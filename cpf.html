@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gerador e Validador de Dados De Pessoa Física</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body data-id="cns">
+    <header></header>
+    <main class="container">
+        <h1>Gerador de CPF E CNPJ válidos</h1>
+        <section>
+            <div class="row">
+                <form name="form_main" class="col s12">
+                    <div class="row">
+                        <label for="numero">Número:</label>
+                        <input name="numero" id="numero" size="20" type="text" /><br /> Tipo:
+
+                        <input name="tipo" value="cpf" id="cpf" type="radio" checked>
+
+                        <label for="cpf">CPF</label>
+
+                        <input name="tipo" value="cnpj" id="cnpj" type="radio" checked />
+                        <label for="cnpj">CNPJ</label>
+
+                        <input name="mascara" value="mascara" id="mascara" type="checkbox">
+                        <label for="mascara">Máscara</label><br /><br />
+
+                        <input name="button" value="Gerar" onclick="gera()" type="button">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Como Funciona?</h5>
+                    <p class="grey-text text-lighten-4">
+                        O Cartão Nacional de Saúde é um instrumento que possibilita a vinculação dos procedimentos executados no âmbito do Sistema Único de Saúde (SUS) ao usuário, ao profissional que os realizou e também à unidade de saúde onde foram realizados.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Referências</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cart%C3%A3o_SUS">Wikipedia</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.yanaga.com.br/2012/06/validacao-do-cns-cartao-nacional-de.html">Validação</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Gerador Dados De Pessoa Física
+                <a class="grey-text text-lighten-4 right" href="#">Jhonathan Ribeiro</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Compiled and minified JavaScript -->
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/cadastro.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
