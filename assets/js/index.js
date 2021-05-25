@@ -58,12 +58,14 @@ function generalAction(dataId, type) {
             if (validated) {
                 document.querySelector('#valicon' + type).innerHTML = 'thumb_up';
                 document.querySelector('#valicon').classList.add('success');
+                document.querySelector('#valicon').classList.remove('danger');
+
                 document.querySelector('#valtext' + type).innerHTML = 'O CNS, ' + masked.bold() + ' é válido!';
             } else {
                 document.querySelector('#valicon' + type).innerHTML = 'thumb_down';
                 document.querySelector('#valicon').classList.remove('success');
                 document.querySelector('#valicon').classList.add('danger');
-                document.querySelector('#valtext' + type).innerHTML =  `O CNS ${masked.bold()} é inválido!`;
+                document.querySelector('#valtext' + type).innerHTML = `O CNS ${masked.bold()} é inválido!`;
             }
         }
     }
@@ -75,16 +77,13 @@ function makeHeader() {
     <nav>
       <div class="nav-wrapper container">
         <a href="/" class="brand-logo">
-          Gerador de dados Pessoa Física
+          IDS Generator
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="cpf.html">CPF/CNPJ</a></li>
-          <li><a href="index.html">CNS</a></li>
-          <li><a href="pessoa.html">Pessoa Física</a></li>
+          
         </ul>
       </div>
     </nav>
-  
    `;
 
     document.querySelector('header').innerHTML = header;
@@ -99,12 +98,12 @@ function makeFooter() {
           
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="https://jhonathanribeiro.netlify.app/">Entre em contato conosco</a></li>
+          <li><a href="https://jhonathanribeiro.netlify.app/"></a></li>
         </ul>
       </div>
     </nav>
     <div style="text-align: center; background-color: white; color: black; font-size: 10px;">
-      Todas as bibliotecas aqui são fornecidas para ajudar o desenvolvedor e o seu uso é de total responsabilidade de quem o está usando.
+      Todos os direitos reservados.
     </div>
    `;
     document.querySelector('footer').innerHTML = document.querySelector('footer').innerHTML + footer;

@@ -1,42 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gerador e Validador de Dados De Pessoa Física</title>
+    <title>Gerador e Validador de Telefone Celular</title>
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body data-id="cns">
+<body data-id="telefone">
     <header></header>
+
     <main class="container">
-        <h1>Gerador e Validador de CNS</h1>
+        <h1>Gerador e Validador de Telefones Nacionais Brasileiros </h1>
         <section>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s4">
+                        <div class="input-field col s6">
                             <div class="collection">
                                 <a href="cpf.html" class="collection-item">Gerador de CPF</a>
                                 <a href="cnpj.html" class="collection-item">Gerador de CNPJ</a>
-                                <a href="index.html" class="collection-item active">Gerador de CNS</a>
+                                <a href="index.html" class="collection-item">Gerador de CNS</a>
                                 <a href="senha.html" class="collection-item">Gerador de senha</a>
-                                <a href="telefone.html" class="collection-item">Gerador de telefone</a>
+                                <a href="telefone.html" class="collection-item active">Gerador de telefone</a>
                                 <a href="pessoa.html" class="collection-item">Gerador de pessoa</a>
                                 <a href="empresa.html" class="collection-item">Gerador de empresa</a>
                             </div>
                         </div>
+
                         <div class="input-field col s6">
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Gerar CNS</span>
+                                    <span class="card-title activator grey-text text-darken-4">Gerar Telefone</span>
                                     <input id="generated" type="text" class="validate">
                                     <label for="generated"></label>
                                 </div>
@@ -47,9 +47,9 @@
                             </div>
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Validar CNS</span>
+                                    <span class="card-title activator grey-text text-darken-4">Validar Telefone</span>
                                     <input id="validated" type="text" class="validate">
-                                    <label for="validated">Digite o CNS</label>
+                                    <label for="validated">Digite o Telefone</label>
 
                                     <ul id="validatedResult" class=" hidden">
                                         <li>
@@ -77,14 +77,16 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Como Funciona?</h5>
                     <p class="grey-text text-lighten-4">
-                        O Cartão Nacional de Saúde é um instrumento que possibilita a vinculação dos procedimentos executados no âmbito do Sistema Único de Saúde (SUS) ao usuário, ao profissional que os realizou e também à unidade de saúde onde foram realizados.
+                        O código de área serve para identificar uma localidade ou um conjunto de localidades e deve ser usado para a realização de ligações de longa distância[8]. O sistema de códigos de área, também chamado de DDD (Discagem Direta a Distância), foi implantado
+                        nacionalmente em 1969[9] e expandido ao longo da década seguinte. Em 2001, a quantidade de códigos de área geográficos subiu de 57 para 68[10], com a criação dos códigos 22, 28, 64, 66, 87, 88, 89, 93, 94, 97 e 99[11][12][13],
+                        por meio das alterações feitas pela Resolução 263 da ANATEL, de 8 de junho de 2001[14].
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Referências</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cart%C3%A3o_SUS">Wikipedia</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://www.yanaga.com.br/2012/06/validacao-do-cns-cartao-nacional-de.html">Validação</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/N%C3%BAmeros_de_telefone_no_Brasil">Wikipedia</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/Telefone/">Receita Federal</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,15 +94,15 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2021 IDS Generator
-                <a class="grey-text text-lighten-4 right" href="#">Jhonathan Ribeiro</a>
+                <a class="grey-text text-lighten-4 right" href="https://jhonathanribeiro.netlify.app/">Jhonathan Ribeiro</a>
             </div>
         </div>
     </footer>
+
     <!-- Compiled and minified JavaScript -->
     <script src="assets/js/materialize.min.js"></script>
-    <script src="assets/js/index.js"></script>
     <script src="assets/js/cadastro.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
