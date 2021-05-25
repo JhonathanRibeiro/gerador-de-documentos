@@ -1,4 +1,4 @@
-# gerador-de-documentos
+# IDS Generator
 Gerador de CPF CNPJ e outros documentos válidos
 CNS
 ![image](https://user-images.githubusercontent.com/37172038/119396766-b2324300-bcab-11eb-815e-c916379eed7b.png)
