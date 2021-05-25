@@ -1,4 +1,5 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -15,30 +16,28 @@
 
 <body data-id="cnpj">
     <header></header>
-
     <main class="container">
         <h1>Gerador e Validador CNPJ</h1>
         <section>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s6">
-                            <div class="collection">
-                                <a href="cpf.html" class="collection-item">Gerador de CPF</a>
-                                <a href="cnpj.html" class="collection-item active">Gerador de CNPJ</a>
-                                <a href="index.html" class="collection-item">Gerador de CNS</a>
-                                <a href="senha.html" class="collection-item">Gerador de senha</a>
-                                <a href="telefone.html" class="collection-item">Gerador de telefone</a>
-                                <a href="pessoa.html" class="collection-item">Gerador de pessoa</a>
-                                <a href="empresa.html" class="collection-item">Gerador de empresa</a>
-                            </div>
-                        </div>
+                        <div class="input-field col s6 sidebar-collection"></div>
 
                         <div class="input-field col s6">
-
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Validar se o CNPJ está no formato padrão</span>
+                                    <span class="card-title activator grey-text text-darken-4">Gerar CNPJ</span>
+                                    <input id="generated" type="text" class="validate">
+                                    <label for="generated"></label>
+                                </div>
+                                <div class="card-action">
+                                    <a class="waves-effect waves-light btn" id="generatedAction"><i class="material-icons right">add</i>gerar CNPJ</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Validar CNPJ</span>
                                     <input id="validated" type="text" class="validate">
                                     <label for="validated">Digite o CNPJ</label>
 
@@ -55,17 +54,6 @@
                                         <a class="waves-effect waves-light btn" id="validatedAction"><i class="material-icons right">check</i>validar</a>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4">Gerar um número de CNPJ de exemplo utilizando o padrão</span>
-                                        <input id="generated" type="text" class="validate">
-                                        <label for="generated"></label>
-                                    </div>
-                                    <div class="card-action">
-                                        <a class="waves-effect waves-light btn" id="generatedAction"><i class="material-icons right">add</i>gerar
-                    novo</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                 </form>
@@ -79,8 +67,6 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Como Funciona?</h5>
                     <p class="grey-text text-lighten-4">
-
-
                         Os oito primeiros números (XX.XXX.XXX) formam a "raiz", que identifica a empresa. Os quatro dígitos seguintes após a barra (YYYY) formam o sufixo, que identifica uma unidade de atuação de empresa, ou seja, um endereço de atividade da pessoa jurídica e
                         os dois últimos, após o traço (ZZ) formam o "dígito verificador", que é resultado de uma equação com os doze números anteriores. Deste modo, os CNPJs no formato XX.XXX.XXX/0001-ZZ identificam a matriz da empresa.
                     </p>
@@ -101,9 +87,6 @@
             </div>
         </div>
     </footer>
-
-
-
     <!-- Compiled and minified JavaScript -->
     <script src="assets/js/materialize.min.js"></script>
     <script src="assets/js/cadastro.js"></script>

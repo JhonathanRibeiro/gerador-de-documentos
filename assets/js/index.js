@@ -2,6 +2,7 @@ window.onload = () => {
     makeHeader();
     makeFooter();
     componentCustom();
+    makeSideNav();
 }
 
 function componentCustom() {
@@ -12,7 +13,6 @@ function componentCustom() {
     }
 }
 
-
 function generalAction(dataId, type) {
     const validatedAction = document.querySelector('#validatedAction' + type);
     const generatedAction = document.querySelector('#generatedAction' + type);
@@ -21,37 +21,34 @@ function generalAction(dataId, type) {
     if (generatedAction) {
         generatedAction.onclick = () => {
             const generatedInput = document.querySelector('#generated' + type);
-            generatedInput.value = jsbrasil.fakerBr[dataId]();
+            generatedInput.value = idsgenerate.fakerBr[dataId]();
         }
     }
-
 
     if (generatedObjectAction) {
         generatedObjectAction.onclick = () => {
             // const generatedInput = document.querySelector('#generated' + type);
-            const data = jsbrasil.fakerBr[dataId]();
+            const data = idsgenerate.fakerBr[dataId]();
             for (key in data) {
                 if (data[key] instanceof Object && !Array.isArray(data[key])) {
                     for (kk in data[key]) {
                         if (document.querySelector('#' + kk)) {
                             document.querySelector('#' + kk).value = data[key][kk];
                         }
-
                     }
                 } else if (!(data[key] instanceof Object)) {
                     if (document.querySelector('#' + key)) {
                         document.querySelector('#' + key).value = data[key];
                     }
                 }
-
             }
         }
     }
     if (validatedAction) {
         validatedAction.onclick = () => {
             const validatedInput = document.querySelector('#validated' + type);
-            const masked = jsbrasil.maskBr[dataId] ? jsbrasil.maskBr[dataId](validatedInput.value) : validatedInput.value;
-            const validated = jsbrasil.validateBr[dataId](validatedInput.value);
+            const masked = idsgenerate.maskBr[dataId] ? idsgenerate.maskBr[dataId](validatedInput.value) : validatedInput.value;
+            const validated = idsgenerate.validateBr[dataId](validatedInput.value);
 
             document.querySelector('#validatedResult' + type).classList.remove('hidden');
 
@@ -69,7 +66,22 @@ function generalAction(dataId, type) {
             }
         }
     }
+}
 
+function makeSideNav() {
+    const sidenav = `
+    <div class="collection">
+        <a href="cpf.html" class="collection-item">Gerador de CPF</a>
+        <a href="cnpj.html" class="collection-item">Gerador de CNPJ</a>
+        <a href="index.html" class="collection-item active">Gerador de CNS</a>
+        <a href="senha.html" class="collection-item">Gerador de senha</a>
+        <a href="telefone.html" class="collection-item">Gerador de telefone</a>
+        <a href="pessoa.html" class="collection-item">Gerador de pessoa</a>
+        <a href="empresa.html" class="collection-item">Gerador de empresa</a>
+        <a href="texto.html" class="collection-item">Conversor de texto</a>
+    </div>
+    `;
+    document.querySelector('.sidebar-collection').innerHTML = sidenav;
 }
 
 function makeHeader() {
@@ -95,7 +107,6 @@ function makeFooter() {
     <nav>
       <div class="nav-wrapper container">
         <a href="/" class="brand-logo">
-          
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="https://jhonathanribeiro.netlify.app/"></a></li>

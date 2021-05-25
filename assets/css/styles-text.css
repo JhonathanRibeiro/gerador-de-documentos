@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0
+}
+
+nav,
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .9
+}
+
+a:hover {
+    opacity: 1
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff
+}
+
+header nav {
+    display: flex
+}
+
+header img {
+    width: 200px
+}
+
+header li a {
+    color: #191c03
+}
+
+header li {
+    margin: 0 15px
+}
+
+header li:first-child {
+    margin-left: 0
+}
+
+header li:last-child {
+    margin-right: 0
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column
+    }
+    header img {
+        margin-bottom: 15px
+    }
+}
+
+.hero {
+    background-size: cover;
+    min-height: 100vh;
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 10px
+}
+
+.hero .textarea {
+    width: 80%;
+    height: 200px;
+    padding-bottom: 10px
+}
+
+.hero .buttons {
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+
+.hero .btn {
+    background-color: #d3d3d3;
+    border-radius: 4px;
+    color: green;
+    padding: 10px 15px
+}
