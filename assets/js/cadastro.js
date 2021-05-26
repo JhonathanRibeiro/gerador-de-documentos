@@ -1,9 +1,19 @@
-var persons = require("./persons");
-
 (function(f) {
-    if (typeof exports === "object" && typeof module !== "undefined") { module.exports = f() } else if (typeof define === "function" && define.amd) { define([], f) } else {
+    if (typeof exports === "object" && typeof module !== "undefined") {
+        module.exports = f()
+    } else if (typeof define === "function" && define.amd) {
+        define([], f)
+    } else {
         var g;
-        if (typeof window !== "undefined") { g = window } else if (typeof global !== "undefined") { g = global } else if (typeof self !== "undefined") { g = self } else { g = this }
+        if (typeof window !== "undefined") {
+            g = window
+        } else if (typeof global !== "undefined") {
+            g = global
+        } else if (typeof self !== "undefined") {
+            g = self
+        } else {
+            g = this
+        }
         g.idsgenerate = f()
     }
 })(function() {
@@ -12,18 +22,205 @@ var persons = require("./persons");
         function r(e, n, t) {
             function o(i, f) {
                 if (!n[i]) {
-                    if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a }
-                    var p = n[i] = { exports: {} };
-                    e[i][0].call(p.exports, function(r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t)
+                    if (!e[i]) {
+                        var c = "function" == typeof require && require;
+                        if (!f && c)
+                            return c(i, !0);
+                        if (u)
+                            return u(i, !0);
+                        var a = new Error("Cannot find module '" + i + "'");
+                        throw a.code = "MODULE_NOT_FOUND",
+                            a
+                    }
+                    var p = n[i] = {
+                        exports: {}
+                    };
+                    e[i][0].call(p.exports, function(r) {
+                        var n = e[i][1][r];
+                        return o(n || r)
+                    }, p, p.exports, r, e, n, t)
                 }
                 return n[i].exports
             }
-            for (var u = "function" == typeof require && require, i = 0; i < t.length; i++) o(t[i]);
+            for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)
+                o(t[i]);
             return o
         }
         return r
     })()({
-        1: persons(),
+        1: [function(require, module, exports) {
+            "use strict";
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
+            exports.NOMES_FEMININOS = ['MARIA', 'ANA', 'FRANCISCA', 'ANTONIA', 'ADRIANA', 'JULIANA', 'MARCIA', 'FERNANDA', 'PATRICIA', 'ALINE'];
+            exports.NOMES_MASCULINOS = ['JOSE', 'JOAO', 'ANTONIO', 'FRANCISCO', 'CARLOS', 'PAULO', 'PEDRO', 'LUCAS', 'LUIZ', 'MARCOS'];
+            exports.SOBRENOMES = ['ALMEIDA', 'ALVES', 'ANDRADE', 'BARBOSA', 'BARROS', 'BATISTA', 'BORGES', 'CAMPOS', 'CARDOSO', 'CARVALHO', 'CASTRO', 'COSTA', 'DIAS', 'DUARTE', 'FREITAS', 'FERNANDES', 'FERREIRA', 'GARCIA', 'GOMES', 'GONÇALVES', 'LIMA', 'LOPES', 'MACHADO', 'MARQUES', 'MARTINS', 'MEDEIROS', 'MELO', 'MENDES', 'MIRANDA', 'MONTEIRO', 'MORAES', 'MOREIRA', 'MOURA', 'NASCIMENTO', 'NUNES', 'OLIVEIRA', 'PEREIRA', 'RAMOS', 'REIS', 'RIBEIRO', 'ROCHA', 'SANTANA', 'SANTOS', 'SILVA', 'SOARES', 'SOUZA', 'TEIXEIRA', 'VIEIRA'];
+            exports.EMPRESAS_TIPOS = ['Pizzaria', 'Mecânica', 'Laboratórios', 'Contabilidade', 'Padaria', 'Pastelaria'];
+            exports.EMPRESAS_NOMES = ['do Barão', 'União', 'Teixeira', 'Nova Era', 'Genuíno', 'Autêntica', 'Lux'];
+            exports.TELEFONE_ESTADO = {
+                'ac': 68,
+                'al': 82,
+                'ap': 96,
+                'am': 92,
+                'ba': 71,
+                'ce': 88,
+                'df': 61,
+                'es': 27,
+                'go': 62,
+                'ma': 98,
+                'mt': 65,
+                'ms': 84,
+                'mg': 31,
+                'pr': 41,
+                'pb': 83,
+                'pa': 91,
+                'pe': 81,
+                'pi': 86,
+                'rj': 21,
+                'rn': 84,
+                'rs': 51,
+                'ro': 69,
+                'rr': 95,
+                'sc': 48,
+                'se': 79,
+                'sp': 11,
+                'to': 63
+            };
+            exports.CEP_ESTADO = {
+                ac: [
+                    [69900000, 69999999]
+                ],
+                al: [
+                    [57000000, 57999999]
+                ],
+                am: [
+                    [69000000, 69299999],
+                    [69400000, 69899999]
+                ],
+                ap: [
+                    [68900000, 68999999]
+                ],
+                ba: [
+                    [40000000, 48999999]
+                ],
+                ce: [
+                    [60000000, 63999999]
+                ],
+                df: [
+                    [70000000, 72799999],
+                    [73000000, 73699999]
+                ],
+                es: [
+                    [29000000, 29999999]
+                ],
+                go: [
+                    [72800000, 72999999],
+                    [73700000, 76799999]
+                ],
+                ma: [
+                    [65000000, 65999999]
+                ],
+                mg: [
+                    [30000000, 39999999]
+                ],
+                ms: [
+                    [79000000, 79999999]
+                ],
+                mt: [
+                    [78000000, 78899999]
+                ],
+                pa: [
+                    [66000000, 68899999]
+                ],
+                pb: [
+                    [58000000, 58999999]
+                ],
+                pe: [
+                    [50000000, 56999999]
+                ],
+                pi: [
+                    [64000000, 64999999]
+                ],
+                pr: [
+                    [80000000, 87999999]
+                ],
+                rj: [
+                    [20000000, 28999999]
+                ],
+                rn: [
+                    [59000000, 59999999]
+                ],
+                ro: [
+                    [76800000, 76999999]
+                ],
+                rr: [
+                    [69300000, 69399999]
+                ],
+                rs: [
+                    [90000000, 99999999]
+                ],
+                sc: [
+                    [88000000, 89999999]
+                ],
+                se: [
+                    [49000000, 49999999]
+                ],
+                sp: [
+                    [1000000, 19999999]
+                ],
+                to: [
+                    [77000000, 77999999]
+                ]
+            };
+            exports.TIPOS_SANGUINEOS = ['O+', 'A+', 'B+', 'AB+', ' O−', ' A−', ' B−', 'AB−'];
+
+            function getAstro(data) {
+                var month, day;
+                if (typeof data === 'string') {
+                    day = parseInt(data.split('/')[0]);
+                    month = parseInt(data.split('/')[1]);
+                } else {
+                    day = data.getDate() + 1;
+                    month = data.getMonth() + 1;
+                }
+                if (month < 1 || month > 12) {
+                    throw new Error("Mes inválido : " + month);
+                }
+                if (day < 1 || day > 32) {
+                    throw new Error("Dia inválido : " + day);
+                }
+                if ((month == 1 && day < 20) || (month == 12 && day >= 22)) {
+                    return 'Capricórnio';
+                } else if ((month == 2 && day < 19) || (month == 1 && day >= 20)) {
+                    return 'Aquários';
+                } else if ((month == 3 && day < 21) || (month == 2 && day >= 19)) {
+                    return 'Peixes';
+                } else if ((month == 4 && day < 20) || (month == 3 && day >= 21)) {
+                    return 'Aries';
+                } else if ((month == 5 && day < 21) || (month == 4 && day >= 20)) {
+                    return 'Touro';
+                } else if ((month == 6 && day < 22) || (month == 5 && day >= 21)) {
+                    return 'Gêmeos';
+                } else if ((month == 7 && day < 23) || (month == 6 && day >= 22)) {
+                    return 'Cancer';
+                } else if ((month == 8 && day < 23) || (month == 7 && day >= 23)) {
+                    return 'Leao';
+                } else if ((month == 9 && day < 23) || (month == 8 && day >= 23)) {
+                    return 'Virgo';
+                } else if ((month == 10 && day < 24) || (month == 9 && day >= 22)) {
+                    return 'Libra';
+                } else if ((month == 11 && day < 22) || (month == 10 && day >= 24)) {
+                    return 'Escorpião';
+                } else if ((month == 12 && day < 22) || (month == 11 && day >= 22)) {
+                    return 'Sagitário';
+                }
+                throw new Error("Signo não encontrado : " + day + '/' + month);
+            }
+            exports.getAstro = getAstro;
+            exports.NAMES = ['Aaron', 'Abel', 'Abelardo', 'Abelino', 'Abiel', 'Abiezer', 'Abílio', 'Abner', 'Abraão', 'Acácio', 'Adailton', 'Adair', 'Adalberto', 'Adalgiso', 'Adalício', 'Adalmir', 'Adalto', 'Adam', 'Adamastor', 'Adamor', 'Adão', 'Adeci', 'Adeildo', 'Adelair', 'Adélcio', 'Adelino', 'Adélio', 'Adelson', 'Ademar', 'Ademilson', 'Ademir', 'Aderbal', 'Adérito', 'Adilson', 'Admilson', 'Adolfo', 'Adonai', 'Adonis', 'Adónis', 'Adrian', 'Adriano', 'Adriel', 'Aécio', 'Afonso', 'Afrânio', 'Agenor', 'Ageo', 'Agipino', 'Agnaldo', 'Agnelo', 'Agostinho', 'Aguinaldo', 'Ailton', 'Aires', 'Airton', 'Aitor', 'Alair', 'Alaôr', 'Alarico', 'Albano', 'Albertino', 'Albino', 'Alcides', 'Alcindo', 'Aldair', 'Aldemir', 'Aldenor', 'Aldo', 'Alejandro', 'Alessandro', 'Alex', 'Alexandrino', 'Alexandro', 'Aléxio', 'Alfredo', 'Alípio', 'Alírio', 'Alison', 'Allan', 'Almerindo', 'Almir', 'Aloísio', 'Alonzo', 'Altino', 'Aluísio', 'Alvantino', 'Alvino', 'Amadeo', 'Amândio', 'Amarildo', 'Amauri', 'Amaury', 'Ambrósio', 'Américo', 'Amílcar', 'Amilton', 'Amir', 'Ananias', 'Andersen', 'Anderson', 'Ândreo', 'Andrés', 'Anésio', 'Angélico', 'Ângelo', 'Aníbal', 'Anísio', 'Anselmo', 'Antenor', 'Antero', 'Anthony', 'Apollo', 'Apolo', 'Aprígio', 'Aquiles', 'Arcanjo', 'Aristeu', 'Aristides', 'Armando', 'Armindo', 'Arnaldo', 'Arthur', 'Arturo', 'Ary', 'Asher', 'Assis', 'Ataíde', 'Athos', 'Átila', 'Atlas', 'Aureliano', 'Aurelino', 'Aurélio', 'Aurino', 'Ayrton', 'Balbino', 'Balduíno', 'Baltasar', 'Baltazar', 'Barnabé', 'Bartolomeu', 'Basileu', 'Basílio', 'Batista', 'Belarmino', 'Belchior', 'Belisário', 'Belmiro', 'Bendito', 'Benedito', 'Benito', 'Benjamin', 'Beto', 'Bill', 'Boanerges', 'Bob', 'Bonifácio', 'Bóris', 'Bosco', 'Brandon', 'Bruce', 'Bryan', 'Byron', 'Cacildo', 'Cadú', 'Cael', 'Caíco', 'Caíque', 'Calazan', 'Calisto', 'Calixto', 'Calvin', 'Camilo', 'Cândido', 'Canuto', 'Casimiro', 'Cassiano', 'Cássio', 'Castiel', 'Cauã', 'Cauê', 'Celestino', 'Celso', 'César', 'Charles', 'Christian', 'Christian', 'Christopher', 'Cirilo', 'Ciro', 'Cláudio', 'Claus', 'Clayton', 'Clementino', 'Clodomiro', 'Clovis', 'Clóvis', 'Conrad', 'Constantin', 'Constantino', 'Cosme', 'Cristiano', 'Cristóvão', 'Cursino', 'Custódio', 'Dácio', 'Dagoberto', 'Dalmo', 'Dalton', 'Danilo', 'Dante', 'Dárcio', 'Darius', 'Deivid', 'Delfino', 'Delmar', 'Demétrio', 'Denis', 'Denzel', 'Derik', 'Didier', 'Dimas', 'Dinis', 'Diniz', 'Dino', 'Diógenes', 'Dionísio', 'Djalma', 'Dom', 'Domênico', 'Dominic', 'Donatello', 'Donatílio', 'Donato', 'Donizete', 'Douglas', 'Douglas', 'Durval', 'Dylan', 'Ed', 'Éder', 'Ederson', 'Edivaldo', 'Edmilson', 'Edmir', 'Edson', 'Eliezer', 'Élio', 'Eliseo', 'Eliseu', 'Elísio', 'Élton', 'Emanuel', 'Emaús', 'Emerson', 'Emílio', 'Ênio', 'Enrico', 'Enrique', 'Erasmo', 'Erasmus', 'Eriberto', 'Erik', 'Ernesto', 'Esdras', 'Eugénio', 'Eurico', 'Evaldo', 'Evandro', 'Evelásio', 'Expedito', 'Ezekiel', 'Fabiano', 'Faustino', 'Fausto', 'Felipe', 'Felisberto', 'Felismino', 'Félix', 'Ferdinand', 'Ferdinando', 'Fernando', 'Fernão', 'Firmino', 'Flávio', 'Florêncio', 'Florentino', 'Floriano', 'Fortunato', 'Francesco', 'Francis', 'Franco', 'Frank', 'Franklin', 'Gael', 'Galdino', 'Galeno', 'Galileu', 'Gastão', 'Gaudêncio', 'Genaro', 'Genésio', 'Geovani', 'Geraldo', 'Germano', 'Gerson', 'Giancarlos', 'Giani', 'Gianluca', 'Gilberto', 'Gilmar', 'Gilmar', 'Gilson', 'Giuseppe', 'Glauco', 'Golias', 'Graciano', 'Gregório', 'Gualter', 'Guarani', 'Gumersindo', 'Guy', 'Haroldo', 'Hélder', 'Hélio', 'Henry', 'Herbert', 'Hermano', 'Hernâni', 'Horácio', 'Humberto', 'Ike', 'Irineu', 'Isaías', 'Isidoro', 'Israel', 'Ítalo', 'Itamar', 'Ivaldo', 'Ivandro', 'Ivanildo', 'Jacinto', 'Jack', 'Jackson', 'Jader', 'Jadiel', 'Jadir', 'Jair', 'Jairo', 'Jamal', 'Jamil', 'Jandir', 'Janilson', 'Januário', 'Jarbas', 'Jason', 'Jason', 'Javier', 'Jean', 'Jefferson', 'Jeremias', 'Jessé', 'Jessie', 'Jessiel', 'Jesualdo', 'Jesus', 'Joab', 'Joelson', 'Jofre', 'Johnny', 'Johnson', 'Jonas', 'Jonatã', 'Josélio', 'Joshua', 'Josias', 'Josué', 'Juan', 'Juliano', 'Julião', 'Júlio', 'Júnior', 'Jurandir', 'Juvenal', 'Kaique', 'Kauã', 'Kauan', 'Kawan', 'Kelvin', 'Kennedy', 'Klaus', 'Kleber', 'Lael', 'Laerte', 'Laertes', 'Lauro', 'Leon', 'Leôncio', 'Leonel', 'Leónidas', 'Leopoldo', 'Lineu', 'Lionel', 'Lisandro', 'Lívio', 'Logan', 'Luã', 'Luan', 'Luca', 'Luciano', 'Lúcio', 'Luigi', 'Luiz', 'Lukas', 'Luzio', 'Macário', 'Magnus', 'Malvino', 'Manassés', 'Manoel', 'Maomé', 'Márcio', 'Marcos', 'Marcus', 'Marley', 'Marlon', 'Martin', 'Martinho', 'Marvin', 'Matheo', 'Matheus', 'Mathias', 'Mathieu', 'Maurílio', 'Max', 'Maximiliano', 'Maxwell', 'Mélvin', 'Messias', 'Micael', 'Michael', 'Michel', 'Milo', 'Milton', 'Mizael', 'Moacir', 'Mohamed', 'Nataniel', 'Nazário', 'Neil', 'Nereu', 'Nestor', 'Newton', 'Ney', 'Nicola', 'Nicolas', 'Nildemar', 'Nilo', 'Nilson', 'Nilton', 'Nivaldo', 'Nonato', 'Norberto', 'Norildo', 'Norimar', 'Odemar', 'Odilson', 'Odin', 'Odorico', 'Olin', 'Omar', 'Omer', 'Onofre', 'Orestes', 'Orlandino', 'Orlando', 'Osias', 'Osman', 'Osmar', 'Osório', 'Osvaldo', 'Otacílio', 'Otávio', 'Otto', 'Ozael', 'Pablo', 'Paco', 'Paolo', 'Pascoal', 'Patrício', 'Patrick', 'Paulino', 'Pepe', 'Percival', 'Péricles', 'Pierre', 'Porfírio', 'Querubim', 'Quintino', 'Radamés', 'Rafaelo', 'Raí', 'Raimundo', 'Ralf', 'Ralph', 'Ramiro', 'Ramon', 'Ramón', 'Raoni', 'Raphael', 'Reginaldo', 'Régis', 'Reimão', 'Reinaldo', 'Renan', 'Renato', 'Renê', 'Rivaldo', 'Roberto', 'Robson', 'Rodney', 'Rodolfo', 'Roger', 'Rogério', 'Roland', 'Rolando', 'Romão', 'Romário', 'Romeo', 'Rômulo', 'Ronald', 'Ronaldo', 'Roni', 'Rosendo', 'Rúbens', 'Rudesindo', 'Rudolfo', 'Ruy', 'Ryan', 'Sansão', 'Saúl', 'Saulo', 'Sávio', 'Selton', 'Sertório', 'Severino', 'Sidney', 'Silas', 'Sílvio', 'Simplício', 'Sinésio', 'Stefan', 'Stefano', 'Stenio', 'Steve', 'Steven', 'Sydney', 'Taciano', 'Tadeu', 'Tales', 'Tamires', 'Tâmiris', 'Tarcísio', 'Tarik', 'Tarsício', 'Telmo', 'Tenório', 'Teo', 'Teobaldo', 'Teodemiro', 'Thales', 'Theo', 'Thiago', 'Thomas', 'Thomaz', 'Tibúrcio', 'Ticiano', 'Tierry', 'Timóteo', 'Tito', 'Tom', 'Tomaz', 'Tristão', 'Troy', 'Túlio', 'Ubirajara', 'Ubiratã', 'Urbano', 'Uriel', 'Valdemar', 'Valentino', 'Vanderlei', 'Vasco', 'Venâncio', 'Veríssimo', 'Vicenzo', 'Victor', 'Vílmar', 'Vilson', 'Vinícius', 'Virgílio', 'Vital', 'Vítor', 'Vladimir', 'Wagner', 'Waldir', 'Waldo', 'Wallace', 'Walter', 'Washington', 'Watson', 'Webster', 'Weller', 'Wellington', 'Wendel', 'Wesley', 'Will', 'William', 'Wilson', ];
+
+        }, {}],
         2: [function(require, module, exports) {
             "use strict";
             var __assign = (this && this.__assign) || function() {
@@ -38,7 +235,9 @@ var persons = require("./persons");
                 };
                 return __assign.apply(this, arguments);
             };
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils = require("./src/utils");
             var validate_1 = require("./src/validate");
             exports.validateBr = validate_1.validateBr;
@@ -56,10 +255,19 @@ var persons = require("./persons");
             exports.maskBr = mask.maskBr;
             exports.fakerBr = faker_1.default;
 
-        }, { "./src/estados": 4, "./src/faker": 5, "./src/mask": 11, "./src/placa": 13, "./src/utils": 15, "./src/validate": 16 }],
+        }, {
+            "./src/estados": 4,
+            "./src/faker": 5,
+            "./src/mask": 11,
+            "./src/placa": 13,
+            "./src/utils": 15,
+            "./src/validate": 16
+        }],
         3: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("./utils");
             /**
              *
@@ -158,7 +366,8 @@ var persons = require("./persons");
                     return false;
                 }
                 var s1, s2;
-                for (var c = s1 = s2 = 0, p = 9; c < 9; c++, p--) {
+                for (var c = s1 = s2 = 0, p = 9; c < 9; c++,
+                    p--) {
                     s1 += parseInt(value[c]) * p;
                     s2 += parseInt(value[c]) * (10 - p);
                 }
@@ -179,16 +388,7 @@ var persons = require("./persons");
                     return false;
                 }
                 // Elimina CNPJs invalidos conhecidos
-                if (cnpj === '00000000000000' ||
-                    cnpj === '11111111111111' ||
-                    cnpj === '22222222222222' ||
-                    cnpj === '33333333333333' ||
-                    cnpj === '44444444444444' ||
-                    cnpj === '55555555555555' ||
-                    cnpj === '66666666666666' ||
-                    cnpj === '77777777777777' ||
-                    cnpj === '88888888888888' ||
-                    cnpj === '99999999999999') {
+                if (cnpj === '00000000000000' || cnpj === '11111111111111' || cnpj === '22222222222222' || cnpj === '33333333333333' || cnpj === '44444444444444' || cnpj === '55555555555555' || cnpj === '66666666666666' || cnpj === '77777777777777' || cnpj === '88888888888888' || cnpj === '99999999999999') {
                     return false;
                 }
                 // Valida DVs
@@ -240,10 +440,7 @@ var persons = require("./persons");
                 if (strCPF === '00000000000') {
                     return false;
                 }
-                var restos = [
-                    utils_1.modulo11(strCPF, 9, 11),
-                    utils_1.modulo11(strCPF, 10, 12)
-                ];
+                var restos = [utils_1.modulo11(strCPF, 9, 11), utils_1.modulo11(strCPF, 10, 12)];
                 return restos;
             }
             exports.create_cpf = create_cpf;
@@ -354,7 +551,8 @@ var persons = require("./persons");
                 var d;
                 var p = 2,
                     c = 9;
-                for (d = 0; c >= 0; c--, (p < 9) ? p++ : p = 2) {
+                for (d = 0; c >= 0; c--,
+                    (p < 9) ? p++ : p = 2) {
                     d += parseInt(nis[c]) * p;
                 }
                 var digit = (((10 * d) % 11) % 10);
@@ -367,9 +565,7 @@ var persons = require("./persons");
                 while (renavam.length < 11) {
                     renavam = '0' + renavam;
                 }
-                dig1 = (renavam.charCodeAt(0) - 48) * 3 + (renavam.charCodeAt(1) - 48) * 2 + (renavam.charCodeAt(2) - 48) * 9 + (renavam.charCodeAt(3) - 48) * 8 +
-                    (renavam.charCodeAt(4) - 48) * 7 + (renavam.charCodeAt(5) - 48) * 6 + (renavam.charCodeAt(6) - 48) * 5 +
-                    (renavam.charCodeAt(7) - 48) * 4 + (renavam.charCodeAt(8) - 48) * 3 + (renavam.charCodeAt(9) - 48) * 2;
+                dig1 = (renavam.charCodeAt(0) - 48) * 3 + (renavam.charCodeAt(1) - 48) * 2 + (renavam.charCodeAt(2) - 48) * 9 + (renavam.charCodeAt(3) - 48) * 8 + (renavam.charCodeAt(4) - 48) * 7 + (renavam.charCodeAt(5) - 48) * 6 + (renavam.charCodeAt(6) - 48) * 5 + (renavam.charCodeAt(7) - 48) * 4 + (renavam.charCodeAt(8) - 48) * 3 + (renavam.charCodeAt(9) - 48) * 2;
                 dig1 = dig1 * 10;
                 var resto = (dig1 % 11);
                 if (resto === 10) {
@@ -431,9 +627,7 @@ var persons = require("./persons");
                 titulo = '000000000000' + titulo;
                 titulo = titulo.substr(titulo.length - 11, titulo.length - 1);
                 var exce = (estado === '01') || (estado === '02');
-                dig1 = (titulo.charCodeAt(0) - 48) * 2 + (titulo.charCodeAt(1) - 48) * 9 + (titulo.charCodeAt(2) - 48) * 8 +
-                    (titulo.charCodeAt(3) - 48) * 7 + (titulo.charCodeAt(4) - 48) * 6 + (titulo.charCodeAt(5) - 48) * 5 +
-                    (titulo.charCodeAt(6) - 48) * 4 + (titulo.charCodeAt(7) - 48) * 3 + (titulo.charCodeAt(8) - 48) * 2;
+                dig1 = (titulo.charCodeAt(0) - 48) * 2 + (titulo.charCodeAt(1) - 48) * 9 + (titulo.charCodeAt(2) - 48) * 8 + (titulo.charCodeAt(3) - 48) * 7 + (titulo.charCodeAt(4) - 48) * 6 + (titulo.charCodeAt(5) - 48) * 5 + (titulo.charCodeAt(6) - 48) * 4 + (titulo.charCodeAt(7) - 48) * 3 + (titulo.charCodeAt(8) - 48) * 2;
                 var resto = (dig1 % 11);
                 if (resto === 0) {
                     if (exce) {
@@ -521,43 +715,124 @@ var persons = require("./persons");
             }
             exports.create_titulo = create_titulo;
 
-        }, { "./utils": 15 }],
+        }, {
+            "./utils": 15
+        }],
         4: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
-            exports.ESTADOS_SIGLA = ['ac', 'al', 'am', 'ap', 'ba', 'ce', 'df', 'es', 'go', 'ma',
-                'mg', 'ms', 'mt', 'pa', 'pb', 'pe', 'pi', 'pr', 'rj', 'rn', 'ro', 'rr', 'rs',
-                'sc', 'se', 'sp', 'to'
-            ];
-            exports.ESTADOS = [
-                { name: 'Acre', shortname: 'AC', slug: 'acre' },
-                { name: 'Alagoas', shortname: 'AL', slug: 'alagoas' },
-                { name: 'Amapá', shortname: 'AP', slug: 'amapa' },
-                { name: 'Amazonas', shortname: 'AM', slug: 'amazonas' },
-                { name: 'Bahia', shortname: 'BA', slug: 'bahia' },
-                { name: 'Ceará', shortname: 'CE', slug: 'ceara' },
-                { name: 'Distrito Federal', shortname: 'DF', slug: 'distrito-federal' },
-                { name: 'Espírito Santo', shortname: 'ES', slug: 'espirito-santo' },
-                { name: 'Goiás', shortname: 'GO', slug: 'goias' },
-                { name: 'Maranhão', shortname: 'MA', slug: 'maranhao' },
-                { name: 'Mato Grosso', shortname: 'MT', slug: 'mato-grosso' },
-                { name: 'Mato Grosso do Sul', shortname: 'MS', slug: 'mato-grosso-do-sul' },
-                { name: 'Minas Gerais', shortname: 'MG', slug: 'minas-gerais' },
-                { name: 'Pará', shortname: 'PA', slug: 'para' },
-                { name: 'Paraíba', shortname: 'PB', slug: 'paraiba' },
-                { name: 'Paraná', shortname: 'PR', slug: 'parana' },
-                { name: 'Pernambuco', shortname: 'PE', slug: 'pernambuco' },
-                { name: 'Piauí', shortname: 'PI', slug: 'piaui' },
-                { name: 'Rio de Janeiro', shortname: 'RJ', slug: 'rio-de-janeiro' },
-                { name: 'Rio Grande do Norte', shortname: 'RN', slug: 'rio-grande-do-norte' },
-                { name: 'Rio Grande do Sul', shortname: 'RS', slug: 'rio-grande-do-sul' },
-                { name: 'Rondônia', shortname: 'RO', slug: 'rondonia' },
-                { name: 'Roraima', shortname: 'RR', slug: 'roraima' },
-                { name: 'Santa Catarina', shortname: 'SC', slug: 'santa-catarina' },
-                { name: 'São Paulo', shortname: 'SP', slug: 'sao-paulo' },
-                { name: 'Sergipe', shortname: 'SE', slug: 'sergipe' },
-                { name: 'Tocantins', shortname: 'TO', slug: 'tocantins' }
-            ];
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
+            exports.ESTADOS_SIGLA = ['ac', 'al', 'am', 'ap', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mg', 'ms', 'mt', 'pa', 'pb', 'pe', 'pi', 'pr', 'rj', 'rn', 'ro', 'rr', 'rs', 'sc', 'se', 'sp', 'to'];
+            exports.ESTADOS = [{
+                name: 'Acre',
+                shortname: 'AC',
+                slug: 'acre'
+            }, {
+                name: 'Alagoas',
+                shortname: 'AL',
+                slug: 'alagoas'
+            }, {
+                name: 'Amapá',
+                shortname: 'AP',
+                slug: 'amapa'
+            }, {
+                name: 'Amazonas',
+                shortname: 'AM',
+                slug: 'amazonas'
+            }, {
+                name: 'Bahia',
+                shortname: 'BA',
+                slug: 'bahia'
+            }, {
+                name: 'Ceará',
+                shortname: 'CE',
+                slug: 'ceara'
+            }, {
+                name: 'Distrito Federal',
+                shortname: 'DF',
+                slug: 'distrito-federal'
+            }, {
+                name: 'Espírito Santo',
+                shortname: 'ES',
+                slug: 'espirito-santo'
+            }, {
+                name: 'Goiás',
+                shortname: 'GO',
+                slug: 'goias'
+            }, {
+                name: 'Maranhão',
+                shortname: 'MA',
+                slug: 'maranhao'
+            }, {
+                name: 'Mato Grosso',
+                shortname: 'MT',
+                slug: 'mato-grosso'
+            }, {
+                name: 'Mato Grosso do Sul',
+                shortname: 'MS',
+                slug: 'mato-grosso-do-sul'
+            }, {
+                name: 'Minas Gerais',
+                shortname: 'MG',
+                slug: 'minas-gerais'
+            }, {
+                name: 'Pará',
+                shortname: 'PA',
+                slug: 'para'
+            }, {
+                name: 'Paraíba',
+                shortname: 'PB',
+                slug: 'paraiba'
+            }, {
+                name: 'Paraná',
+                shortname: 'PR',
+                slug: 'parana'
+            }, {
+                name: 'Pernambuco',
+                shortname: 'PE',
+                slug: 'pernambuco'
+            }, {
+                name: 'Piauí',
+                shortname: 'PI',
+                slug: 'piaui'
+            }, {
+                name: 'Rio de Janeiro',
+                shortname: 'RJ',
+                slug: 'rio-de-janeiro'
+            }, {
+                name: 'Rio Grande do Norte',
+                shortname: 'RN',
+                slug: 'rio-grande-do-norte'
+            }, {
+                name: 'Rio Grande do Sul',
+                shortname: 'RS',
+                slug: 'rio-grande-do-sul'
+            }, {
+                name: 'Rondônia',
+                shortname: 'RO',
+                slug: 'rondonia'
+            }, {
+                name: 'Roraima',
+                shortname: 'RR',
+                slug: 'roraima'
+            }, {
+                name: 'Santa Catarina',
+                shortname: 'SC',
+                slug: 'santa-catarina'
+            }, {
+                name: 'São Paulo',
+                shortname: 'SP',
+                slug: 'sao-paulo'
+            }, {
+                name: 'Sergipe',
+                shortname: 'SE',
+                slug: 'sergipe'
+            }, {
+                name: 'Tocantins',
+                shortname: 'TO',
+                slug: 'tocantins'
+            }];
 
         }, {}],
         5: [function(require, module, exports) {
@@ -574,7 +849,9 @@ var persons = require("./persons");
                 };
                 return __assign.apply(this, arguments);
             };
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var mask_1 = require("./mask");
             var validate_1 = require("./validate");
             var randexp_1 = require("randexp");
@@ -584,16 +861,25 @@ var persons = require("./persons");
             var utils_1 = require("./utils");
             var veiculos_1 = require("./veiculos");
             var name_1 = require("./name");
-            var pessoas_1 = require("./persons");
+            var pessoas_1 = require("../addons/pessoas");
             var create_2 = require("./iptu/create");
             // import cnaes from '../addons/cnaes';
             function aih(uf, ano, tipo, seq) {
-                if (uf === void 0) { uf = 35; }
-                if (ano === void 0) { ano = 19; }
-                if (tipo === void 0) { tipo = 1; }
-                if (seq === void 0) { seq = null; }
+                if (uf === void 0) {
+                    uf = 35;
+                }
+                if (ano === void 0) {
+                    ano = 19;
+                }
+                if (tipo === void 0) {
+                    tipo = 1;
+                }
+                if (seq === void 0) {
+                    seq = null;
+                }
                 if (!seq) {
-                    seq = utils_1.randomNumber(1000000, 9999999); // new Random().Next(1, 9999999).ToString().PadLeft(7, '0');
+                    seq = utils_1.randomNumber(1000000, 9999999);
+                    // new Random().Next(1, 9999999).ToString().PadLeft(7, '0');
                 }
                 var cod = parseInt("" + uf + ano + tipo + seq);
                 var digito = create_1.create_aih(cod);
@@ -602,12 +888,18 @@ var persons = require("./persons");
             }
 
             function celular(options) {
-                if (options === void 0) { options = {}; }
-                return telefone(__assign({}, options, { celular: true }));
+                if (options === void 0) {
+                    options = {};
+                }
+                return telefone(__assign({}, options, {
+                    celular: true
+                }));
             }
 
             function cep(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.estado) {
                     options.estado = utils_1.randomEstadoSigla();
                 }
@@ -640,8 +932,7 @@ var persons = require("./persons");
                 return chassi;
             }
 
-            function cid() {
-                // let chassi = makeGenericFaker(MASKS['chassi'])();
+            function cid() { // let chassi = makeGenericFaker(MASKS['chassi'])();
                 // chassi = chassi.replace(/i|I|o|O|q|Q/g, 'A');
                 // return chassi;
             }
@@ -702,7 +993,10 @@ var persons = require("./persons");
 
             function currency() {
                 var x = Math.random() * 10000;
-                var final = x.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                var final = x.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                });
                 if (final[final.length - 3] === '.') {
                     final = final.replace(/\./g, '#');
                     final = final.replace(/\,/g, '.');
@@ -717,7 +1011,9 @@ var persons = require("./persons");
             }
 
             function data(config) {
-                if (config === void 0) { config = {}; }
+                if (config === void 0) {
+                    config = {};
+                }
                 var date = new Date();
                 if (config.dias) {
                     date.setDate(date.getDate() + config.dias);
@@ -749,7 +1045,9 @@ var persons = require("./persons");
             }
 
             function email(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 var nome = utils_1.randArray(pessoas_1.NOMES_MASCULINOS);
                 if (options.nome) {
                     nome = options.nome;
@@ -759,11 +1057,16 @@ var persons = require("./persons");
                 if (options.empresa) {
                     empresa = options.empresa;
                 }
-                return nome + '@' + site({ nome: empresa, url: '' });
+                return nome + '@' + site({
+                    nome: empresa,
+                    url: ''
+                });
             }
 
             function empresa(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.estado) {
                     options.estado = utils_1.randomEstadoSigla();
                 }
@@ -775,10 +1078,7 @@ var persons = require("./persons");
                 });
                 var fundador1 = pessoa(options);
                 var fundador2 = pessoa(options);
-                var fundadores = [
-                    fundador1,
-                    fundador2
-                ];
+                var fundadores = [fundador1, fundador2];
                 var nome = utils_1.randArray(pessoas_1.EMPRESAS_TIPOS) + ' ' + utils_1.randArray(pessoas_1.EMPRESAS_NOMES);
                 // const site = faker.site();
                 var emailVal = email({
@@ -803,20 +1103,35 @@ var persons = require("./persons");
             }
 
             function endereco(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.estado) {
                     options.estado = utils_1.randomEstadoSigla();
                 }
-                var estadoFound = name_1.LOCALIZACAO_ESTADOS.find(function(e) { return e.uf.toLowerCase() === options.estado; }) || name_1.LOCALIZACAO_ESTADOS[0];
-                var cidades = name_1.LOCALIZACAO_CIDADES.filter(function(c) { return c[1] === estadoFound.nome; });
+                var estadoFound = name_1.LOCALIZACAO_ESTADOS.find(function(e) {
+                    return e.uf.toLowerCase() === options.estado;
+                }) || name_1.LOCALIZACAO_ESTADOS[0];
+                var cidades = name_1.LOCALIZACAO_CIDADES.filter(function(c) {
+                    return c[1] === estadoFound.nome;
+                });
                 var cidade = utils_1.randArray(cidades);
                 var estado = cidade[1].toLowerCase();
-                estado = name_1.LOCALIZACAO_ESTADOS.find(function(e) { return e.nome.toLowerCase() === estado.toLowerCase(); });
+                estado = name_1.LOCALIZACAO_ESTADOS.find(function(e) {
+                    return e.nome.toLowerCase() === estado.toLowerCase();
+                });
                 return {
                     cep: cep(),
                     logradouro: utils_1.randArray(name_1.LOCALIZACAO_RUAS),
-                    complemento: utils_1.randArray(name_1.LOCALIZACAO_COMPLEMENTOS) + ' ' + number({ min: 1, max: 10, decimals: 0 }),
-                    numero: number({ min: 1, decimals: 0 }),
+                    complemento: utils_1.randArray(name_1.LOCALIZACAO_COMPLEMENTOS) + ' ' + number({
+                        min: 1,
+                        max: 10,
+                        decimals: 0
+                    }),
+                    numero: number({
+                        min: 1,
+                        decimals: 0
+                    }),
                     bairro: utils_1.randArray(name_1.LOCALIZACAO_BAIRROS),
                     cidade: cidade[0],
                     estado: cidade[1],
@@ -840,7 +1155,9 @@ var persons = require("./persons");
             }
 
             function number(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.max) {
                     options.max = 10000;
                 }
@@ -859,7 +1176,9 @@ var persons = require("./persons");
             var porcentagem = utils_1.makeGenericFaker(mask_1.MASKS['porcentagem']);
 
             function pessoa(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.estado) {
                     options.estado = utils_1.randomEstadoSigla();
                 }
@@ -921,44 +1240,44 @@ var persons = require("./persons");
             }
 
             function rg(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.estado) {
                     options.estado = utils_1.randomEstadoSigla();
                 }
                 var estado = options.estado.split('');
                 var makeRg = utils_1.makeGenericFaker(mask_1.MASKS['rg'], {
-                    0: function() { return estado[0]; },
-                    1: function() { return estado[1]; }
+                    0: function() {
+                        return estado[0];
+                    },
+                    1: function() {
+                        return estado[1];
+                    }
                 });
                 return makeRg();
             }
 
             function senha(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 if (!options.size) {
                     options.size = 8;
                 }
-                var pass = [
-                    utils_1.randomLetter().toLowerCase(),
-                    utils_1.randomLetter().toUpperCase(),
-                    utils_1.randomNumber(0, 9),
-                    utils_1.randArray(['!', '@', '#', '$', '%', '^', '&', '*'])
-                ];
+                var pass = [utils_1.randomLetter().toLowerCase(), utils_1.randomLetter().toUpperCase(), utils_1.randomNumber(0, 9), utils_1.randArray(['!', '@', '#', '$', '%', '^', '&', '*'])];
                 var i = 4;
                 for (i = 4; i <= options.size; i++) {
-                    var newchar = utils_1.randArray([
-                        utils_1.randomLetter().toLowerCase(),
-                        utils_1.randomLetter().toUpperCase(),
-                        utils_1.randomNumber(0, 9),
-                        utils_1.randArray(['!', '@', '#', '$', '%', '^', '&', '*'])
-                    ]);
+                    var newchar = utils_1.randArray([utils_1.randomLetter().toLowerCase(), utils_1.randomLetter().toUpperCase(), utils_1.randomNumber(0, 9), utils_1.randArray(['!', '@', '#', '$', '%', '^', '&', '*'])]);
                     pass.push(newchar);
                 }
                 return pass.join('');
             }
 
             function site(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 var nome = utils_1.randArray(pessoas_1.EMPRESAS_TIPOS) + ' ' + utils_1.randArray(pessoas_1.EMPRESAS_NOMES);
                 var dominio = '.com.br';
                 var url = utils_1.randArray(['http://', 'https://']);
@@ -977,7 +1296,9 @@ var persons = require("./persons");
             var sped = utils_1.makeGenericFaker(mask_1.MASKS['sped']);
 
             function telefone(options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 var telefone = utils_1.makeGenericFaker(mask_1.MASKS['telefone'])();
                 if (options.estado) {
                     var telefones = telefone.toString().split('');
@@ -1080,10 +1401,24 @@ var persons = require("./persons");
                 usuario: usuario,
             };
 
-        }, { "../addons/pessoas": 1, "./create": 3, "./inscricaoestadual": 6, "./iptu/create": 7, "./mask": 11, "./name": 12, "./placa": 13, "./utils": 15, "./validate": 16, "./veiculos": 17, "randexp": 19 }],
+        }, {
+            "../addons/pessoas": 1,
+            "./create": 3,
+            "./inscricaoestadual": 6,
+            "./iptu/create": 7,
+            "./mask": 11,
+            "./name": 12,
+            "./placa": 13,
+            "./utils": 15,
+            "./validate": 16,
+            "./veiculos": 17,
+            "randexp": 19
+        }],
         6: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("./utils");
             /**
              * BASED ON https://github.com/gammasoft/ie/
@@ -1691,7 +2026,9 @@ var persons = require("./persons");
             }
 
             function tamanhoNaoE(string, tamanho) {
-                if (tamanho === void 0) { tamanho = 9; }
+                if (tamanho === void 0) {
+                    tamanho = 9;
+                }
                 if (eIndefinido(tamanho)) {
                     tamanho = 9;
                 }
@@ -1711,7 +2048,9 @@ var persons = require("./persons");
             }
 
             function primeiros(string, quantidade) {
-                if (quantidade === void 0) { quantidade = 8; }
+                if (quantidade === void 0) {
+                    quantidade = 8;
+                }
                 if (eIndefinido(quantidade)) {
                     quantidade = 8;
                 }
@@ -1723,8 +2062,12 @@ var persons = require("./persons");
             }
 
             function mod(valor, multiplicadores, divisor) {
-                if (multiplicadores === void 0) { multiplicadores = serie(2, 9); }
-                if (divisor === void 0) { divisor = 11; }
+                if (multiplicadores === void 0) {
+                    multiplicadores = serie(2, 9);
+                }
+                if (divisor === void 0) {
+                    divisor = 11;
+                }
                 if (eIndefinido(divisor)) {
                     divisor = 11;
                 }
@@ -1741,8 +2084,12 @@ var persons = require("./persons");
             }
 
             function calculoTrivialGenerate(valor, base, validarTamanho) {
-                if (base === void 0) { base = null; }
-                if (validarTamanho === void 0) { validarTamanho = false; }
+                if (base === void 0) {
+                    base = null;
+                }
+                if (validarTamanho === void 0) {
+                    validarTamanho = false;
+                }
                 if (!validarTamanho && tamanhoNaoE(valor)) {
                     return false;
                 }
@@ -1781,10 +2128,14 @@ var persons = require("./persons");
                 }
             }
 
-        }, { "./utils": 15 }],
+        }, {
+            "./utils": 15
+        }],
         7: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("../utils");
             var mask_1 = require("./mask");
 
@@ -1849,10 +2200,15 @@ var persons = require("./persons");
                 }
             };
 
-        }, { "../utils": 15, "./mask": 9 }],
+        }, {
+            "../utils": 15,
+            "./mask": 9
+        }],
         8: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var validate_1 = require("./validate");
             var mask_1 = require("./mask");
             var utils_1 = require("../utils");
@@ -1878,10 +2234,17 @@ var persons = require("./persons");
                 return validate_1.IPTUVALIDATE[estado][cidade](number);
             };
 
-        }, { "../utils": 15, "./create": 7, "./mask": 9, "./validate": 10 }],
+        }, {
+            "../utils": 15,
+            "./create": 7,
+            "./mask": 9,
+            "./validate": 10
+        }],
         9: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             exports.IPTUMASKS = {
                 'minas-gerais': {
                     'belo-horizonte': {
@@ -1922,7 +2285,9 @@ var persons = require("./persons");
         }, {}],
         10: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("../utils");
             var create_1 = require("./create");
             var validateRemoveDigito = function(number, max) {
@@ -1994,7 +2359,10 @@ var persons = require("./persons");
                 }
             };
 
-        }, { "../utils": 15, "./create": 7 }],
+        }, {
+            "../utils": 15,
+            "./create": 7
+        }],
         11: [function(require, module, exports) {
             "use strict";
             var __assign = (this && this.__assign) || function() {
@@ -2009,7 +2377,9 @@ var persons = require("./persons");
                 };
                 return __assign.apply(this, arguments);
             };
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("./utils");
             var inscricaoestadual_1 = require("./inscricaoestadual");
             exports.MASKSIE = inscricaoestadual_1.MASKSIE;
@@ -2045,10 +2415,7 @@ var persons = require("./persons");
                 // certidao Certidões de Nascimento, Casamento ou Óbito 
                 certidao: {
                     text: '000000.00.00.0000.0.00000.000.0000000-00',
-                    textMask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, '.',
-                        /\d/, /\d/, /\d/, /\d/, '.', /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, '.',
-                        /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/
-                    ]
+                    textMask: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
                 },
                 chassi: {
                     text: 'AAA AAAAAA AA AA0000',
@@ -2075,9 +2442,7 @@ var persons = require("./persons");
                 },
                 contabanco: {
                     text: '000 00000-0 00000-0',
-                    textMask: [/\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-',
-                        /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/
-                    ]
+                    textMask: [/\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/]
                 },
                 cpf: {
                     text: '000.000.000-00',
@@ -2089,7 +2454,10 @@ var persons = require("./persons");
                 },
                 currency: {
                     text: '0.000,00',
-                    textMask: createNumberMask_1.default(__assign({}, maskNumber, { prefix: 'R$ ', allowNegative: true }))
+                    textMask: createNumberMask_1.default(__assign({}, maskNumber, {
+                        prefix: 'R$ ',
+                        allowNegative: true
+                    }))
                 },
                 data: {
                     text: '00/00/0000',
@@ -2113,7 +2481,9 @@ var persons = require("./persons");
                 },
                 porcentagem: {
                     text: '00,00%',
-                    textMask: createNumberMask_1.default(__assign({}, maskNumber, { suffix: '%' }))
+                    textMask: createNumberMask_1.default(__assign({}, maskNumber, {
+                        suffix: '%'
+                    }))
                 },
                 pispasep: {
                     text: '000.00000.00-0',
@@ -2195,7 +2565,9 @@ var persons = require("./persons");
                     if (typeof textMaskFunction === 'function') {
                         mask = textMaskFunction(value);
                     }
-                    return conformToMask(value, mask, { guide: false }).conformedValue;
+                    return conformToMask(value, mask, {
+                        guide: false
+                    }).conformedValue;
                 };
             };
             exports.maskBr = {
@@ -2213,7 +2585,9 @@ var persons = require("./persons");
                 cpfcnpj: makeGeneric('cpfcnpj'),
                 cartaocredito: makeGeneric('cartaocredito'),
                 currency: function(currencyValueInput, decimalsFormat) {
-                    if (decimalsFormat === void 0) { decimalsFormat = 2; }
+                    if (decimalsFormat === void 0) {
+                        decimalsFormat = 2;
+                    }
                     return formatNumber(exports.MASKS.currency, currencyValueInput, decimalsFormat);
                 },
                 data: makeGeneric('data'),
@@ -2222,8 +2596,7 @@ var persons = require("./persons");
                 inscricaoestadual: function(inscricaoestadualValue, estado) {
                     var ie = inscricaoestadual_2.MASKSIE;
                     var ieState = ie[estado];
-                    if (!inscricaoestadualValue || !estado || !ieState ||
-                        !ieState.textMask) {
+                    if (!inscricaoestadualValue || !estado || !ieState || !ieState.textMask) {
                         return '';
                     }
                     var mask = ieState.textMask;
@@ -2231,21 +2604,29 @@ var persons = require("./persons");
                     if (typeof textMaskFunction === 'function') {
                         mask = textMaskFunction(inscricaoestadualValue);
                     }
-                    return conformToMask(inscricaoestadualValue, mask, { guide: false }).conformedValue;
+                    return conformToMask(inscricaoestadualValue, mask, {
+                        guide: false
+                    }).conformedValue;
                 },
                 iptu: function(iptuValue, estado, cidade) {
                     var mask = iptu_1.mask_iptu(iptuValue, estado, cidade);
                     if (!mask || typeof mask === 'string') {
                         return '';
                     }
-                    return conformToMask(iptuValue, mask.textMask, { guide: false }).conformedValue;
+                    return conformToMask(iptuValue, mask.textMask, {
+                        guide: false
+                    }).conformedValue;
                 },
                 number: function(numberValue, decimalsFormat) {
-                    if (decimalsFormat === void 0) { decimalsFormat = 2; }
+                    if (decimalsFormat === void 0) {
+                        decimalsFormat = 2;
+                    }
                     return formatNumber(exports.MASKS.number, numberValue, decimalsFormat);
                 },
                 porcentagem: function(porcentagemValue, decimalsFormat) {
-                    if (decimalsFormat === void 0) { decimalsFormat = 2; }
+                    if (decimalsFormat === void 0) {
+                        decimalsFormat = 2;
+                    }
                     return formatNumber(exports.MASKS.porcentagem, porcentagemValue, decimalsFormat);
                 },
                 pispasep: makeGeneric('pispasep'),
@@ -2268,9 +2649,15 @@ var persons = require("./persons");
             var emptyString = '';
 
             function conformToMask(rawValue, mask, config) {
-                if (rawValue === void 0) { rawValue = emptyString; }
-                if (mask === void 0) { mask = emptyArray; }
-                if (config === void 0) { config = {}; }
+                if (rawValue === void 0) {
+                    rawValue = emptyString;
+                }
+                if (mask === void 0) {
+                    mask = emptyArray;
+                }
+                if (config === void 0) {
+                    config = {};
+                }
                 if (!utils_1.isArray(mask)) {
                     // If someone passes a function as the mask property, we should call the
                     // function to get the mask array - Normally this is handled by the
@@ -2330,16 +2717,17 @@ var persons = require("./persons");
                     // Now we trick our algorithm by modifying the raw value to make it contain additional placeholder characters
                     // That way when the we start laying the characters again on the mask, it will keep the non-deleted characters
                     // in their positions.
-                    rawValue = (rawValue.slice(0, indexOfFirstChange) +
-                        compensatingPlaceholderChars +
-                        rawValue.slice(indexOfFirstChange, rawValueLength));
+                    rawValue = (rawValue.slice(0, indexOfFirstChange) + compensatingPlaceholderChars + rawValue.slice(indexOfFirstChange, rawValueLength));
                 }
                 // Convert `rawValue` string to an array, and mark characters based on whether they are newly added or have
                 // existed in the previous conformed value. Identifying new and old characters is needed for `conformToMask`
                 // to work if it is configured to keep character positions.
-                var rawValueArr = rawValue
-                    .split(emptyString)
-                    .map(function(char, i) { return ({ char: char, isNew: i >= indexOfFirstChange && i < indexOfLastChange }); });
+                var rawValueArr = rawValue.split(emptyString).map(function(char, i) {
+                    return ({
+                        char: char,
+                        isNew: i >= indexOfFirstChange && i < indexOfLastChange
+                    });
+                });
                 // The loop below removes masking characters from user input. For example, for mask
                 // `00 (111)`, the placeholder would be `00 (___)`. If user input is `00 (234)`, the loop below
                 // would remove all characters but `234` from the `rawValueArr`. The rest of the algorithm
@@ -2389,11 +2777,7 @@ var persons = require("./persons");
                                         // we map the character differently based on whether we are keeping character positions or not.
                                         // If any of the conditions below are met, we simply map the raw value character to the
                                         // placeholder position.
-                                        if (keepCharPositions !== true ||
-                                            isNew === false ||
-                                            previousConformedValue === emptyString ||
-                                            guide === false ||
-                                            !isAddition) {
+                                        if (keepCharPositions !== true || isNew === false || previousConformedValue === emptyString || guide === false || !isAddition) {
                                             conformedValue += rawValueChar;
                                         } else {
                                             // We enter this block of code if we are trying to keep character positions and none of the conditions
@@ -2477,21 +2861,27 @@ var persons = require("./persons");
                         conformedValue = emptyString;
                     }
                 }
-                return { conformedValue: conformedValue, meta: { someCharsRejected: someCharsRejected } };
+                return {
+                    conformedValue: conformedValue,
+                    meta: {
+                        someCharsRejected: someCharsRejected
+                    }
+                };
             }
             exports.conformToMask = conformToMask;
 
             function convertMaskToPlaceholder(mask, placeholderChar) {
-                if (mask === void 0) { mask = emptyArray; }
-                if (placeholderChar === void 0) { placeholderChar = defaultPlaceholderChar; }
+                if (mask === void 0) {
+                    mask = emptyArray;
+                }
+                if (placeholderChar === void 0) {
+                    placeholderChar = defaultPlaceholderChar;
+                }
                 if (!utils_1.isArray(mask)) {
                     throw new Error('Text-mask:convertMaskToPlaceholder; The mask property must be an array.');
                 }
                 if (mask.indexOf(placeholderChar) !== -1) {
-                    throw new Error('Placeholder character must not be used as part of the mask. Please specify a character ' +
-                        'that is not present in your mask as your placeholder character.\n\n' +
-                        ("The placeholder character that was received is: " + JSON.stringify(placeholderChar) + "\n\n") +
-                        ("The mask that was received is: " + JSON.stringify(mask)));
+                    throw new Error('Placeholder character must not be used as part of the mask. Please specify a character ' + 'that is not present in your mask as your placeholder character.\n\n' + ("The placeholder character that was received is: " + JSON.stringify(placeholderChar) + "\n\n") + ("The mask that was received is: " + JSON.stringify(mask)));
                 }
                 return mask.map(function(char) {
                     return (char instanceof RegExp) ? placeholderChar : char;
@@ -2506,7 +2896,9 @@ var persons = require("./persons");
              * @returns
              */
             function formatNumber(maskType, numberValue, decimalsFormat) {
-                if (decimalsFormat === void 0) { decimalsFormat = 2; }
+                if (decimalsFormat === void 0) {
+                    decimalsFormat = 2;
+                }
                 if (!numberValue && numberValue !== 0) {
                     return '';
                 }
@@ -2528,7 +2920,9 @@ var persons = require("./persons");
                         decimals = decimals.substring(0, decimalsFormat);
                     }
                 }
-                var conformedValue = conformToMask(numberValue, mask, { guide: false }).conformedValue;
+                var conformedValue = conformToMask(numberValue, mask, {
+                    guide: false
+                }).conformedValue;
                 var suffix = '';
                 if (conformedValue.indexOf('%') >= 0) {
                     conformedValue = conformedValue.replace('%', '');
@@ -2537,56 +2931,103 @@ var persons = require("./persons");
                 return conformedValue + (decimalsFormat > 0 ? ',' + decimals : '') + suffix;
             }
 
-        }, { "./inscricaoestadual": 6, "./iptu/iptu": 8, "./utils": 15, "text-mask-addons/dist/createNumberMask": 25 }],
+        }, {
+            "./inscricaoestadual": 6,
+            "./iptu/iptu": 8,
+            "./utils": 15,
+            "text-mask-addons/dist/createNumberMask": 25
+        }],
         12: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
-            exports.LOCALIZACAO_RUAS = ['Dois', 'Um', 'Principal', 'São José', 'Onze', 'São Paulo', 'Doze', 'Treze',
-                'Santo Antônio', 'Brasil', 'A', 'São Pedro', 'Quinze', 'São João',
-                'Quatorze', 'São Francisco', 'Sete de Setembro', 'Dezesseis', 'Quinze de Novembro',
-                'Tiradentes', 'Dezessete', 'Vinte', 'Bahia', 'Amazonas', 'Dezoito', 'São Sebastião', 'Paraná', 'Bela Vista', 'Santa Luzia', 'São Jorge',
-                'Castro Alves', 'Duque de Caxias', 'Projetada', 'Rui Barbosa', 'Santa Catarina', 'Minas Gerais', 'Santos Dumont',
-                'Espírito Santo', 'Vinte e Um', 'Vinte e Dois', 'da Paz', 'Treze de Maio', 'Rio de Janeiro',
-                'Goiás', 'Ceará', 'Belo Horizonte', 'das Flores', 'Sergipe', 'Vitória', 'José Bonifácio',
-                'Pernambuco', 'Piauí', 'Vinte e Três', 'Mato Grosso', 'Santa Maria', 'Dom Pedro II',
-                'Primeiro de Maio', 'Pará', 'Maranhão', 'Alagoas', 'Boa Vista', 'São Luiz', 'Vinte e Quatro', 'Paraíba', 'Santa Rita'
-            ];
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
+            exports.LOCALIZACAO_RUAS = ['Dois', 'Um', 'Principal', 'São José', 'Onze', 'São Paulo', 'Doze', 'Treze', 'Santo Antônio', 'Brasil', 'A', 'São Pedro', 'Quinze', 'São João', 'Quatorze', 'São Francisco', 'Sete de Setembro', 'Dezesseis', 'Quinze de Novembro', 'Tiradentes', 'Dezessete', 'Vinte', 'Bahia', 'Amazonas', 'Dezoito', 'São Sebastião', 'Paraná', 'Bela Vista', 'Santa Luzia', 'São Jorge', 'Castro Alves', 'Duque de Caxias', 'Projetada', 'Rui Barbosa', 'Santa Catarina', 'Minas Gerais', 'Santos Dumont', 'Espírito Santo', 'Vinte e Um', 'Vinte e Dois', 'da Paz', 'Treze de Maio', 'Rio de Janeiro', 'Goiás', 'Ceará', 'Belo Horizonte', 'das Flores', 'Sergipe', 'Vitória', 'José Bonifácio', 'Pernambuco', 'Piauí', 'Vinte e Três', 'Mato Grosso', 'Santa Maria', 'Dom Pedro II', 'Primeiro de Maio', 'Pará', 'Maranhão', 'Alagoas', 'Boa Vista', 'São Luiz', 'Vinte e Quatro', 'Paraíba', 'Santa Rita'];
             exports.LOCALIZACAO_LOGRADOUROS = ['Avenida', 'Rua', 'Marginal'];
-            exports.LOCALIZACAO_COMPLEMENTOS = ["Apartamento", 'Aeroporto', 'Anexo', "Andar", "Bloco", "Conjunto", 'Cobertura', "Casa",
-                'Fazenda', 'Fundos', 'Galeria', "Galp\u00E3o", "Lote", "Loja", "Port\u00E3o", "Quadra", "Sala", "Sobreloja", 'Subsolo', 'Terreo'
-            ];
-            exports.LOCALIZACAO_BAIRROS = ['Centro', 'Bela Vista', 'São José', 'Santo Antônio', 'São Francisco', 'Vila Nova',
-                'Boa Vista', 'Industrial', 'São Cristóvão', 'Planalto'
-            ];
-            exports.LOCALIZACAO_ESTADOS = [
-                { "nome": "Acre", "uf": "AC" },
-                { "nome": "Alagoas", "uf": "AL" },
-                { "nome": "Amapá", "uf": "AP" },
-                { "nome": "Amazonas", "uf": "AM" },
-                { "nome": "Bahia", "uf": "BA" },
-                { "nome": "Ceará", "uf": "CE" },
-                { "nome": "Distrito Federal", "uf": "DF" },
-                { "nome": "Espírito Santo", "uf": "ES" },
-                { "nome": "Goiás", "uf": "GO" },
-                { "nome": "Maranhão", "uf": "MA" },
-                { "nome": "Mato Grosso", "uf": "MT" },
-                { "nome": "Mato Grosso do Sul", "uf": "MS" },
-                { "nome": "Minas Gerais", "uf": "MG" },
-                { "nome": "Pará", "uf": "PA" },
-                { "nome": "Paraíba", "uf": "PB" },
-                { "nome": "Paraná", "uf": "PR" },
-                { "nome": "Pernambuco", "uf": "PE" },
-                { "nome": "Piauí", "uf": "PI" },
-                { "nome": "Rio de Janeiro", "uf": "RJ" },
-                { "nome": "Rio Grande do Norte", "uf": "RN" },
-                { "nome": "Rio Grande do Sul", "uf": "RS" },
-                { "nome": "Rondônia", "uf": "RO" },
-                { "nome": "Roraima", "uf": "RR" },
-                { "nome": "Santa Catarina", "uf": "SC" },
-                { "nome": "São Paulo", "uf": "SP" },
-                { "nome": "Sergipe", "uf": "SE" },
-                { "nome": "Tocantins", "uf": "TO" }
-            ];
+            exports.LOCALIZACAO_COMPLEMENTOS = ["Apartamento", 'Aeroporto', 'Anexo', "Andar", "Bloco", "Conjunto", 'Cobertura', "Casa", 'Fazenda', 'Fundos', 'Galeria', "Galp\u00E3o", "Lote", "Loja", "Port\u00E3o", "Quadra", "Sala", "Sobreloja", 'Subsolo', 'Terreo'];
+            exports.LOCALIZACAO_BAIRROS = ['Centro', 'Bela Vista', 'São José', 'Santo Antônio', 'São Francisco', 'Vila Nova', 'Boa Vista', 'Industrial', 'São Cristóvão', 'Planalto'];
+            exports.LOCALIZACAO_ESTADOS = [{
+                "nome": "Acre",
+                "uf": "AC"
+            }, {
+                "nome": "Alagoas",
+                "uf": "AL"
+            }, {
+                "nome": "Amapá",
+                "uf": "AP"
+            }, {
+                "nome": "Amazonas",
+                "uf": "AM"
+            }, {
+                "nome": "Bahia",
+                "uf": "BA"
+            }, {
+                "nome": "Ceará",
+                "uf": "CE"
+            }, {
+                "nome": "Distrito Federal",
+                "uf": "DF"
+            }, {
+                "nome": "Espírito Santo",
+                "uf": "ES"
+            }, {
+                "nome": "Goiás",
+                "uf": "GO"
+            }, {
+                "nome": "Maranhão",
+                "uf": "MA"
+            }, {
+                "nome": "Mato Grosso",
+                "uf": "MT"
+            }, {
+                "nome": "Mato Grosso do Sul",
+                "uf": "MS"
+            }, {
+                "nome": "Minas Gerais",
+                "uf": "MG"
+            }, {
+                "nome": "Pará",
+                "uf": "PA"
+            }, {
+                "nome": "Paraíba",
+                "uf": "PB"
+            }, {
+                "nome": "Paraná",
+                "uf": "PR"
+            }, {
+                "nome": "Pernambuco",
+                "uf": "PE"
+            }, {
+                "nome": "Piauí",
+                "uf": "PI"
+            }, {
+                "nome": "Rio de Janeiro",
+                "uf": "RJ"
+            }, {
+                "nome": "Rio Grande do Norte",
+                "uf": "RN"
+            }, {
+                "nome": "Rio Grande do Sul",
+                "uf": "RS"
+            }, {
+                "nome": "Rondônia",
+                "uf": "RO"
+            }, {
+                "nome": "Roraima",
+                "uf": "RR"
+            }, {
+                "nome": "Santa Catarina",
+                "uf": "SC"
+            }, {
+                "nome": "São Paulo",
+                "uf": "SP"
+            }, {
+                "nome": "Sergipe",
+                "uf": "SE"
+            }, {
+                "nome": "Tocantins",
+                "uf": "TO"
+            }];
             exports.LOCALIZACAO_CIDADES = [
                 ['São Paulo', 'São Paulo'],
                 ['Rio de Janeiro', 'Rio de Janeiro'],
@@ -2918,149 +3359,821 @@ var persons = require("./persons");
         }, {}],
         13: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
-            exports.PLACAS_RANGE = [
-                { start: 'AAA0001', end: 'BEZ9999', state: '', desc: 'Paraná]] (PR)', since: '02/1990' },
-                { start: 'BFA0001', end: 'GKI9999', state: '', desc: 'São Paulo (estado)|São Paulo]] (SP)', since: '10/1991' },
-                { start: 'GKJ0001', end: 'HOK9999', state: '', desc: 'Minas Gerais]] (MG)', since: '09/1991' },
-                { start: 'HOL0001', end: 'HQE9999', state: '', desc: 'Maranhão]] (MA)', since: '01/1992' },
-                { start: 'HQF0001', end: 'HTW9999', state: '', desc: 'Mato Grosso do Sul]] (MS)', since: '03/1992' },
-                { start: 'HTX0001', end: 'HZA9999', state: '', desc: 'Ceará]] (CE)', since: '10/1992' },
-                { start: 'HZB0001', end: 'IAP9999', state: '', desc: 'Sergipe]] (SE)', since: '09/1993' },
-                { start: 'IAQ0001', end: 'JDO9999', state: '', desc: 'Rio Grande do Sul]] (RS)', since: '03/1992' },
-                { start: 'JDP0001', end: 'JKR9999', state: '', desc: 'Distrito Federal (Brasil)|Distrito Federal]] (DF)', since: '04/1994' },
-                { start: 'JKS0001', end: 'JSZ9999', state: '', desc: 'Bahia]] (BA)', since: '08/1993' },
-                { start: 'JTA0001', end: 'JWE9999', state: '', desc: 'Pará]] (PA)', since: '07/1993' },
-                { start: 'JWF0001', end: 'JXY9999', state: '', desc: 'Amazonas]] (AM)', since: '09/1993' },
-                { start: 'JXZ0001', end: 'KAU9999', state: '', desc: 'Mato Grosso]] (MT)', since: '09/1993' },
-                { start: 'KAV0001', end: 'KFC9999', state: '', desc: 'Goiás]] (GO)', since: '05/1994' },
-                { start: 'KFD0001', end: 'KME9999', state: '', desc: 'Pernambuco]] (PE) ', since: '08/1994' },
-                { start: 'KMF0001', end: 'LVE9999', state: '', desc: 'Rio de Janeiro (estado)|Rio de Janeiro]] (RJ)', since: '05/1994' },
-                { start: 'LVF0001', end: 'LWQ9999', state: '', desc: 'Piauí]] (PI)', since: '04/1996' },
-                { start: 'LWR0001', end: 'MMM9999', state: '', desc: 'Santa Catarina]] (SC)', since: '06/1996' },
-                { start: 'MMN0001', end: 'MOW9999', state: '', desc: 'Paraíba]] (PB)', since: '07/1996' },
-                { start: 'MOX0001', end: 'MTZ9999', state: '', desc: 'Espírito Santo (estado)|Espírito Santo]] (ES)', since: '12/1995' },
-                { start: 'MUA0001', end: 'MVK9999', state: '', desc: 'Alagoas]] (AL)', since: '08/1996' },
-                { start: 'MVL0001', end: 'MXG9999', state: '', desc: 'Tocantins]] (TO)', since: '11/1996' },
-                { start: 'MXH0001', end: 'MZM9999', state: '', desc: 'Rio Grande do Norte]] (RN)', since: '06/1998' },
-                { start: 'MZN0001', end: 'NAG9999', state: '', desc: 'Acre]] (AC)', since: '06/1998' },
-                { start: 'NAH0001', end: 'NBA9999', state: '', desc: 'Roraima]] (RR)', since: '07/1998' },
-                { start: 'NBB0001', end: 'NEH9999', state: '', desc: 'Rondônia]] (RO)', since: '07/1998' },
-                { start: 'NEI0001', end: 'NFB9999', state: '', desc: 'Amapá]] (AP)', since: '09/1998' },
-                { start: 'NFC0001', end: 'NGZ9999', state: '', desc: 'Goiás]] (GO) 2ª sequência', since: '08/2003' },
-                { start: 'NHA0001', end: 'NHT9999', state: '', desc: 'Maranhão]] (MA) 2ª sequência', since: '12/2006' },
-                { start: 'NHU0001', end: 'NIX9999', state: '', desc: 'Piauí]] (PI) 2ª sequência', since: '05/2007' },
-                { start: 'NIY0001', end: 'NJW9999', state: '', desc: 'Mato Grosso]] (MT) 2ª sequência', since: '10/2007' },
-                { start: 'NJX0001', end: 'NLU9999', state: '', desc: 'Goiás]] (GO) 3ª sequência', since: '11/2007' },
-                { start: 'NLV0001', end: 'NMO9999', state: '', desc: 'Alagoas]] (AL) 2ª sequência', since: '01/2008' },
-                { start: 'NMP0001', end: 'NNI9999', state: '', desc: 'Maranhão]] (MA) 3ª sequência', since: '05/2008' },
-                { start: 'NNJ0001', end: 'NOH9999', state: '', desc: 'Rio Grande do Norte]] (RN) 2ª sequência', since: '07/2008' },
-                { start: 'NOI0001', end: 'NPB9999', state: '', desc: 'Amazonas]] (AM) 2ª sequência', since: '07/2008' },
-                { start: 'NPC0001', end: 'NPQ9999', state: '', desc: 'Mato Grosso]] (MT) 3ª sequência', since: '09/2008' },
-                { start: 'NPR0001', end: 'NQK9999', state: '', desc: 'Paraíba]] (PB) 2ª sequência', since: '11/2008' },
-                { start: 'NQL0001', end: 'NRE9999', state: '', desc: 'Ceará]] (CE) 2ª sequência', since: '12/2008' },
-                { start: 'NRF0001', end: 'NSD9999', state: '', desc: 'Mato Grosso do Sul]] (MS) 2ª sequência', since: '11/2009' },
-                { start: 'NSE0001', end: 'NTC9999', state: '', desc: 'Pará]] (PA) 2ª sequência', since: '11/2009' },
-                { start: 'NTD0001', end: 'NTW9999', state: '', desc: 'Bahia]] (BA) 2ª sequência', since: '02/2010' },
-                { start: 'NTX0001', end: 'NUG9999', state: '', desc: 'Mato Grosso]] (MT) 4ª sequência', since: '03/2010' },
-                { start: 'NUH0001', end: 'NUL9999', state: '', desc: 'Roraima]] (RR) 2ª sequência', since: '06/2010' },
-                { start: 'NUM0001', end: 'NVF9999', state: '', desc: 'Ceará]] (CE) 3ª sequência', since: '06/2010' },
-                { start: 'NVG0001', end: 'NVN9999', state: '', desc: 'Sergipe]] (SE) 2ª sequência', since: '03/2010' },
-                { start: 'NVO0001', end: 'NWR9999', state: '', desc: 'Goiás]] (GO) 4ª sequência', since: '03/2010' },
-                { start: 'NWS0001', end: 'NXQ9999', state: '', desc: 'Maranhão]] (MA) 4ª sequência', since: '07/2010' },
-                { start: 'NXR0001', end: 'NXT9999', state: '', desc: 'Acre]] (AC) 2ª sequência', since: '05/2011' },
-                { start: 'NXU0001', end: 'NXW9999', state: '', desc: 'Pernambuco]] (PE) 2ª sequência', since: '07/2010' },
-                { start: 'NXX0001', end: 'NYG9999', state: '', desc: 'Minas Gerais]] (MG) 2ª sequência', since: '10/2011' },
-                { start: 'NYH0001', end: 'NZZ9999', state: '', desc: 'Bahia]] (BA) 3ª sequência', since: '10/2010' },
-                { start: 'OAA0001', end: 'OAO9999', state: '', desc: 'Amazonas]] (AM) 3ª sequência', since: '12/2010' },
-                { start: 'OAP0001', end: 'OBS9999', state: '', desc: 'Mato Grosso]] (MT) 5ª sequência', since: '05/2011' },
-                { start: 'OBT0001', end: 'OCA9999', state: '', desc: 'Pará]] (PA) 3ª sequência', since: '07/2011' },
-                { start: 'OCB0001', end: 'OCU9999', state: '', desc: 'Ceará]] (CE) 4ª sequência', since: '02/2011' },
-                { start: 'OCV0001', end: 'ODT9999', state: '', desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 2ª sequênci', since: '05/2011' },
-                { start: 'ODU0001', end: 'OEI9999', state: '', desc: 'Piauí]] (PI) 3ª sequência', since: '09/2011' },
-                { start: 'OEJ0001', end: 'OES9999', state: '', desc: 'Sergipe]] (SE) 3ª sequência', since: '08/2011' },
-                { start: 'OET0001', end: 'OFH9999', state: '', desc: 'Paraíba]] (PB) 3ª sequência', since: '04/2011' },
-                { start: 'OFI0001', end: 'OFW9999', state: '', desc: 'Pará]] (PA) 4ª sequência', since: '03/2011' },
-                { start: 'OFX0001', end: 'OGG9999', state: '', desc: 'Paraíba]] (PB) 4ª sequência', since: '06/2011' },
-                { start: 'OGH0001', end: 'OHA9999', state: '', desc: 'Goiás]] (GO) 5ª sequência', since: '04/2011' },
-                { start: 'OHB0001', end: 'OHK9999', state: '', desc: 'Alagoas]] (AL) 3ª sequência', since: '09/2011' },
-                { start: 'OHL0001', end: 'OHW9999', state: '', desc: 'Rondônia]] (RO) 2ª sequência', since: '11/2011' },
-                { start: 'OHX0001', end: 'OIQ9999', state: '', desc: 'Ceará]] (CE) 5ª sequência', since: '12/2011' },
-                { start: 'OIR0001', end: 'OJQ9999', state: '', desc: 'Maranhão]] (MA) 5ª sequência', since: '01/2012' },
-                { start: 'OJR0001', end: 'OKC9999', state: '', desc: 'Rio Grande do Norte]] (RN) 3ª sequência', since: '04/2012' },
-                { start: 'OKD0001', end: 'OKH9999', state: '', desc: 'Santa Catarina]] (SC) 2ª sequência', since: '02/2014' },
-                { start: 'OKI0001', end: 'OLG9999', state: '', desc: 'Bahia]] (BA) 4ª sequência', since: '10/2011' },
-                { start: 'OLH0001', end: 'OLN9999', state: '', desc: 'Tocantins]] (TO) 2ª sequência', since: '02/2012' },
-                { start: 'OLO0001', end: 'OMH9999', state: '', desc: 'Minas Gerais]] (MG) 3ª sequência', since: '03/2012' },
-                { start: 'OMI0001', end: 'OOF9999', state: '', desc: 'Goiás]] (GO) 6ª sequência', since: '04/2012' },
-                { start: 'OOG0001', end: 'OOU9999', state: '', desc: 'Mato Grosso do Sul]] (MS) 3ª sequência', since: '02/2012' },
-                { start: 'OOV0001', end: 'ORC9999', state: '', desc: 'Minas Gerais]] (MG) 4ª sequência', since: '06/2012' },
-                { start: 'ORD0001', end: 'ORM9999', state: '', desc: 'Alagoas]] (AL) 4ªsequência', since: '01/2012' },
-                { start: 'ORN0001', end: 'OSV9999', state: '', desc: 'Ceará]] (CE) 6ª sequência', since: '07/2012' },
-                { start: 'OSW0001', end: 'OTZ9999', state: '', desc: 'Pará]] (PA) 5ª sequência', since: '08/2012' },
-                { start: 'OUA0001', end: 'OUE9999', state: '', desc: 'Piauí]] (PI) 4ª sequência', since: '11/2012' },
-                { start: 'OUF0001', end: 'OVD9999', state: '', desc: 'Bahia]] (BA) 5ª sequência', since: '12/2012' },
-                { start: 'OVE0001', end: 'OVF9999', state: '', desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 3ª sequênci', since: '12/2012' },
-                { start: 'OVG0001', end: 'OVG9999', state: '', desc: 'Acre]] (AC) 3ª sequência', since: '05/2013' },
-                { start: 'OVH0001', end: 'OVL9999', state: '', desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 4ª sequênci', since: '07/2013' },
-                { start: 'OVM0001', end: 'OVV9999', state: '', desc: 'Distrito Federal]] (DF) 2ª sequência', since: '11/2013' },
-                { start: 'OVW0001', end: 'OVY9999', state: '', desc: 'Piauí]] (PI) 5ª sequência', since: '10/2013' },
-                { start: 'OVZ0001', end: 'OWG9999', state: '', desc: 'Rio Grande do Norte]] (RN) 4ª sequência', since: '06/2013' },
-                { start: 'OWH0001', end: 'OXK9999', state: '', desc: 'Minas Gerais]] (MG) 5ª sequência', since: '10/2013' },
-                { start: 'OXL0001', end: 'OXL9999', state: '', desc: 'Rondônia]] (RO) 3ª sequência', since: '11/2013' },
-                { start: 'OXM0001', end: 'OXM9999', state: '', desc: 'Amazonas]] (AM) 4ª sequência', since: '11/2013' },
-                { start: 'OXN0001', end: 'OXN9999', state: '', desc: 'Alagoas]] (AL) 5ª sequência', since: '11/2013' },
-                { start: 'OXO0001', end: 'OXO9999', state: '', desc: 'Paraíba]] (PB) 5ª sequência', since: '11/2013' },
-                { start: 'OXP0001', end: 'OXP9999', state: '', desc: 'Acre]] (AC) 4ª sequência', since: '12/2013' },
-                { start: 'OXQ0001', end: 'OXZ9999', state: '', desc: 'Maranhão]] (MA) 6ª sequência', since: '04/2014' },
-                { start: 'OYA0001', end: 'OYC9999', state: '', desc: 'Tocantins]] (TO) 3ª sequência', since: '11/2013' },
-                { start: 'OYD0001', end: 'OYK9999', state: '', desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 5ª sequênci', since: '12/2013' },
-                { start: 'OYL0001', end: 'OYZ9999', state: '', desc: 'Pernambuco]] (PE) 6ª sequência', since: '02/2014' },
-                { start: 'OZA0001', end: 'OZA9999', state: '', desc: 'Ceará]] (CE) 7ª sequência', since: '01/2014' },
-                { start: 'OZB0001', end: 'OZB9999', state: '', desc: 'Sergipe]] (SE) 4ª sequência', since: '01/2014' },
-                { start: 'OZC0001', end: 'OZV9999', state: '', desc: 'Bahia]] (BA) 6ª sequência', since: '03/2014' },
-                { start: 'OZW0001', end: 'PBZ9999', state: '', desc: 'Distrito Federal]] (DF) 3ª sequência', since: '05/2014' },
-                { start: 'PCA0001', end: 'PED9999', state: '', desc: 'Pernambuco]] (PE) 7ª sequência', since: '12/2014' },
-                { start: 'PEE0001', end: 'PFQ9999', state: '', desc: 'Pernambuco]] (PE) 3ª sequência', since: '09/2010' },
-                { start: 'PFR0001', end: 'PGK9999', state: '', desc: 'Pernambuco]] (PE) 4ª sequência', since: '07/2012' },
-                { start: 'PGL0001', end: 'PGU9999', state: '', desc: 'Pernambuco]] (PE) 5ª sequência', since: '10/2013' },
-                { start: 'PGV0001', end: 'PGZ9999', state: '', desc: 'Pernambuco]] (PE) 8ª sequência', since: '12/2014' },
-                { start: 'PHA0001', end: 'PHZ9999', state: '', desc: 'Amazonas]] (AM) 5ª sequência', since: '06/2014' },
-                { start: 'PIA0001', end: 'PIZ9999', state: '', desc: 'Piauí]] (PI) 6ª sequência', since: '06/2014' },
-                { start: 'PJA0001', end: 'PLZ9999', state: '', desc: 'Bahia]] (BA) 7ª sequência', since: '10/2014' },
-                { start: 'PMA0001', end: 'POZ9999', state: '', desc: 'Ceará]] (CE) 8ª sequência', since: '06/2014' },
-                { start: 'PPA0001', end: 'PPZ9999', state: '', desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 6ª sequênci', since: '08/2014' },
-                { start: 'PQA0001', end: 'PRZ9999', state: '', desc: 'Goiás]] (GO) 7ª sequência', since: '03/2015' },
-                { start: 'PSA0001', end: 'PTZ9999', state: '', desc: 'Maranhão]] (MA) 7ª sequência', since: '12/2014' },
-                { start: 'PUA0001', end: 'PZZ9999', state: '', desc: 'Minas Gerais]] (MG) 6ª sequência', since: '05/2014' },
-                { start: 'QAA0001', end: 'QAZ9999', state: '', desc: 'Mato Grosso do Sul]] (MS) 4ª sequência', since: '12/2014' },
-                { start: 'QBA0001', end: 'QCZ9999', state: '', desc: 'Mato Grosso]] (MT) 6ª sequência', since: '05/2014' },
-                { start: 'QDA0001', end: 'QEZ9999', state: '', desc: 'Pará]] (PA) 6ª sequência', since: '10/2014' },
-                { start: 'QFA0001', end: 'QFZ9999', state: '', desc: 'Paraíba]] (PB) 6ª sequência', since: '05/2014' },
-                { start: 'QGA0001', end: 'QGZ9999', state: '', desc: 'Rio Grande do Norte]] (RN) 5ª sequência', since: '09/2014' },
-                { start: 'QHA0001', end: 'QJZ9999', state: '', desc: 'Santa Catarina]] (SC) 3ª sequência', since: '05/2014' },
-                { start: 'QKA0001', end: 'QKM9999', state: '', desc: 'Tocantins]] (TO) 4ª sequência', since: '11/2014' },
-                { start: 'QKN0001', end: 'QKZ9999', state: '', desc: 'Sergipe]] (SE) 5ª sequência', since: '06/2014' },
-                { start: 'QLA0001', end: 'QLM9999', state: '', desc: 'Alagoas]] (AL) 6ª sequência', since: '09/2015' },
-                { start: 'QLN0001', end: 'QLT9999', state: '', desc: 'Amapá]] (AP) 2ª sequência', since: '01/2015' },
-                { start: 'QLU0001', end: 'QLZ9999', state: '', desc: 'Acre]] (AC) 5ª sequência', since: '08/2014' },
-                { start: 'QMA0001', end: 'QMP9999', state: '', desc: 'Sergipe]] (SE) 6ª sequência', since: '03/2017' },
-                { start: 'QMQ0001', end: 'QQZ9999', state: '', desc: 'Minas Gerais]] (MG) 7ª sequência ', since: '07/2017' },
-                { start: 'QRA0001', end: 'QRA9999', state: '', desc: 'Rondônia]] (RO) 4ª sequência', since: '11/2017' },
-                { start: 'QRB0001', end: 'QRZ9999', state: '', desc: 'Espírito Santo (estado)|Espírito Santo]] (ES) 7ª sequência', since: '05/2018' },
-                { start: 'QSA0001', end: 'QSZ9999', state: '', desc: 'Paraíba]] (PB) 7ª sequência', since: '04/2018' },
-                { start: 'QTA0001', end: 'QTB9999', state: '', desc: 'Rondônia]] (RO) 5ª sequência', since: '08/2018' },
-                { start: 'QTC0001', end: 'RIN9999', state: '', desc: 'quên', since: 'inidas ' },
-                { start: 'RIO0001', end: 'RIO9999', state: '', desc: 'Rio de Janeiro (estado)|Rio de Janeiro]] (RJ) 2ª sequência ', since: '9/2018}' },
-                { start: 'RLA0001', end: 'SAU9999', state: '', desc: 'equên', since: 'inidas ' },
-                { start: 'SAV0001', end: 'SAV9999', state: '', desc: 'ão Paulo (estado)|São Paulo]] (SP) 2º sequência', since: '09/2009' },
-            ];
-            exports.PLACAS_INVALID = { start: 'SAW0001', end: 'ZZZ9999' }; // || Sequências ainda não definidas
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
+            exports.PLACAS_RANGE = [{
+                start: 'AAA0001',
+                end: 'BEZ9999',
+                state: '',
+                desc: 'Paraná]] (PR)',
+                since: '02/1990'
+            }, {
+                start: 'BFA0001',
+                end: 'GKI9999',
+                state: '',
+                desc: 'São Paulo (estado)|São Paulo]] (SP)',
+                since: '10/1991'
+            }, {
+                start: 'GKJ0001',
+                end: 'HOK9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG)',
+                since: '09/1991'
+            }, {
+                start: 'HOL0001',
+                end: 'HQE9999',
+                state: '',
+                desc: 'Maranhão]] (MA)',
+                since: '01/1992'
+            }, {
+                start: 'HQF0001',
+                end: 'HTW9999',
+                state: '',
+                desc: 'Mato Grosso do Sul]] (MS)',
+                since: '03/1992'
+            }, {
+                start: 'HTX0001',
+                end: 'HZA9999',
+                state: '',
+                desc: 'Ceará]] (CE)',
+                since: '10/1992'
+            }, {
+                start: 'HZB0001',
+                end: 'IAP9999',
+                state: '',
+                desc: 'Sergipe]] (SE)',
+                since: '09/1993'
+            }, {
+                start: 'IAQ0001',
+                end: 'JDO9999',
+                state: '',
+                desc: 'Rio Grande do Sul]] (RS)',
+                since: '03/1992'
+            }, {
+                start: 'JDP0001',
+                end: 'JKR9999',
+                state: '',
+                desc: 'Distrito Federal (Brasil)|Distrito Federal]] (DF)',
+                since: '04/1994'
+            }, {
+                start: 'JKS0001',
+                end: 'JSZ9999',
+                state: '',
+                desc: 'Bahia]] (BA)',
+                since: '08/1993'
+            }, {
+                start: 'JTA0001',
+                end: 'JWE9999',
+                state: '',
+                desc: 'Pará]] (PA)',
+                since: '07/1993'
+            }, {
+                start: 'JWF0001',
+                end: 'JXY9999',
+                state: '',
+                desc: 'Amazonas]] (AM)',
+                since: '09/1993'
+            }, {
+                start: 'JXZ0001',
+                end: 'KAU9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT)',
+                since: '09/1993'
+            }, {
+                start: 'KAV0001',
+                end: 'KFC9999',
+                state: '',
+                desc: 'Goiás]] (GO)',
+                since: '05/1994'
+            }, {
+                start: 'KFD0001',
+                end: 'KME9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) ',
+                since: '08/1994'
+            }, {
+                start: 'KMF0001',
+                end: 'LVE9999',
+                state: '',
+                desc: 'Rio de Janeiro (estado)|Rio de Janeiro]] (RJ)',
+                since: '05/1994'
+            }, {
+                start: 'LVF0001',
+                end: 'LWQ9999',
+                state: '',
+                desc: 'Piauí]] (PI)',
+                since: '04/1996'
+            }, {
+                start: 'LWR0001',
+                end: 'MMM9999',
+                state: '',
+                desc: 'Santa Catarina]] (SC)',
+                since: '06/1996'
+            }, {
+                start: 'MMN0001',
+                end: 'MOW9999',
+                state: '',
+                desc: 'Paraíba]] (PB)',
+                since: '07/1996'
+            }, {
+                start: 'MOX0001',
+                end: 'MTZ9999',
+                state: '',
+                desc: 'Espírito Santo (estado)|Espírito Santo]] (ES)',
+                since: '12/1995'
+            }, {
+                start: 'MUA0001',
+                end: 'MVK9999',
+                state: '',
+                desc: 'Alagoas]] (AL)',
+                since: '08/1996'
+            }, {
+                start: 'MVL0001',
+                end: 'MXG9999',
+                state: '',
+                desc: 'Tocantins]] (TO)',
+                since: '11/1996'
+            }, {
+                start: 'MXH0001',
+                end: 'MZM9999',
+                state: '',
+                desc: 'Rio Grande do Norte]] (RN)',
+                since: '06/1998'
+            }, {
+                start: 'MZN0001',
+                end: 'NAG9999',
+                state: '',
+                desc: 'Acre]] (AC)',
+                since: '06/1998'
+            }, {
+                start: 'NAH0001',
+                end: 'NBA9999',
+                state: '',
+                desc: 'Roraima]] (RR)',
+                since: '07/1998'
+            }, {
+                start: 'NBB0001',
+                end: 'NEH9999',
+                state: '',
+                desc: 'Rondônia]] (RO)',
+                since: '07/1998'
+            }, {
+                start: 'NEI0001',
+                end: 'NFB9999',
+                state: '',
+                desc: 'Amapá]] (AP)',
+                since: '09/1998'
+            }, {
+                start: 'NFC0001',
+                end: 'NGZ9999',
+                state: '',
+                desc: 'Goiás]] (GO) 2ª sequência',
+                since: '08/2003'
+            }, {
+                start: 'NHA0001',
+                end: 'NHT9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 2ª sequência',
+                since: '12/2006'
+            }, {
+                start: 'NHU0001',
+                end: 'NIX9999',
+                state: '',
+                desc: 'Piauí]] (PI) 2ª sequência',
+                since: '05/2007'
+            }, {
+                start: 'NIY0001',
+                end: 'NJW9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT) 2ª sequência',
+                since: '10/2007'
+            }, {
+                start: 'NJX0001',
+                end: 'NLU9999',
+                state: '',
+                desc: 'Goiás]] (GO) 3ª sequência',
+                since: '11/2007'
+            }, {
+                start: 'NLV0001',
+                end: 'NMO9999',
+                state: '',
+                desc: 'Alagoas]] (AL) 2ª sequência',
+                since: '01/2008'
+            }, {
+                start: 'NMP0001',
+                end: 'NNI9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 3ª sequência',
+                since: '05/2008'
+            }, {
+                start: 'NNJ0001',
+                end: 'NOH9999',
+                state: '',
+                desc: 'Rio Grande do Norte]] (RN) 2ª sequência',
+                since: '07/2008'
+            }, {
+                start: 'NOI0001',
+                end: 'NPB9999',
+                state: '',
+                desc: 'Amazonas]] (AM) 2ª sequência',
+                since: '07/2008'
+            }, {
+                start: 'NPC0001',
+                end: 'NPQ9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT) 3ª sequência',
+                since: '09/2008'
+            }, {
+                start: 'NPR0001',
+                end: 'NQK9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 2ª sequência',
+                since: '11/2008'
+            }, {
+                start: 'NQL0001',
+                end: 'NRE9999',
+                state: '',
+                desc: 'Ceará]] (CE) 2ª sequência',
+                since: '12/2008'
+            }, {
+                start: 'NRF0001',
+                end: 'NSD9999',
+                state: '',
+                desc: 'Mato Grosso do Sul]] (MS) 2ª sequência',
+                since: '11/2009'
+            }, {
+                start: 'NSE0001',
+                end: 'NTC9999',
+                state: '',
+                desc: 'Pará]] (PA) 2ª sequência',
+                since: '11/2009'
+            }, {
+                start: 'NTD0001',
+                end: 'NTW9999',
+                state: '',
+                desc: 'Bahia]] (BA) 2ª sequência',
+                since: '02/2010'
+            }, {
+                start: 'NTX0001',
+                end: 'NUG9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT) 4ª sequência',
+                since: '03/2010'
+            }, {
+                start: 'NUH0001',
+                end: 'NUL9999',
+                state: '',
+                desc: 'Roraima]] (RR) 2ª sequência',
+                since: '06/2010'
+            }, {
+                start: 'NUM0001',
+                end: 'NVF9999',
+                state: '',
+                desc: 'Ceará]] (CE) 3ª sequência',
+                since: '06/2010'
+            }, {
+                start: 'NVG0001',
+                end: 'NVN9999',
+                state: '',
+                desc: 'Sergipe]] (SE) 2ª sequência',
+                since: '03/2010'
+            }, {
+                start: 'NVO0001',
+                end: 'NWR9999',
+                state: '',
+                desc: 'Goiás]] (GO) 4ª sequência',
+                since: '03/2010'
+            }, {
+                start: 'NWS0001',
+                end: 'NXQ9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 4ª sequência',
+                since: '07/2010'
+            }, {
+                start: 'NXR0001',
+                end: 'NXT9999',
+                state: '',
+                desc: 'Acre]] (AC) 2ª sequência',
+                since: '05/2011'
+            }, {
+                start: 'NXU0001',
+                end: 'NXW9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 2ª sequência',
+                since: '07/2010'
+            }, {
+                start: 'NXX0001',
+                end: 'NYG9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 2ª sequência',
+                since: '10/2011'
+            }, {
+                start: 'NYH0001',
+                end: 'NZZ9999',
+                state: '',
+                desc: 'Bahia]] (BA) 3ª sequência',
+                since: '10/2010'
+            }, {
+                start: 'OAA0001',
+                end: 'OAO9999',
+                state: '',
+                desc: 'Amazonas]] (AM) 3ª sequência',
+                since: '12/2010'
+            }, {
+                start: 'OAP0001',
+                end: 'OBS9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT) 5ª sequência',
+                since: '05/2011'
+            }, {
+                start: 'OBT0001',
+                end: 'OCA9999',
+                state: '',
+                desc: 'Pará]] (PA) 3ª sequência',
+                since: '07/2011'
+            }, {
+                start: 'OCB0001',
+                end: 'OCU9999',
+                state: '',
+                desc: 'Ceará]] (CE) 4ª sequência',
+                since: '02/2011'
+            }, {
+                start: 'OCV0001',
+                end: 'ODT9999',
+                state: '',
+                desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 2ª sequênci',
+                since: '05/2011'
+            }, {
+                start: 'ODU0001',
+                end: 'OEI9999',
+                state: '',
+                desc: 'Piauí]] (PI) 3ª sequência',
+                since: '09/2011'
+            }, {
+                start: 'OEJ0001',
+                end: 'OES9999',
+                state: '',
+                desc: 'Sergipe]] (SE) 3ª sequência',
+                since: '08/2011'
+            }, {
+                start: 'OET0001',
+                end: 'OFH9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 3ª sequência',
+                since: '04/2011'
+            }, {
+                start: 'OFI0001',
+                end: 'OFW9999',
+                state: '',
+                desc: 'Pará]] (PA) 4ª sequência',
+                since: '03/2011'
+            }, {
+                start: 'OFX0001',
+                end: 'OGG9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 4ª sequência',
+                since: '06/2011'
+            }, {
+                start: 'OGH0001',
+                end: 'OHA9999',
+                state: '',
+                desc: 'Goiás]] (GO) 5ª sequência',
+                since: '04/2011'
+            }, {
+                start: 'OHB0001',
+                end: 'OHK9999',
+                state: '',
+                desc: 'Alagoas]] (AL) 3ª sequência',
+                since: '09/2011'
+            }, {
+                start: 'OHL0001',
+                end: 'OHW9999',
+                state: '',
+                desc: 'Rondônia]] (RO) 2ª sequência',
+                since: '11/2011'
+            }, {
+                start: 'OHX0001',
+                end: 'OIQ9999',
+                state: '',
+                desc: 'Ceará]] (CE) 5ª sequência',
+                since: '12/2011'
+            }, {
+                start: 'OIR0001',
+                end: 'OJQ9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 5ª sequência',
+                since: '01/2012'
+            }, {
+                start: 'OJR0001',
+                end: 'OKC9999',
+                state: '',
+                desc: 'Rio Grande do Norte]] (RN) 3ª sequência',
+                since: '04/2012'
+            }, {
+                start: 'OKD0001',
+                end: 'OKH9999',
+                state: '',
+                desc: 'Santa Catarina]] (SC) 2ª sequência',
+                since: '02/2014'
+            }, {
+                start: 'OKI0001',
+                end: 'OLG9999',
+                state: '',
+                desc: 'Bahia]] (BA) 4ª sequência',
+                since: '10/2011'
+            }, {
+                start: 'OLH0001',
+                end: 'OLN9999',
+                state: '',
+                desc: 'Tocantins]] (TO) 2ª sequência',
+                since: '02/2012'
+            }, {
+                start: 'OLO0001',
+                end: 'OMH9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 3ª sequência',
+                since: '03/2012'
+            }, {
+                start: 'OMI0001',
+                end: 'OOF9999',
+                state: '',
+                desc: 'Goiás]] (GO) 6ª sequência',
+                since: '04/2012'
+            }, {
+                start: 'OOG0001',
+                end: 'OOU9999',
+                state: '',
+                desc: 'Mato Grosso do Sul]] (MS) 3ª sequência',
+                since: '02/2012'
+            }, {
+                start: 'OOV0001',
+                end: 'ORC9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 4ª sequência',
+                since: '06/2012'
+            }, {
+                start: 'ORD0001',
+                end: 'ORM9999',
+                state: '',
+                desc: 'Alagoas]] (AL) 4ªsequência',
+                since: '01/2012'
+            }, {
+                start: 'ORN0001',
+                end: 'OSV9999',
+                state: '',
+                desc: 'Ceará]] (CE) 6ª sequência',
+                since: '07/2012'
+            }, {
+                start: 'OSW0001',
+                end: 'OTZ9999',
+                state: '',
+                desc: 'Pará]] (PA) 5ª sequência',
+                since: '08/2012'
+            }, {
+                start: 'OUA0001',
+                end: 'OUE9999',
+                state: '',
+                desc: 'Piauí]] (PI) 4ª sequência',
+                since: '11/2012'
+            }, {
+                start: 'OUF0001',
+                end: 'OVD9999',
+                state: '',
+                desc: 'Bahia]] (BA) 5ª sequência',
+                since: '12/2012'
+            }, {
+                start: 'OVE0001',
+                end: 'OVF9999',
+                state: '',
+                desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 3ª sequênci',
+                since: '12/2012'
+            }, {
+                start: 'OVG0001',
+                end: 'OVG9999',
+                state: '',
+                desc: 'Acre]] (AC) 3ª sequência',
+                since: '05/2013'
+            }, {
+                start: 'OVH0001',
+                end: 'OVL9999',
+                state: '',
+                desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 4ª sequênci',
+                since: '07/2013'
+            }, {
+                start: 'OVM0001',
+                end: 'OVV9999',
+                state: '',
+                desc: 'Distrito Federal]] (DF) 2ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OVW0001',
+                end: 'OVY9999',
+                state: '',
+                desc: 'Piauí]] (PI) 5ª sequência',
+                since: '10/2013'
+            }, {
+                start: 'OVZ0001',
+                end: 'OWG9999',
+                state: '',
+                desc: 'Rio Grande do Norte]] (RN) 4ª sequência',
+                since: '06/2013'
+            }, {
+                start: 'OWH0001',
+                end: 'OXK9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 5ª sequência',
+                since: '10/2013'
+            }, {
+                start: 'OXL0001',
+                end: 'OXL9999',
+                state: '',
+                desc: 'Rondônia]] (RO) 3ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OXM0001',
+                end: 'OXM9999',
+                state: '',
+                desc: 'Amazonas]] (AM) 4ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OXN0001',
+                end: 'OXN9999',
+                state: '',
+                desc: 'Alagoas]] (AL) 5ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OXO0001',
+                end: 'OXO9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 5ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OXP0001',
+                end: 'OXP9999',
+                state: '',
+                desc: 'Acre]] (AC) 4ª sequência',
+                since: '12/2013'
+            }, {
+                start: 'OXQ0001',
+                end: 'OXZ9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 6ª sequência',
+                since: '04/2014'
+            }, {
+                start: 'OYA0001',
+                end: 'OYC9999',
+                state: '',
+                desc: 'Tocantins]] (TO) 3ª sequência',
+                since: '11/2013'
+            }, {
+                start: 'OYD0001',
+                end: 'OYK9999',
+                state: '',
+                desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 5ª sequênci',
+                since: '12/2013'
+            }, {
+                start: 'OYL0001',
+                end: 'OYZ9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 6ª sequência',
+                since: '02/2014'
+            }, {
+                start: 'OZA0001',
+                end: 'OZA9999',
+                state: '',
+                desc: 'Ceará]] (CE) 7ª sequência',
+                since: '01/2014'
+            }, {
+                start: 'OZB0001',
+                end: 'OZB9999',
+                state: '',
+                desc: 'Sergipe]] (SE) 4ª sequência',
+                since: '01/2014'
+            }, {
+                start: 'OZC0001',
+                end: 'OZV9999',
+                state: '',
+                desc: 'Bahia]] (BA) 6ª sequência',
+                since: '03/2014'
+            }, {
+                start: 'OZW0001',
+                end: 'PBZ9999',
+                state: '',
+                desc: 'Distrito Federal]] (DF) 3ª sequência',
+                since: '05/2014'
+            }, {
+                start: 'PCA0001',
+                end: 'PED9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 7ª sequência',
+                since: '12/2014'
+            }, {
+                start: 'PEE0001',
+                end: 'PFQ9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 3ª sequência',
+                since: '09/2010'
+            }, {
+                start: 'PFR0001',
+                end: 'PGK9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 4ª sequência',
+                since: '07/2012'
+            }, {
+                start: 'PGL0001',
+                end: 'PGU9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 5ª sequência',
+                since: '10/2013'
+            }, {
+                start: 'PGV0001',
+                end: 'PGZ9999',
+                state: '',
+                desc: 'Pernambuco]] (PE) 8ª sequência',
+                since: '12/2014'
+            }, {
+                start: 'PHA0001',
+                end: 'PHZ9999',
+                state: '',
+                desc: 'Amazonas]] (AM) 5ª sequência',
+                since: '06/2014'
+            }, {
+                start: 'PIA0001',
+                end: 'PIZ9999',
+                state: '',
+                desc: 'Piauí]] (PI) 6ª sequência',
+                since: '06/2014'
+            }, {
+                start: 'PJA0001',
+                end: 'PLZ9999',
+                state: '',
+                desc: 'Bahia]] (BA) 7ª sequência',
+                since: '10/2014'
+            }, {
+                start: 'PMA0001',
+                end: 'POZ9999',
+                state: '',
+                desc: 'Ceará]] (CE) 8ª sequência',
+                since: '06/2014'
+            }, {
+                start: 'PPA0001',
+                end: 'PPZ9999',
+                state: '',
+                desc: 'spírito Santo (estado)|Espírito Santo]] (ES) 6ª sequênci',
+                since: '08/2014'
+            }, {
+                start: 'PQA0001',
+                end: 'PRZ9999',
+                state: '',
+                desc: 'Goiás]] (GO) 7ª sequência',
+                since: '03/2015'
+            }, {
+                start: 'PSA0001',
+                end: 'PTZ9999',
+                state: '',
+                desc: 'Maranhão]] (MA) 7ª sequência',
+                since: '12/2014'
+            }, {
+                start: 'PUA0001',
+                end: 'PZZ9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 6ª sequência',
+                since: '05/2014'
+            }, {
+                start: 'QAA0001',
+                end: 'QAZ9999',
+                state: '',
+                desc: 'Mato Grosso do Sul]] (MS) 4ª sequência',
+                since: '12/2014'
+            }, {
+                start: 'QBA0001',
+                end: 'QCZ9999',
+                state: '',
+                desc: 'Mato Grosso]] (MT) 6ª sequência',
+                since: '05/2014'
+            }, {
+                start: 'QDA0001',
+                end: 'QEZ9999',
+                state: '',
+                desc: 'Pará]] (PA) 6ª sequência',
+                since: '10/2014'
+            }, {
+                start: 'QFA0001',
+                end: 'QFZ9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 6ª sequência',
+                since: '05/2014'
+            }, {
+                start: 'QGA0001',
+                end: 'QGZ9999',
+                state: '',
+                desc: 'Rio Grande do Norte]] (RN) 5ª sequência',
+                since: '09/2014'
+            }, {
+                start: 'QHA0001',
+                end: 'QJZ9999',
+                state: '',
+                desc: 'Santa Catarina]] (SC) 3ª sequência',
+                since: '05/2014'
+            }, {
+                start: 'QKA0001',
+                end: 'QKM9999',
+                state: '',
+                desc: 'Tocantins]] (TO) 4ª sequência',
+                since: '11/2014'
+            }, {
+                start: 'QKN0001',
+                end: 'QKZ9999',
+                state: '',
+                desc: 'Sergipe]] (SE) 5ª sequência',
+                since: '06/2014'
+            }, {
+                start: 'QLA0001',
+                end: 'QLM9999',
+                state: '',
+                desc: 'Alagoas]] (AL) 6ª sequência',
+                since: '09/2015'
+            }, {
+                start: 'QLN0001',
+                end: 'QLT9999',
+                state: '',
+                desc: 'Amapá]] (AP) 2ª sequência',
+                since: '01/2015'
+            }, {
+                start: 'QLU0001',
+                end: 'QLZ9999',
+                state: '',
+                desc: 'Acre]] (AC) 5ª sequência',
+                since: '08/2014'
+            }, {
+                start: 'QMA0001',
+                end: 'QMP9999',
+                state: '',
+                desc: 'Sergipe]] (SE) 6ª sequência',
+                since: '03/2017'
+            }, {
+                start: 'QMQ0001',
+                end: 'QQZ9999',
+                state: '',
+                desc: 'Minas Gerais]] (MG) 7ª sequência ',
+                since: '07/2017'
+            }, {
+                start: 'QRA0001',
+                end: 'QRA9999',
+                state: '',
+                desc: 'Rondônia]] (RO) 4ª sequência',
+                since: '11/2017'
+            }, {
+                start: 'QRB0001',
+                end: 'QRZ9999',
+                state: '',
+                desc: 'Espírito Santo (estado)|Espírito Santo]] (ES) 7ª sequência',
+                since: '05/2018'
+            }, {
+                start: 'QSA0001',
+                end: 'QSZ9999',
+                state: '',
+                desc: 'Paraíba]] (PB) 7ª sequência',
+                since: '04/2018'
+            }, {
+                start: 'QTA0001',
+                end: 'QTB9999',
+                state: '',
+                desc: 'Rondônia]] (RO) 5ª sequência',
+                since: '08/2018'
+            }, {
+                start: 'QTC0001',
+                end: 'RIN9999',
+                state: '',
+                desc: 'quên',
+                since: 'inidas '
+            }, {
+                start: 'RIO0001',
+                end: 'RIO9999',
+                state: '',
+                desc: 'Rio de Janeiro (estado)|Rio de Janeiro]] (RJ) 2ª sequência ',
+                since: '9/2018}'
+            }, {
+                start: 'RLA0001',
+                end: 'SAU9999',
+                state: '',
+                desc: 'equên',
+                since: 'inidas '
+            }, {
+                start: 'SAV0001',
+                end: 'SAV9999',
+                state: '',
+                desc: 'ão Paulo (estado)|São Paulo]] (SP) 2º sequência',
+                since: '09/2009'
+            }, ];
+            exports.PLACAS_INVALID = {
+                start: 'SAW0001',
+                end: 'ZZZ9999'
+            };
+            // || Sequências ainda não definidas
             function validate_placa(placa, incluiMercosul) {
-                var placaClean = placa.toString()
-                    .replace(/-/g, '')
-                    .replace(/ /g, '')
-                    .toUpperCase();
+                var placaClean = placa.toString().replace(/-/g, '').replace(/ /g, '').toUpperCase();
                 var regex = {
                     legadoBR: /^[A-Z]{3}[0-9]{4}$/,
                     mercosulBR: /^[A-Z]{3}[0-9]{1}[A-Z]{1}[0-9]{2}$/,
@@ -3070,12 +4183,7 @@ var persons = require("./persons");
                     mercosulUY: /^[A-Z]{3}[0-9]{4}$/,
                 };
                 var isLegadoBRInvalid = placaClean >= exports.PLACAS_INVALID.start && placaClean <= exports.PLACAS_INVALID.end;
-                if ((regex.legadoBR.test(placaClean) && !isLegadoBRInvalid) ||
-                    (regex.mercosulBR.test(placaClean)) ||
-                    (incluiMercosul && ((regex.mercosulAR.test(placaClean)) ||
-                        (regex.mercosulBO.test(placaClean)) ||
-                        (regex.mercosulPY.test(placaClean)) ||
-                        (regex.mercosulUY.test(placaClean))))) {
+                if ((regex.legadoBR.test(placaClean) && !isLegadoBRInvalid) || (regex.mercosulBR.test(placaClean)) || (incluiMercosul && ((regex.mercosulAR.test(placaClean)) || (regex.mercosulBO.test(placaClean)) || (regex.mercosulPY.test(placaClean)) || (regex.mercosulUY.test(placaClean))))) {
                     return true;
                 }
                 return false;
@@ -3085,7 +4193,9 @@ var persons = require("./persons");
         }, {}],
         14: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
 
             function rg_sp(number) {
                 // if(number.length>8){alert("Erro. Não existe RG SP\ncom mais de 8 dígitos.");}
@@ -3156,7 +4266,9 @@ var persons = require("./persons");
         }, {}],
         15: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var estados_1 = require("./estados");
 
             function isPresent(obj) {
@@ -3175,7 +4287,8 @@ var persons = require("./persons");
             exports.isString = isString;
 
             function isNumber(value) {
-                return typeof value === 'number' && !isNaN(value); // && value.length === undefined
+                return typeof value === 'number' && !isNaN(value);
+                // && value.length === undefined
             }
             exports.isNumber = isNumber;
 
@@ -3188,11 +4301,16 @@ var persons = require("./persons");
             function processCaretTraps(mask) {
                 var indexes = [];
                 var indexOfCaretTrap;
-                while (indexOfCaretTrap = mask.indexOf(strCaretTrap), indexOfCaretTrap !== -1) { // eslint-disable-line
+                while (indexOfCaretTrap = mask.indexOf(strCaretTrap),
+                    indexOfCaretTrap !== -1) {
+                    // eslint-disable-line
                     indexes.push(indexOfCaretTrap);
                     mask.splice(indexOfCaretTrap, 1);
                 }
-                return { maskWithoutCaretTraps: mask, indexes: indexes };
+                return {
+                    maskWithoutCaretTraps: mask,
+                    indexes: indexes
+                };
             }
             exports.processCaretTraps = processCaretTraps;
             exports.modulo11 = function(string, size, mod) {
@@ -3208,14 +4326,14 @@ var persons = require("./persons");
                 return resto;
             };
             /**
-             *
-             * @param input
-             * ^ - Match line start
-              (\d) - match first digit and capture it in back reference #1 i.e. \1
-              (?!..) is a negative lookahead
-              (?!\1+$) means disallow the match if first digit is followed by same digit (captured group) till end.
-              \d{11}$ match next 11 digit followed by line end
-             */
+ *
+ * @param input
+ * ^ - Match line start
+  (\d) - match first digit and capture it in back reference #1 i.e. \1
+  (?!..) is a negative lookahead
+  (?!\1+$) means disallow the match if first digit is followed by same digit (captured group) till end.
+  \d{11}$ match next 11 digit followed by line end
+ */
             function allNumbersAreSame(inputValue) {
                 var input = getAllDigits(inputValue);
                 if (typeof input === 'string') {
@@ -3268,8 +4386,7 @@ var persons = require("./persons");
             exports.numberToCurrency = numberToCurrency;;
 
             function slugify(value) {
-                return value.toString().toLowerCase()
-                    .replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a') // Special Characters #1
+                return value.toString().toLowerCase().replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a') // Special Characters #1
                     .replace(/[èÈéÉêÊëË]+/g, 'e') // Special Characters #2
                     .replace(/[ìÌíÍîÎïÏ]+/g, 'i') // Special Characters #3
                     .replace(/[òÒóÓôÔõÕöÖº]+/g, 'o') // Special Characters #4
@@ -3285,7 +4402,8 @@ var persons = require("./persons");
                     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
                     .replace(/\-\-+/g, '-') // Replace multiple - with single -
                     .replace(/^-+/, '') // Trim - from start of text
-                    .replace(/-+$/, ''); // Trim - from end of text
+                    .replace(/-+$/, '');
+                // Trim - from end of text
             }
             exports.slugify = slugify;;
             /**
@@ -3318,15 +4436,22 @@ var persons = require("./persons");
                 for (var _i = 1; _i < arguments.length; _i++) {
                     ranges[_i - 1] = arguments[_i];
                 }
-                var str = ""; // the string (initialized to "")
-                while (length--) { // repeat this length of times
-                    var ind = Math.floor(Math.random() * ranges.length); // get a random range from the ranges object
+                var str = "";
+                // the string (initialized to "")
+                while (length--) {
+                    // repeat this length of times
+                    var ind = Math.floor(Math.random() * ranges.length);
+                    // get a random range from the ranges object
                     var min = ranges[ind][0].charCodeAt(0), // get the minimum char code allowed for this range
-                        max = ranges[ind][1].charCodeAt(0); // get the maximum char code allowed for this range
-                    var c = Math.floor(Math.random() * (max - min + 1)) + min; // get a random char code between min and max
-                    str += String.fromCharCode(c); // convert it back into a character and append it to the string str
+                        max = ranges[ind][1].charCodeAt(0);
+                    // get the maximum char code allowed for this range
+                    var c = Math.floor(Math.random() * (max - min + 1)) + min;
+                    // get a random char code between min and max
+                    str += String.fromCharCode(c);
+                    // convert it back into a character and append it to the string str
                 }
-                return str; // return str
+                return str;
+                // return str
             }
             exports.rand = rand;
 
@@ -3338,8 +4463,12 @@ var persons = require("./persons");
             exports.randomNumber = randomNumber;
 
             function randomLetter(size, onlyCapitals) {
-                if (size === void 0) { size = 1; }
-                if (onlyCapitals === void 0) { onlyCapitals = false; }
+                if (size === void 0) {
+                    size = 1;
+                }
+                if (onlyCapitals === void 0) {
+                    onlyCapitals = false;
+                }
                 var text = "";
                 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 if (onlyCapitals == false) {
@@ -3355,8 +4484,12 @@ var persons = require("./persons");
             exports.randomLetter = randomLetter;
 
             function randomLetterOrNumber(size, onlyCapitals) {
-                if (size === void 0) { size = 1; }
-                if (onlyCapitals === void 0) { onlyCapitals = false; }
+                if (size === void 0) {
+                    size = 1;
+                }
+                if (onlyCapitals === void 0) {
+                    onlyCapitals = false;
+                }
                 var text = "";
                 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
                 if (onlyCapitals == false) {
@@ -3374,9 +4507,7 @@ var persons = require("./persons");
                 var total = estados_1.ESTADOS_SIGLA.length;
                 return estados_1.ESTADOS_SIGLA[Math.floor(Math.random() * total)];
             };
-            exports.CORES = ["AMARELO", "AZUL", "BEGE", "BRANCA", "CINZA", "DOURADA", "GRENA", "LARANJA", "MARROM", "PRATA",
-                "PRETA", "ROSA", "ROXA", "VERDE", "VERMELHA", "FANTASIA"
-            ];
+            exports.CORES = ["AMARELO", "AZUL", "BEGE", "BRANCA", "CINZA", "DOURADA", "GRENA", "LARANJA", "MARROM", "PRATA", "PRETA", "ROSA", "ROXA", "VERDE", "VERMELHA", "FANTASIA"];
 
             function getSpecialProperty(model, key) {
                 return model[key];
@@ -3386,7 +4517,9 @@ var persons = require("./persons");
              *
              */
             exports.makeGenericFaker = function(val, options) {
-                if (options === void 0) { options = null; }
+                if (options === void 0) {
+                    options = null;
+                }
                 return function() {
                     if (!val.textMask || !val.textMask.map) {
                         return '';
@@ -3402,7 +4535,8 @@ var persons = require("./persons");
                             return randomLetter(1).toString();
                         } else if (c === /\w/.toString()) {
                             return randomLetterOrNumber(1).toString();
-                        } else if (c.indexOf('/[') === 0) { // /[1-9]/ ou /[5-9]/
+                        } else if (c.indexOf('/[') === 0) {
+                            // /[1-9]/ ou /[5-9]/
                             c = c.replace('/[', '').replace(']/', '');
                             if (c.indexOf('-') > 0) {
                                 c = c.split('-');
@@ -3426,10 +4560,14 @@ var persons = require("./persons");
                 };
             };
 
-        }, { "./estados": 4 }],
+        }, {
+            "./estados": 4
+        }],
         16: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             var utils_1 = require("./utils");
             var inscricaoestadual_1 = require("./inscricaoestadual");
             var placa_1 = require("./placa");
@@ -3539,7 +4677,8 @@ var persons = require("./persons");
                     return false;
                 }
                 // 2 - Possuir espaço no chassi
-                chassi = utils_1.getAllWords(chassi); // espacoNoChassi
+                chassi = utils_1.getAllWords(chassi);
+                // espacoNoChassi
                 // 3 - Se, a partir do 4º dígito, houver uma repetição consecutiva, por mais de seis vezes, do mesmo dígito 
                 // (alfabético ou numérico). Exemplos: 9BW11111119452687 e 9BWZZZ5268AAAAAAA.
                 var repeticaoMaisDe6Vezes = /^.{4,}([0-9A-Z])\1{5,}/;
@@ -3584,9 +4723,7 @@ var persons = require("./persons");
                 var tamanho = cnpj.length - 2;
                 var digitos = cnpj.substring(tamanho);
                 var resultados = create_1.create_cnpj(cnpj);
-                if (!resultados ||
-                    resultados[0] !== parseInt(digitos.charAt(0), 10) ||
-                    resultados[1] !== parseInt(digitos.charAt(1), 10)) {
+                if (!resultados || resultados[0] !== parseInt(digitos.charAt(0), 10) || resultados[1] !== parseInt(digitos.charAt(1), 10)) {
                     return false;
                 }
                 return true;
@@ -3609,9 +4746,7 @@ var persons = require("./persons");
                 }
                 // valida digito verificados
                 var restos = create_1.create_cpf(strCPF);
-                if (!restos ||
-                    restos[0] !== parseInt(strCPF.substring(9, 10), 10) ||
-                    restos[1] !== parseInt(strCPF.substring(10, 11), 10)) {
+                if (!restos || restos[0] !== parseInt(strCPF.substring(9, 10), 10) || restos[1] !== parseInt(strCPF.substring(10, 11), 10)) {
                     return false;
                 }
                 return true;
@@ -3624,8 +4759,10 @@ var persons = require("./persons");
 
             function validate_cns(value) {
                 var cns = utils_1.getAllDigits(value);
-                var definitivo = /[1-2][0-9]{10}00[0-1][0-9]/; // começam com 1 ou 2
-                var provisorio = /[7-9][0-9]{14}/; // começam com 7,8 ou 9
+                var definitivo = /[1-2][0-9]{10}00[0-1][0-9]/;
+                // começam com 1 ou 2
+                var provisorio = /[7-9][0-9]{14}/;
+                // começam com 7,8 ou 9
                 if (!definitivo.test(cns) && !provisorio.test(cns)) {
                     return false;
                 }
@@ -3673,23 +4810,37 @@ var persons = require("./persons");
             exports.validate_cartaocredito = validate_cartaocredito;
 
             function validate_cvv(value, maxLength) {
-                if (maxLength === void 0) { maxLength = 3; }
+                if (maxLength === void 0) {
+                    maxLength = 3;
+                }
                 maxLength = maxLength instanceof Array ? maxLength : [maxLength];
                 if (typeof value !== 'string') {
-                    return { isValid: false, isPotentiallyValid: false };
+                    return {
+                        isValid: false,
+                        isPotentiallyValid: false
+                    };
                 }
                 if (!/^\d*$/.test(value)) {
-                    return { isValid: false, isPotentiallyValid: false };
+                    return {
+                        isValid: false,
+                        isPotentiallyValid: false
+                    };
                 }
                 var i = 0;
                 var max = value.length;
                 for (; i < maxLength.length; i++) {
                     if (max === maxLength[i]) {
-                        return { isValid: true, isPotentiallyValid: true };
+                        return {
+                            isValid: true,
+                            isPotentiallyValid: true
+                        };
                     }
                 }
                 if (value.length < Math.min.apply(null, maxLength)) {
-                    return { isValid: false, isPotentiallyValid: true };
+                    return {
+                        isValid: false,
+                        isPotentiallyValid: true
+                    };
                 }
                 var maximum = maxLength;
                 var i = 0;
@@ -3697,22 +4848,28 @@ var persons = require("./persons");
                     maximum = maxLength[i] > maximum ? maxLength[i] : maximum;
                 }
                 if (value.length > maximum) {
-                    return { isValid: false, isPotentiallyValid: false };
+                    return {
+                        isValid: false,
+                        isPotentiallyValid: false
+                    };
                 }
-                return { isValid: true, isPotentiallyValid: true };
+                return {
+                    isValid: true,
+                    isPotentiallyValid: true
+                };
             }
             /**
-             *     A hash of valid CC abbreviations and regular expressions
-                mc: Mastercard
-                ec: Eurocard
-                vi: Visa
-                ax: American Express
-                dc: Diners Club
-                bl: Carte Blanch
-                di: Discover
-                jcb: JCB
-                er: Enroute
-            */
+ *     A hash of valid CC abbreviations and regular expressions
+    mc: Mastercard
+    ec: Eurocard
+    vi: Visa
+    ax: American Express
+    dc: Diners Club
+    bl: Carte Blanch
+    di: Discover
+    jcb: JCB
+    er: Enroute
+*/
             exports.creditCardValidator = {
                 'mc': /5[1-5][0-9]{14}/,
                 'ec': /5[1-5][0-9]{14}/,
@@ -3807,7 +4964,8 @@ var persons = require("./persons");
             function validate_pispasep(number) {
                 number = utils_1.getAllDigits(number);
                 var nis = utils_1.fillString(number, 11, '0');
-                var regex = /\d{11}/; // /^\d{3}\.\d{5}\.\d{2}\-\d{1}$/;
+                var regex = /\d{11}/;
+                // /^\d{3}\.\d{5}\.\d{2}\-\d{1}$/;
                 if (!regex.test(nis)) {
                     return false;
                 }
@@ -3848,7 +5006,9 @@ var persons = require("./persons");
             exports.validate_rg = validate_rg;
 
             function validate_senha(value, options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 var finalregex = '^';
                 //   ^	The password string will start this way
                 // (?=.*[a-z])	The string must contain at least 1 lowercase alphabetical character
@@ -3898,7 +5058,9 @@ var persons = require("./persons");
             exports.validate_telefone = validate_telefone;
 
             function validate_time(time, options) {
-                if (options === void 0) { options = {}; }
+                if (options === void 0) {
+                    options = {};
+                }
                 var value = time.toString();
                 if (options.diario) {
                     var expression = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/;
@@ -3979,354 +5141,995 @@ var persons = require("./persons");
                 username: validate_username
             };
 
-        }, { "./create": 3, "./inscricaoestadual": 6, "./iptu/iptu": 8, "./placa": 13, "./rg": 14, "./utils": 15 }],
+        }, {
+            "./create": 3,
+            "./inscricaoestadual": 6,
+            "./iptu/iptu": 8,
+            "./placa": 13,
+            "./rg": 14,
+            "./utils": 15
+        }],
         17: [function(require, module, exports) {
             "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
+            Object.defineProperty(exports, "__esModule", {
+                value: true
+            });
             exports.CNH_CATEGORIAS = ["A", "AB", "B", "C", "D", "E", "ACC", "MOTOR-CASA"];
-            exports.VEICULOS_CARROCERIAS = ["AMBULÂNCIA", "BASCULANTE", "BLINDADA", "BUGGY", "C. FECHADA", "CAB. DUPLA", "CAB. ABERTA",
-                "CONVERSÍVEL", "FURGÃO", "JIPE", "TRAILER"
-            ];
+            exports.VEICULOS_CARROCERIAS = ["AMBULÂNCIA", "BASCULANTE", "BLINDADA", "BUGGY", "C. FECHADA", "CAB. DUPLA", "CAB. ABERTA", "CONVERSÍVEL", "FURGÃO", "JIPE", "TRAILER"];
             exports.VEICULOS_CATEGORIAS = ["ALUGUEL", "APRENDIZAGEM", "PARTICULAR"];
-            exports.VEICULOS_TIPOS = ["AUTOMÓVEL", "CAMINHÃO", "CAMINHONETA", "CARGA / CAM", "CICLOMOTO", "ESP / ÔNIBUS", "MICROÔNIBUS",
-                "MISTO / CAM", "MOTOCICLO", "MOTONETA", "ÔNIBUS", "REBOQUE", "TRICICLO", "C. TRATOR"
-            ];
-            exports.VEICULOS_COMBUSTIVEIS = ["ÁLCOOL", "ÁLCOOL / GNC", "DIESEL", "DIESEL / GNC", "ELFONT EX", "ELFONT IN", "GÁS METANO",
-                "GASOGÊNIO", "GASOL / GNC", "GASOLINA", "ÁLCOOL / GASOLINA", "ÁLCOOL / GASOL / GNV"
-            ];
-            exports.VEICULOS_RESTRICOES = ["ALIENAÇÃO FIDUCIÁRIA", "ARRENDAMENTO", "RESERVA DE DOMÍNIO", "RESTRIÇÃO JUDICIAL",
-                "RESTRIÇÃO POR BENEF. TRIBUTÁRIO", "RESTRIÇÃO POR ROUBO OU FURTO"
-            ];
+            exports.VEICULOS_TIPOS = ["AUTOMÓVEL", "CAMINHÃO", "CAMINHONETA", "CARGA / CAM", "CICLOMOTO", "ESP / ÔNIBUS", "MICROÔNIBUS", "MISTO / CAM", "MOTOCICLO", "MOTONETA", "ÔNIBUS", "REBOQUE", "TRICICLO", "C. TRATOR"];
+            exports.VEICULOS_COMBUSTIVEIS = ["ÁLCOOL", "ÁLCOOL / GNC", "DIESEL", "DIESEL / GNC", "ELFONT EX", "ELFONT IN", "GÁS METANO", "GASOGÊNIO", "GASOL / GNC", "GASOLINA", "ÁLCOOL / GASOLINA", "ÁLCOOL / GASOL / GNV"];
+            exports.VEICULOS_RESTRICOES = ["ALIENAÇÃO FIDUCIÁRIA", "ARRENDAMENTO", "RESERVA DE DOMÍNIO", "RESTRIÇÃO JUDICIAL", "RESTRIÇÃO POR BENEF. TRIBUTÁRIO", "RESTRIÇÃO POR ROUBO OU FURTO"];
             exports.VEICULOS_ESPECIES = ["CARGA", "CORRIDA", "ESPECIAL", "MISTO", "PASSAGEIRO", "TRAÇÃO"];
-            exports.VEICULOS = [
-                { "modelo": "100 2.8 V6", "marca": "Audi" },
-                { "modelo": "A3 Sportback 2.0 16V TFSI S-Tronic", "marca": "Audi" },
-                { "modelo": "A4 1.8  Aut.", "marca": "Audi" },
-                { "modelo": "320iA 2.0 TB M Sport ActiveFlex 16V 4p", "marca": "BMW" },
-                { "modelo": "325i", "marca": "BMW" },
-                { "modelo": "420i Cabriolet Sport 2.0 TB 184cv 2p", "marca": "BMW" },
-                { "modelo": "550iA Limited Sport Edition 4.8 32V", "marca": "BMW" },
-                { "modelo": "840Ci", "marca": "BMW" },
-                { "modelo": "i3 Rex E Drive Full 170cv Aut.(Elétrico)", "marca": "BMW" },
-                { "modelo": "M3 Sedan 4.0 32V", "marca": "BMW" },
-                { "modelo": "M4 Cabriolet 3.0 Bi-Turbo 24V 431cv 2p", "marca": "BMW" },
-                { "modelo": "M5 3.8/Touring 3.8 24V", "marca": "BMW" },
-                { "modelo": "M6 5.0 V10 40V 507cv", "marca": "BMW" },
-                { "modelo": "X4 XDRIVE 28i X-Line 2.0 Turbo 245cv Aut", "marca": "BMW" },
-                { "modelo": "X4 XDRIVE 35i M-Sport 3.0 TB 306cv Aut.", "marca": "BMW" },
-                { "modelo": "X5 3.0 4x4", "marca": "BMW" },
-                { "modelo": "Z4 Roadster Sport 3.0 24V 231cv Aut.", "marca": "BMW" },
-                { "modelo": "Z8 5.0 V8", "marca": "BMW" },
-                { "modelo": "AIRCROSS Exc. ATACA. 1.6 Flex 16V 5p Aut", "marca": "Citroën" },
-                { "modelo": "AX GTi", "marca": "Citroën" },
-                { "modelo": "C3 XTR 1.6 Flex 16V 5p", "marca": "Citroën" },
-                { "modelo": "C4 Tendance 2.0 Flex 16V 5p Aut.", "marca": "Citroën" },
-                { "modelo": "DS3 1.6 Turbo 16V 3p Mec.", "marca": "Citroën" },
-                { "modelo": "Evasion  GLX 2.0 16V", "marca": "Citroën" },
-                { "modelo": "Grand C4 Picasso Intensive 1.6 TB Aut.", "marca": "Citroën" },
-                { "modelo": "Jumper 2.3 15/16Lug. TB Diesel", "marca": "Citroën" },
-                { "modelo": "Xantia 2.0  16V", "marca": "Citroën" },
-                { "modelo": "Xsara Break Exclusive 1.6 16V 5p Aut.", "marca": "Citroën" },
-                { "modelo": "ZX Cupê 16V", "marca": "Citroën" },
-                { "modelo": "147 C/ CL", "marca": "Fiat" },
-                { "modelo": "500 ABARTH MULTIAIR 1.4 TB 16V 3p", "marca": "Fiat" },
-                { "modelo": "Bravo ABSOLUTE 1.8 Flex 16V 5p", "marca": "Fiat" },
-                { "modelo": "Cinquecento 0.7", "marca": "Fiat" },
-                { "modelo": "Coupe 16V", "marca": "Fiat" },
-                { "modelo": "Doblo  1.4 mpi Fire Flex  8V 4p", "marca": "Fiat" },
-                { "modelo": "Ducato Cargo 2.8 Curto/Longo TB Diesel", "marca": "Fiat" },
-                { "modelo": "Duna 1.6ie", "marca": "Fiat" },
-                { "modelo": "Elba 1.6i.e/Top/CSL/ 1.6i.e/1.5 2p e 4p", "marca": "Fiat" },
-                { "modelo": "Fiorino Pick-Up Working 1.5 mpi / i.e.", "marca": "Fiat" },
-                { "modelo": "FREEMONT 2.4 16V 5p Aut.", "marca": "Fiat" },
-                { "modelo": "Grand Siena TETRAFUEL 1.4 Evo F. Flex 8V", "marca": "Fiat" },
-                { "modelo": "Idea A.Ext./A..Ext.Loc.Dual. 1.8 Flex 5p", "marca": "Fiat" },
-                { "modelo": "LINEA T-JET 1.4 16V Turbo 4p", "marca": "Fiat" },
-                { "modelo": "Marea City", "marca": "Fiat" },
-                { "modelo": "Marea Weekend Turbo 2.0 20V 4p", "marca": "Fiat" },
-                { "modelo": "MOBI WAY on 1.0 Fire Flex 5p.", "marca": "Fiat" },
-                { "modelo": "Oggi", "marca": "Fiat" },
-                { "modelo": "Palio 1.0 Cel. ECON./ITALIA F.Flex 8V 4p", "marca": "Fiat" },
-                { "modelo": "Palio 1.5 mpi 8V 2p", "marca": "Fiat" },
-                { "modelo": "Palio 1.8R mpi Flex 8V 4p", "marca": "Fiat" },
-                { "modelo": "Palio ELX 1.0 Fire/30 Anos F. Flex 8V 4p", "marca": "Fiat" },
-                { "modelo": "Palio Week. Adv. Dualogic 1.8 Flex", "marca": "Fiat" },
-                { "modelo": "Palio Weekend Trekking 1.8 mpi Flex 8V", "marca": "Fiat" },
-                { "modelo": "Premio S 1.5 i.e./ 1.5 / 1.3", "marca": "Fiat" },
-                { "modelo": "Punto  ELX 1.4 Fire Flex 8V 5p", "marca": "Fiat" },
-                { "modelo": "Siena Stile/Sport MTV 1.6 mpi 16V", "marca": "Fiat" },
-                { "modelo": "Siena TETRAFUEL 1.4 mpi Fire Flex 8v 4p", "marca": "Fiat" },
-                { "modelo": "Stilo Duologic 1.8 ATTRACTIVE Flex 8V 5p", "marca": "Fiat" },
-                { "modelo": "Strada LX 1.6 16V CE", "marca": "Fiat" },
-                { "modelo": "Strada Trekking 1.8 mpi Flex 8V CS", "marca": "Fiat" },
-                { "modelo": "Strada Working 1.4 mpi Fire Flex 8V CD", "marca": "Fiat" },
-                { "modelo": "Tempra Turbo 2.0 i.e. 2p", "marca": "Fiat" },
-                { "modelo": "Tipo 1.6 i.e. 2p e 4p", "marca": "Fiat" },
-                { "modelo": "Toro Volcano 2.0 16V 4x4 TB Diesel Aut.", "marca": "Fiat" },
-                { "modelo": "Uno 1.6 mpi 2p e 4p", "marca": "Fiat" },
-                { "modelo": "UNO ECONOMY 1.4 EVO Fire Flex 8V 2p", "marca": "Fiat" },
-                { "modelo": "Uno Furgão 1.5/ 1.3", "marca": "Fiat" },
-                { "modelo": "Uno Mille/ Mille EX/ Smart 4p", "marca": "Fiat" },
-                { "modelo": "UNO SPORTING Dualogic 1.4 EVO Flex 8V 4p", "marca": "Fiat" },
-                { "modelo": "UNO WAY XINGU 1.4 EVO F.Flex 8V 5p", "marca": "Fiat" },
-                { "modelo": "Del Rey GLX 1.6/1.8 / GL 1.6/1.8 2p e 4p", "marca": "Ford" },
-                { "modelo": "EcoSport S 1.6 16V Flex 5p", "marca": "Ford" },
-                { "modelo": "EDGE TITANIUM 3.5 V6 24V AWD Aut.", "marca": "Ford" },
-                { "modelo": "Escort XR3 2.0i Conversível", "marca": "Ford" },
-                { "modelo": "Expedition 5.4 V8", "marca": "Ford" },
-                { "modelo": "Explorer XLT 4x4 4.0 V6", "marca": "Ford" },
-                { "modelo": "F-1000 XLT/XL Lighting 4.9i", "marca": "Ford" },
-                { "modelo": "F-250 XLT 4.2 V6", "marca": "Ford" },
-                { "modelo": "Fiesta 1.0 8V Flex/Class 1.0 8V Flex 5p", "marca": "Ford" },
-                { "modelo": "Fiesta Sedan TITANIUM 1.6 16V Flex Mec", "marca": "Ford" },
-                { "modelo": "Focus TITANIUM 2.0 16V Flex 5p Mec.", "marca": "Ford" },
-                { "modelo": "Fusion Titanium HYBRID 2.0 145cv Aut.", "marca": "Ford" },
-                { "modelo": "Mondeo CLX 1.8 4p e 5p", "marca": "Ford" },
-                { "modelo": "Mustang GT V8 Conversível", "marca": "Ford" },
-                { "modelo": "Pampa 4x4 Jeep GL / L 1.6", "marca": "Ford" },
-                { "modelo": "Ranger XLT 4.0 4x4 CS", "marca": "Ford" },
-                { "modelo": "Ranger XLT Limit./L.Cent. 2.8 CD TB Dies", "marca": "Ford" },
-                { "modelo": "Royale Ghia 2.0i 4p / 2.0i / 2.0", "marca": "Ford" },
-                { "modelo": "Taurus GL 3.0 V6", "marca": "Ford" },
-                { "modelo": "Thunderbird SC 3.8 V6", "marca": "Ford" },
-                { "modelo": "TRANSIT Chassi 2.2 TDCI Diesel", "marca": "Ford" },
-                { "modelo": "Verona S 2.0i 4p", "marca": "Ford" },
-                { "modelo": "Versailles Ghia 2.0i / 2.0 2p e 4p", "marca": "Ford" },
-                { "modelo": "AGILE LTZ WI-FI 1.4 8V FlexPower 5p", "marca": "GM - Chevrolet" },
-                { "modelo": "Astra Sedan Comfort 1.8 MPFI 8V 4p", "marca": "GM - Chevrolet" },
-                { "modelo": "Blazer Jimmy 4.3 V6", "marca": "GM - Chevrolet" },
-                { "modelo": "Bonanza S / Luxe 4.0 Diesel Turbo", "marca": "GM - Chevrolet" },
-                { "modelo": "Brasinca Blazer CD 4.1", "marca": "GM - Chevrolet" },
-                { "modelo": "C-10 2.5/4.1", "marca": "GM - Chevrolet" },
-                { "modelo": "Camaro Z-28 Targa/Conv. 5.7", "marca": "GM - Chevrolet" },
-                { "modelo": "Caprice 4.3 V8", "marca": "GM - Chevrolet" },
-                { "modelo": "CAPTIVA SPORT FWD 3.6 V6 24V 261cv 4x2", "marca": "GM - Chevrolet" },
-                { "modelo": "Celta Super 1.0 MPFI 8V FlexPower 5p", "marca": "GM - Chevrolet" },
-                { "modelo": "Chevette Junior 1.0", "marca": "GM - Chevrolet" },
-                { "modelo": "Chevette L / SL / SL/e / DL / SE 1.6", "marca": "GM - Chevrolet" },
-                { "modelo": "Chevy 500 DL / SL / SE/ Furgão 1.6", "marca": "GM - Chevrolet" },
-                { "modelo": "Cheynne 4.3 V6", "marca": "GM - Chevrolet" },
-                { "modelo": "Classic ADVANTAGE 1.0 VHC FlexPower 4p", "marca": "GM - Chevrolet" },
-                { "modelo": "Classic/ Classic LS 1.0 VHC FlexPower 4p", "marca": "GM - Chevrolet" },
-                { "modelo": "COBALT LTZ 1.8 8V Econo.Flex 4p Mec.", "marca": "GM - Chevrolet" },
-                { "modelo": "Corsa Furgão 1.6 MPFi Powertech 92cv", "marca": "GM - Chevrolet" },
-                { "modelo": "Corsa Wind Piquet/ Champ 1.0 MPFI 2p", "marca": "GM - Chevrolet" },
-                { "modelo": "Corvette 5.7/ 6.0, 6.2 Conv./Stingray", "marca": "GM - Chevrolet" },
-                { "modelo": "Corvette 5.7/ 6.0, 6.2 Targa/Stingray", "marca": "GM - Chevrolet" },
-                { "modelo": "CRUZE LTZ 1.8 16V FlexPower 4p Aut.", "marca": "GM - Chevrolet" },
-                { "modelo": "D-10 CD Diesel", "marca": "GM - Chevrolet" },
-                { "modelo": "Kadett Sport 2.0 MPFI / EFI", "marca": "GM - Chevrolet" },
-                { "modelo": "Lumina", "marca": "GM - Chevrolet" },
-                { "modelo": "Meriva SS EASYTRONIC 1.8 FlexPower 5p", "marca": "GM - Chevrolet" },
-                { "modelo": "MONTANA  Sport 1.8 MPFI FlexPower 8V", "marca": "GM - Chevrolet" },
-                { "modelo": "Monza 1.6i/ 1.8i  (restante)", "marca": "GM - Chevrolet" },
-                { "modelo": "Monza Class 1.8/ 2.0", "marca": "GM - Chevrolet" },
-                { "modelo": "Omega CD 3.8 V6", "marca": "GM - Chevrolet" },
-                { "modelo": "ONIX  Lollapalooza 1.0 F.Power 5p Mec.", "marca": "GM - Chevrolet" },
-                { "modelo": "Opala Comodoro/ Comod. SLE  4.1 / 2.5", "marca": "GM - Chevrolet" },
-                { "modelo": "PRISMA  Sed. Maxx/ LT 1.4 8V ECONOF. 4p", "marca": "GM - Chevrolet" },
-                { "modelo": "S10 Blazer  DTi 2.8 4x2 Turbo Diesel", "marca": "GM - Chevrolet" },
-                { "modelo": "SONIC HB LT 1.6 16V FlexPower 5p Aut.", "marca": "GM - Chevrolet" },
-                { "modelo": "SpaceVan Furgão 2.1 Diesel", "marca": "GM - Chevrolet" },
-                { "modelo": "SPIN ACTIV 1.8 8V Econo. Flex 5p Aut.", "marca": "GM - Chevrolet" },
-                { "modelo": "Vectra CD 2.0 (modelo antigo)", "marca": "GM - Chevrolet" },
-                { "modelo": "Zafira 2.0/ CD 2.0  8V  MPFI 5p Mec.", "marca": "GM - Chevrolet" },
-                { "modelo": "Accord Coupe EX", "marca": "Honda" },
-                { "modelo": "Civic Hatch DX", "marca": "Honda" },
-                { "modelo": "Civic Sed LX 1.8 Aut 4p(s/Acess.Esp.D.F)", "marca": "Honda" },
-                { "modelo": "CR-V 2.0 16V Aut.", "marca": "Honda" },
-                { "modelo": "HR-V EX 1.8 Flexone 16V 5p Aut.", "marca": "Honda" },
-                { "modelo": "Accent GLS 1.5 12/16V Aut.", "marca": "Hyundai" },
-                { "modelo": "Coupê FX 2.0 Aut.", "marca": "Hyundai" },
-                { "modelo": "Elantra GLS 2.0 16V Aut", "marca": "Hyundai" },
-                { "modelo": "HB20 C./C.Plus/C.Style 1.6 Flex 16V Mec.", "marca": "Hyundai" },
-                { "modelo": "HB20S  Impress 1.6 Flex 16V Aut.", "marca": "Hyundai" },
-                { "modelo": "HB20X Premium 1.6 Flex 16V Aut.", "marca": "Hyundai" },
-                { "modelo": "Santa Fé /GLS 3.3 V6 4X4 Tiptronic", "marca": "Hyundai" },
-                { "modelo": "Sonata 2.4 16V 182cv 4p Aut.", "marca": "Hyundai" },
-                { "modelo": "Tucson 2.0 16V Aut.", "marca": "Hyundai" },
-                { "modelo": "Besta EST 2.7 Diesel (10/12lug.)", "marca": "Kia Motors" },
-                { "modelo": "Bongo K-2400 2.4 Diesel", "marca": "Kia Motors" },
-                { "modelo": "Carnival GS 2.9 TDI 16V 125cv Diesel", "marca": "Kia Motors" },
-                { "modelo": "Cerato 1.6 16 V Flex Mec.", "marca": "Kia Motors" },
-                { "modelo": "Picanto EX 1.1/ 1.0/ 1.0 Flex Aut", "marca": "Kia Motors" },
-                { "modelo": "Sorento 2.4 16V 174cv 4x2 Aut.", "marca": "Kia Motors" },
-                { "modelo": "Sportage 2.0 8V TB-IC Diesel", "marca": "Kia Motors" },
-                { "modelo": "C-200 Classic/Sport", "marca": "Mercedes-Benz" },
-                { "modelo": "Classe A 160 Classic Semi-Aut.", "marca": "Mercedes-Benz" },
-                { "modelo": "Classe B 170 1.7 116cv Aut.", "marca": "Mercedes-Benz" },
-                { "modelo": "CLK-230 Cabriolet Kompressor", "marca": "Mercedes-Benz" },
-                { "modelo": "CLS-63 AMG 6.2 V8 32V 514cv", "marca": "Mercedes-Benz" },
-                { "modelo": "GLK 220 CDI 2.2 TB 4X4 170cv Aut. Diesel", "marca": "Mercedes-Benz" },
-                { "modelo": "ML-230 4x4", "marca": "Mercedes-Benz" },
-                { "modelo": "SL-280 Classic 2.8", "marca": "Mercedes-Benz" },
-                { "modelo": "SLK-320 3.2 218cv", "marca": "Mercedes-Benz" },
-                { "modelo": "Sprinter 310 Chassi Diesel", "marca": "Mercedes-Benz" },
-                { "modelo": "ASX 2.0 16V  4x4 Aut.(By Armura-Blind.)", "marca": "Mitsubishi" },
-                { "modelo": "ASX 2.0 16V 160cv Aut.", "marca": "Mitsubishi" },
-                { "modelo": "Eclipse GS/ GS Turbo Mec", "marca": "Mitsubishi" },
-                { "modelo": "L200 2.5 4x2 CD Turbo Diesel", "marca": "Mitsubishi" },
-                { "modelo": "Lancer 2.0 16V 160cv Aut.", "marca": "Mitsubishi" },
-                { "modelo": "OUTLANDER 2.0 16V 160cv Aut.", "marca": "Mitsubishi" },
-                { "modelo": "Pajero 3.2 4x4 T.I. Dies. 5p Aut", "marca": "Mitsubishi" },
-                { "modelo": "Space Wagon GLS 2.0", "marca": "Mitsubishi" },
-                { "modelo": "Space Wagon GLS 2.4", "marca": "Mitsubishi" },
-                { "modelo": "Space Wagon GLXi 2.4 ( Nova Série )", "marca": "Mitsubishi" },
-                { "modelo": "Space Wagon/ Glxi 2.4", "marca": "Mitsubishi" },
-                { "modelo": "350Z 3.5 V6 280cv/ 312cv 2p", "marca": "Nissan" },
-                { "modelo": "Altima GXE 2.4 16V", "marca": "Nissan" },
-                { "modelo": "Altima SE 2.4 16V", "marca": "Nissan" },
-                { "modelo": "ALTIMA SL 2.5 16V 4p Aut.", "marca": "Nissan" },
-                { "modelo": "AX 6.5D Turbo Diesel", "marca": "Nissan" },
-                { "modelo": "D-21 Pick-Up CD 4x2/4x4 2.7 Diesel", "marca": "Nissan" },
-                { "modelo": "D-21 Pick-Up CS 4x2/4x4 2.7 Diesel", "marca": "Nissan" },
-                { "modelo": "Frontier AX 3.2 CD Diesel", "marca": "Nissan" },
-                { "modelo": "Infinit 3.0", "marca": "Nissan" },
-                { "modelo": "KICKS Rio 2016 1.6 16V FlexStar 5p Aut.", "marca": "Nissan" },
-                { "modelo": "KICKS SL 1.6 16V FlexStar 5p Aut.", "marca": "Nissan" },
-                { "modelo": "King-Cab SE 4x4 3.0 V6", "marca": "Nissan" },
-                { "modelo": "MARCH 1.0 12V Flex 5p", "marca": "Nissan" },
-                { "modelo": "Pathfinder LE 2.5 16V TDI Diesel Aut", "marca": "Nissan" },
-                { "modelo": "Sentra 2.0/ 2.0 Flex Fuel 16V Aut.", "marca": "Nissan" },
-                { "modelo": "TIIDA S 1.8/1.8 Flex 16V  Mec.", "marca": "Nissan" },
-                { "modelo": "VERSA 1.0 12V FlexStart 4p Mec.", "marca": "Nissan" },
-                { "modelo": "XTerra XE 4x4 2.8 132cv TB Int. Diesel", "marca": "Nissan" },
-                { "modelo": "X-TRAIL GX 2.5 16V 180cv 5p", "marca": "Nissan" },
-                { "modelo": "205 CJ Cabriolet", "marca": "Peugeot" },
-                { "modelo": "207 Active 1.4 Flex 8V 5p", "marca": "Peugeot" },
-                { "modelo": "208 Active 1.2 Flex 12V 5p mec.", "marca": "Peugeot" },
-                { "modelo": "306 Cabriolet 1.8/ Mi 16V", "marca": "Peugeot" },
-                { "modelo": "307 SW Feline 2.0 16V 5p Aut.", "marca": "Peugeot" },
-                { "modelo": "508 THP 1.6 Turbo 16V 4p Aut.", "marca": "Peugeot" },
-                { "modelo": "Boxer 2.3 Furg.TB Dies. Curto/Médio", "marca": "Peugeot" },
-                { "modelo": "HOGGAR Active 1.4 Flex 8V 2p", "marca": "Peugeot" },
-                { "modelo": "Clio Auth. /AIR Hi-Flex 1.6 16V 5p", "marca": "Renault" },
-                { "modelo": "DUSTER 1.6 Hi-Flex 16V Mec", "marca": "Renault" },
-                { "modelo": "Express 1.6/ RL 1.6", "marca": "Renault" },
-                { "modelo": "FLUENCE Sed. Dyn. Plus 2.0 16V FLEX Aut.", "marca": "Renault" },
-                { "modelo": "Kangoo Authentique 1.6 16V 95cv", "marca": "Renault" },
-                { "modelo": "Laguna Grand Tour Privilège 3.0 V6 210cv", "marca": "Renault" },
-                { "modelo": "LOGAN Authentique Hi-Flex 1.0 16V 4p", "marca": "Renault" },
-                { "modelo": "Master 2.3 dCi Chassi 16V Diesel", "marca": "Renault" },
-                { "modelo": "Megane Grand Tour Dynam. Hi-Flex 1.6 16V", "marca": "Renault" },
-                { "modelo": "Megane Sed. Expression 2.0 16V Aut.", "marca": "Renault" },
-                { "modelo": "SANDERO Auth. Plus Hi-Power 1.0 16V 5p", "marca": "Renault" },
-                { "modelo": "Scénic RXE 2.0 8V", "marca": "Renault" },
-                { "modelo": "Twingo Easy 1.2", "marca": "Renault" },
-                { "modelo": "Grand Vitara 1.6 16V Aut.", "marca": "Suzuki" },
-                { "modelo": "Swift GL", "marca": "Suzuki" },
-                { "modelo": "SX4 2.0 16V 145cv 4WD 5p Aut.", "marca": "Suzuki" },
-                { "modelo": "Vitara JLX Metal 1.6 8V 2p", "marca": "Suzuki" },
-                { "modelo": "Corolla ALTIS 2.0 Flex 16V Aut.", "marca": "Toyota" },
-                { "modelo": "Corolla DX/ SW DX 1.6 16V", "marca": "Toyota" },
-                { "modelo": "ETIOS 1.3 Flex 16V 5p Mec.", "marca": "Toyota" },
-                { "modelo": "Hilux 4x2 2.4 Diesel", "marca": "Toyota" },
-                { "modelo": "Land Cruiser 4WD 4.5 24V", "marca": "Toyota" },
-                { "modelo": "PRIUS HYBRID 1.8 16V 5p Aut.", "marca": "Toyota" },
-                { "modelo": "RAV4 2.0 4x2 16V Aut.", "marca": "Toyota" },
-                { "modelo": "Supra", "marca": "Toyota" },
-                { "modelo": "T-100 3.4 V6", "marca": "Toyota" },
-                { "modelo": "440 Turbo 1.8", "marca": "Volvo" },
-                { "modelo": "S80 3.2 238cv Aut.", "marca": "Volvo" },
-                { "modelo": "V60 T-5 MOMENTUM 2.0 245cv 5p", "marca": "Volvo" },
-                { "modelo": "AMAROK CD2.0 16V/S CD2.0 16V TDI 4x2 Die", "marca": "VW - VolksWagen" },
-                { "modelo": "Bora 2.0 8v Comfortline Aut.", "marca": "VW - VolksWagen" },
-                { "modelo": "CROSSFOX  1.6 T. Flex 16V 5p", "marca": "VW - VolksWagen" },
-                { "modelo": "EOS Cab. 2.0 Turbo FSI Tiptronic", "marca": "VW - VolksWagen" },
-                { "modelo": "Eurovan 2.4 Diesel", "marca": "VW - VolksWagen" },
-                { "modelo": "Fox 1.0 Mi Total Flex 8V 3p", "marca": "VW - VolksWagen" },
-                { "modelo": "Fusca", "marca": "VW - VolksWagen" },
-                { "modelo": "Fusca 2.0 TSI 16V Mec.", "marca": "VW - VolksWagen" },
-                { "modelo": "Gol (novo) 1.0 Mi Total Flex 8V 2p", "marca": "VW - VolksWagen" },
-                { "modelo": "Gol TSi 2000 2p e 4p", "marca": "VW - VolksWagen" },
-                { "modelo": "Golf  BLACK EDITON 2.0 Mi T. Flex 8V Tip", "marca": "VW - VolksWagen" },
-                { "modelo": "Grand Saveiro Xtreme/Street  1.6/1.8/2.0", "marca": "VW - VolksWagen" },
-                { "modelo": "JETTA  GLX III 2.8 VR6", "marca": "VW - VolksWagen" },
-                { "modelo": "Kombi Carat", "marca": "VW - VolksWagen" },
-                { "modelo": "Logus 1.6 / CLi / CL/ GL", "marca": "VW - VolksWagen" },
-                { "modelo": "New Beetle 2.0 Mi Mec./Aut.", "marca": "VW - VolksWagen" },
-                { "modelo": "Parati 1.0 Mi FUN/ SunSet 16V 4p", "marca": "VW - VolksWagen" },
-                { "modelo": "Passat  L/LS/LSe/GL/GLS/TS/Fla/Vill/Plus", "marca": "VW - VolksWagen" },
-                { "modelo": "Passat VR6 2.8", "marca": "VW - VolksWagen" },
-                { "modelo": "Pointer 1.8 / CLi", "marca": "VW - VolksWagen" },
-                { "modelo": "Polo 1.0 Mi 79cv 16V 5p", "marca": "VW - VolksWagen" },
-                { "modelo": "Quantum 1.8 Mi/ 1.8i", "marca": "VW - VolksWagen" },
-                { "modelo": "Santana 1.8 Mi", "marca": "VW - VolksWagen" },
-                { "modelo": "Saveiro  Trendline 1.6 T.Flex 8V", "marca": "VW - VolksWagen" },
-                { "modelo": "SpaceCross I MOTION 1.6 Mi Total Flex 8V", "marca": "VW - VolksWagen" },
-                { "modelo": "SPACEFOX  SPORTLINE/HIGHLINE 1.6 T.Flex", "marca": "VW - VolksWagen" },
-                { "modelo": "up! black/white/red 1.0 T. Flex 12V 5p", "marca": "VW - VolksWagen" },
-                { "modelo": "VOYAGE Trendline 1.0 T.Flex 12V 4p", "marca": "VW - VolksWagen" },
-                { "modelo": "145 Elegant 1.7/1.8 16V", "marca": "Alfa Romeo" },
-                { "modelo": "145 Elegant 2.0 16V", "marca": "Alfa Romeo" },
-                { "modelo": "156 SportWagon 2.5 V6 24V 190cv 4p Aut.", "marca": "Alfa Romeo" },
-                { "modelo": "Celer Hatch 1.5 16V Flex 5p", "marca": "CHERY" },
-                { "modelo": "Celer Sedan ACT 1.5 16V Flex 5p", "marca": "CHERY" },
-                { "modelo": "CIELO 1.6 16V 119cv  5p", "marca": "CHERY" },
-                { "modelo": "CIELO Sedan 1.6 16V 119cv  4p", "marca": "CHERY" },
-                { "modelo": "Face 1.3 16V/1.3 16v Flex.Mec", "marca": "CHERY" },
-                { "modelo": "QQ 1.0 ACT 12V 69cv 5p", "marca": "CHERY" },
-                { "modelo": "QQ 1.0 ACT FL 12V 69cv 5p", "marca": "CHERY" },
-                { "modelo": "QQ 1.0 Look FL 12V 69cv 5p", "marca": "CHERY" },
-                { "modelo": "QQ 1.1/1.0 12V 69cv 5p", "marca": "CHERY" },
-                { "modelo": "S-18 1.3 16V Flex Mec. 5p", "marca": "CHERY" },
-                { "modelo": "Tiggo 2.0 16V Aut. 5p", "marca": "CHERY" },
-                { "modelo": "Tiggo 2.0 16V Mec. 5p", "marca": "CHERY" },
-                { "modelo": "Caravan LE  3.3", "marca": "Chrysler" },
-                { "modelo": "Grand Caravan LE 3.3 Aut", "marca": "Chrysler" },
-                { "modelo": "PT Cruiser Cabrio 2.4 16V 143cv 2p", "marca": "Chrysler" },
-                { "modelo": "Dakota 2.5", "marca": "Dodge" },
-                { "modelo": "JOURNEY Crossroad 3.6 V6 Aut.", "marca": "Dodge" },
-                { "modelo": "Ram 2500 TROPIVAN 5.9 SLT TDI 4x4 Dies.", "marca": "Dodge" },
-                { "modelo": "456 GTA", "marca": "Ferrari" },
-                { "modelo": "BR-800 (todos)/ Supermini", "marca": "Gurgel" },
-                { "modelo": "J2 1.4 16V 5p Mec.", "marca": "JAC" },
-                { "modelo": "J2 1.4 JET Flex 16V 5p Mec", "marca": "JAC" },
-                { "modelo": "J3 1.4 16V 5p Mec.", "marca": "JAC" },
-                { "modelo": "J5 Sedan 1.5 16V 4p Mec.", "marca": "JAC" },
-                { "modelo": "J6 2.0 16V 5p Mec.", "marca": "JAC" },
-                { "modelo": "T 140 2.8 2p (diesel)", "marca": "JAC" },
-                { "modelo": "T5 1.5 JET Flex 16V 5p Mec.", "marca": "JAC" },
-                { "modelo": "T6 2.0 JET Flex 5p Mec.", "marca": "JAC" },
-                { "modelo": "T8 2.0 16V 5p Mec.", "marca": "JAC" },
-                { "modelo": "XJ-8 Executive/ Centenary 4.0", "marca": "Jaguar" },
-                { "modelo": "Cherokee Sport 2.5 4x4 Diesel", "marca": "Jeep" },
-                { "modelo": "Grand Cherokee Laredo 2.7 I-5 TB Dies.", "marca": "Jeep" },
-                { "modelo": "Grand Cherokee SRT8 6.1 V8 16V 432cv Aut", "marca": "Jeep" },
-                { "modelo": "Renegade 75 Anos 1.8 4X2 Flex 16V Aut.", "marca": "Jeep" },
-                { "modelo": "Renegade1.8 4x2 Flex 16V Mec.", "marca": "Jeep" },
-                { "modelo": "Wrangler 4.0/Sport 4.0", "marca": "Jeep" },
-                { "modelo": "HURACAN Coupe LP 610-4", "marca": "LAMBORGHINI" },
-                { "modelo": "Defender 110 2.4 122cv T.Diesel", "marca": "Land Rover" },
-                { "modelo": "Defender 90 TDI Hard Top Diesel", "marca": "Land Rover" },
-                { "modelo": "Discovery3 HSE 4.4 V8 4x4 299cv Aut.", "marca": "Land Rover" },
-                { "modelo": "Discovery4 HSE 2.7 4x4 TDV6 Diesel Aut.", "marca": "Land Rover" },
-                { "modelo": "Range R. EVO DYNAMIQUE BLACK 2.0 Aut. 5p", "marca": "Land Rover" },
-                { "modelo": "Range Rover EVOQUE Zanzibar 2.0 Aut. 5p", "marca": "Land Rover" },
-                { "modelo": "Range Rover SUPERCHAGED 4.2 V8 396cv", "marca": "Land Rover" },
-                { "modelo": "Range Rover Vogue 3.0 TDV6 Diesel Aut.", "marca": "Land Rover" },
-                { "modelo": "COOPER PACEMAN S John Works ALL4 1.6 Aut", "marca": "MINI" },
-                { "modelo": "COOPER S BAYSWATER 1.6 Aut.", "marca": "MINI" },
-                { "modelo": "COOPER S Clubman 1.6 Aut.", "marca": "MINI" },
-                { "modelo": "ONE 1.6 Aut.", "marca": "MINI" },
-                { "modelo": "Picape BG-Truck CD Turbo Diesel", "marca": "Miura" },
-                { "modelo": "Boxster Spyder 3.4 320cv", "marca": "Porsche" },
-                { "modelo": "Cayenne S 4.5/4.8", "marca": "Porsche" },
-                { "modelo": "Cayman S 3.4", "marca": "Porsche" },
-                { "modelo": "Mini Cooper 1.3", "marca": "Rover" },
-                { "modelo": "ACTYON 2.3 16V 150cv Aut.", "marca": "SSANGYONG" },
-                { "modelo": "Forester 2.0 16v 4x4 Turbo Aut.", "marca": "Subaru" },
-                { "modelo": "XV 2.0 16V 4x4 150cv Aut.", "marca": "Subaru" },
-                { "modelo": "PANTANAL 3.0 TDI Elet. 4x2 CS Diesel", "marca": "Troller" },
-                { "modelo": "RF Esport 4x4 2.0", "marca": "Troller" },
-                { "modelo": "T-4 DESERT STORM 4x4 3.0 TB Int Diesel", "marca": "Troller" }
-            ];
+            exports.VEICULOS = [{
+                "modelo": "100 2.8 V6",
+                "marca": "Audi"
+            }, {
+                "modelo": "A3 Sportback 2.0 16V TFSI S-Tronic",
+                "marca": "Audi"
+            }, {
+                "modelo": "A4 1.8  Aut.",
+                "marca": "Audi"
+            }, {
+                "modelo": "320iA 2.0 TB M Sport ActiveFlex 16V 4p",
+                "marca": "BMW"
+            }, {
+                "modelo": "325i",
+                "marca": "BMW"
+            }, {
+                "modelo": "420i Cabriolet Sport 2.0 TB 184cv 2p",
+                "marca": "BMW"
+            }, {
+                "modelo": "550iA Limited Sport Edition 4.8 32V",
+                "marca": "BMW"
+            }, {
+                "modelo": "840Ci",
+                "marca": "BMW"
+            }, {
+                "modelo": "i3 Rex E Drive Full 170cv Aut.(Elétrico)",
+                "marca": "BMW"
+            }, {
+                "modelo": "M3 Sedan 4.0 32V",
+                "marca": "BMW"
+            }, {
+                "modelo": "M4 Cabriolet 3.0 Bi-Turbo 24V 431cv 2p",
+                "marca": "BMW"
+            }, {
+                "modelo": "M5 3.8/Touring 3.8 24V",
+                "marca": "BMW"
+            }, {
+                "modelo": "M6 5.0 V10 40V 507cv",
+                "marca": "BMW"
+            }, {
+                "modelo": "X4 XDRIVE 28i X-Line 2.0 Turbo 245cv Aut",
+                "marca": "BMW"
+            }, {
+                "modelo": "X4 XDRIVE 35i M-Sport 3.0 TB 306cv Aut.",
+                "marca": "BMW"
+            }, {
+                "modelo": "X5 3.0 4x4",
+                "marca": "BMW"
+            }, {
+                "modelo": "Z4 Roadster Sport 3.0 24V 231cv Aut.",
+                "marca": "BMW"
+            }, {
+                "modelo": "Z8 5.0 V8",
+                "marca": "BMW"
+            }, {
+                "modelo": "AIRCROSS Exc. ATACA. 1.6 Flex 16V 5p Aut",
+                "marca": "Citroën"
+            }, {
+                "modelo": "AX GTi",
+                "marca": "Citroën"
+            }, {
+                "modelo": "C3 XTR 1.6 Flex 16V 5p",
+                "marca": "Citroën"
+            }, {
+                "modelo": "C4 Tendance 2.0 Flex 16V 5p Aut.",
+                "marca": "Citroën"
+            }, {
+                "modelo": "DS3 1.6 Turbo 16V 3p Mec.",
+                "marca": "Citroën"
+            }, {
+                "modelo": "Evasion  GLX 2.0 16V",
+                "marca": "Citroën"
+            }, {
+                "modelo": "Grand C4 Picasso Intensive 1.6 TB Aut.",
+                "marca": "Citroën"
+            }, {
+                "modelo": "Jumper 2.3 15/16Lug. TB Diesel",
+                "marca": "Citroën"
+            }, {
+                "modelo": "Xantia 2.0  16V",
+                "marca": "Citroën"
+            }, {
+                "modelo": "Xsara Break Exclusive 1.6 16V 5p Aut.",
+                "marca": "Citroën"
+            }, {
+                "modelo": "ZX Cupê 16V",
+                "marca": "Citroën"
+            }, {
+                "modelo": "147 C/ CL",
+                "marca": "Fiat"
+            }, {
+                "modelo": "500 ABARTH MULTIAIR 1.4 TB 16V 3p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Bravo ABSOLUTE 1.8 Flex 16V 5p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Cinquecento 0.7",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Coupe 16V",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Doblo  1.4 mpi Fire Flex  8V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Ducato Cargo 2.8 Curto/Longo TB Diesel",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Duna 1.6ie",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Elba 1.6i.e/Top/CSL/ 1.6i.e/1.5 2p e 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Fiorino Pick-Up Working 1.5 mpi / i.e.",
+                "marca": "Fiat"
+            }, {
+                "modelo": "FREEMONT 2.4 16V 5p Aut.",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Grand Siena TETRAFUEL 1.4 Evo F. Flex 8V",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Idea A.Ext./A..Ext.Loc.Dual. 1.8 Flex 5p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "LINEA T-JET 1.4 16V Turbo 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Marea City",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Marea Weekend Turbo 2.0 20V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "MOBI WAY on 1.0 Fire Flex 5p.",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Oggi",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio 1.0 Cel. ECON./ITALIA F.Flex 8V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio 1.5 mpi 8V 2p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio 1.8R mpi Flex 8V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio ELX 1.0 Fire/30 Anos F. Flex 8V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio Week. Adv. Dualogic 1.8 Flex",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Palio Weekend Trekking 1.8 mpi Flex 8V",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Premio S 1.5 i.e./ 1.5 / 1.3",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Punto  ELX 1.4 Fire Flex 8V 5p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Siena Stile/Sport MTV 1.6 mpi 16V",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Siena TETRAFUEL 1.4 mpi Fire Flex 8v 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Stilo Duologic 1.8 ATTRACTIVE Flex 8V 5p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Strada LX 1.6 16V CE",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Strada Trekking 1.8 mpi Flex 8V CS",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Strada Working 1.4 mpi Fire Flex 8V CD",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Tempra Turbo 2.0 i.e. 2p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Tipo 1.6 i.e. 2p e 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Toro Volcano 2.0 16V 4x4 TB Diesel Aut.",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Uno 1.6 mpi 2p e 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "UNO ECONOMY 1.4 EVO Fire Flex 8V 2p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Uno Furgão 1.5/ 1.3",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Uno Mille/ Mille EX/ Smart 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "UNO SPORTING Dualogic 1.4 EVO Flex 8V 4p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "UNO WAY XINGU 1.4 EVO F.Flex 8V 5p",
+                "marca": "Fiat"
+            }, {
+                "modelo": "Del Rey GLX 1.6/1.8 / GL 1.6/1.8 2p e 4p",
+                "marca": "Ford"
+            }, {
+                "modelo": "EcoSport S 1.6 16V Flex 5p",
+                "marca": "Ford"
+            }, {
+                "modelo": "EDGE TITANIUM 3.5 V6 24V AWD Aut.",
+                "marca": "Ford"
+            }, {
+                "modelo": "Escort XR3 2.0i Conversível",
+                "marca": "Ford"
+            }, {
+                "modelo": "Expedition 5.4 V8",
+                "marca": "Ford"
+            }, {
+                "modelo": "Explorer XLT 4x4 4.0 V6",
+                "marca": "Ford"
+            }, {
+                "modelo": "F-1000 XLT/XL Lighting 4.9i",
+                "marca": "Ford"
+            }, {
+                "modelo": "F-250 XLT 4.2 V6",
+                "marca": "Ford"
+            }, {
+                "modelo": "Fiesta 1.0 8V Flex/Class 1.0 8V Flex 5p",
+                "marca": "Ford"
+            }, {
+                "modelo": "Fiesta Sedan TITANIUM 1.6 16V Flex Mec",
+                "marca": "Ford"
+            }, {
+                "modelo": "Focus TITANIUM 2.0 16V Flex 5p Mec.",
+                "marca": "Ford"
+            }, {
+                "modelo": "Fusion Titanium HYBRID 2.0 145cv Aut.",
+                "marca": "Ford"
+            }, {
+                "modelo": "Mondeo CLX 1.8 4p e 5p",
+                "marca": "Ford"
+            }, {
+                "modelo": "Mustang GT V8 Conversível",
+                "marca": "Ford"
+            }, {
+                "modelo": "Pampa 4x4 Jeep GL / L 1.6",
+                "marca": "Ford"
+            }, {
+                "modelo": "Ranger XLT 4.0 4x4 CS",
+                "marca": "Ford"
+            }, {
+                "modelo": "Ranger XLT Limit./L.Cent. 2.8 CD TB Dies",
+                "marca": "Ford"
+            }, {
+                "modelo": "Royale Ghia 2.0i 4p / 2.0i / 2.0",
+                "marca": "Ford"
+            }, {
+                "modelo": "Taurus GL 3.0 V6",
+                "marca": "Ford"
+            }, {
+                "modelo": "Thunderbird SC 3.8 V6",
+                "marca": "Ford"
+            }, {
+                "modelo": "TRANSIT Chassi 2.2 TDCI Diesel",
+                "marca": "Ford"
+            }, {
+                "modelo": "Verona S 2.0i 4p",
+                "marca": "Ford"
+            }, {
+                "modelo": "Versailles Ghia 2.0i / 2.0 2p e 4p",
+                "marca": "Ford"
+            }, {
+                "modelo": "AGILE LTZ WI-FI 1.4 8V FlexPower 5p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Astra Sedan Comfort 1.8 MPFI 8V 4p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Blazer Jimmy 4.3 V6",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Bonanza S / Luxe 4.0 Diesel Turbo",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Brasinca Blazer CD 4.1",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "C-10 2.5/4.1",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Camaro Z-28 Targa/Conv. 5.7",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Caprice 4.3 V8",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "CAPTIVA SPORT FWD 3.6 V6 24V 261cv 4x2",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Celta Super 1.0 MPFI 8V FlexPower 5p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Chevette Junior 1.0",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Chevette L / SL / SL/e / DL / SE 1.6",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Chevy 500 DL / SL / SE/ Furgão 1.6",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Cheynne 4.3 V6",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Classic ADVANTAGE 1.0 VHC FlexPower 4p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Classic/ Classic LS 1.0 VHC FlexPower 4p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "COBALT LTZ 1.8 8V Econo.Flex 4p Mec.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Corsa Furgão 1.6 MPFi Powertech 92cv",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Corsa Wind Piquet/ Champ 1.0 MPFI 2p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Corvette 5.7/ 6.0, 6.2 Conv./Stingray",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Corvette 5.7/ 6.0, 6.2 Targa/Stingray",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "CRUZE LTZ 1.8 16V FlexPower 4p Aut.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "D-10 CD Diesel",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Kadett Sport 2.0 MPFI / EFI",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Lumina",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Meriva SS EASYTRONIC 1.8 FlexPower 5p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "MONTANA  Sport 1.8 MPFI FlexPower 8V",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Monza 1.6i/ 1.8i  (restante)",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Monza Class 1.8/ 2.0",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Omega CD 3.8 V6",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "ONIX  Lollapalooza 1.0 F.Power 5p Mec.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Opala Comodoro/ Comod. SLE  4.1 / 2.5",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "PRISMA  Sed. Maxx/ LT 1.4 8V ECONOF. 4p",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "S10 Blazer  DTi 2.8 4x2 Turbo Diesel",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "SONIC HB LT 1.6 16V FlexPower 5p Aut.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "SpaceVan Furgão 2.1 Diesel",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "SPIN ACTIV 1.8 8V Econo. Flex 5p Aut.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Vectra CD 2.0 (modelo antigo)",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Zafira 2.0/ CD 2.0  8V  MPFI 5p Mec.",
+                "marca": "GM - Chevrolet"
+            }, {
+                "modelo": "Accord Coupe EX",
+                "marca": "Honda"
+            }, {
+                "modelo": "Civic Hatch DX",
+                "marca": "Honda"
+            }, {
+                "modelo": "Civic Sed LX 1.8 Aut 4p(s/Acess.Esp.D.F)",
+                "marca": "Honda"
+            }, {
+                "modelo": "CR-V 2.0 16V Aut.",
+                "marca": "Honda"
+            }, {
+                "modelo": "HR-V EX 1.8 Flexone 16V 5p Aut.",
+                "marca": "Honda"
+            }, {
+                "modelo": "Accent GLS 1.5 12/16V Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Coupê FX 2.0 Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Elantra GLS 2.0 16V Aut",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "HB20 C./C.Plus/C.Style 1.6 Flex 16V Mec.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "HB20S  Impress 1.6 Flex 16V Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "HB20X Premium 1.6 Flex 16V Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Santa Fé /GLS 3.3 V6 4X4 Tiptronic",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Sonata 2.4 16V 182cv 4p Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Tucson 2.0 16V Aut.",
+                "marca": "Hyundai"
+            }, {
+                "modelo": "Besta EST 2.7 Diesel (10/12lug.)",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Bongo K-2400 2.4 Diesel",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Carnival GS 2.9 TDI 16V 125cv Diesel",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Cerato 1.6 16 V Flex Mec.",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Picanto EX 1.1/ 1.0/ 1.0 Flex Aut",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Sorento 2.4 16V 174cv 4x2 Aut.",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "Sportage 2.0 8V TB-IC Diesel",
+                "marca": "Kia Motors"
+            }, {
+                "modelo": "C-200 Classic/Sport",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "Classe A 160 Classic Semi-Aut.",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "Classe B 170 1.7 116cv Aut.",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "CLK-230 Cabriolet Kompressor",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "CLS-63 AMG 6.2 V8 32V 514cv",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "GLK 220 CDI 2.2 TB 4X4 170cv Aut. Diesel",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "ML-230 4x4",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "SL-280 Classic 2.8",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "SLK-320 3.2 218cv",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "Sprinter 310 Chassi Diesel",
+                "marca": "Mercedes-Benz"
+            }, {
+                "modelo": "ASX 2.0 16V  4x4 Aut.(By Armura-Blind.)",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "ASX 2.0 16V 160cv Aut.",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Eclipse GS/ GS Turbo Mec",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "L200 2.5 4x2 CD Turbo Diesel",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Lancer 2.0 16V 160cv Aut.",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "OUTLANDER 2.0 16V 160cv Aut.",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Pajero 3.2 4x4 T.I. Dies. 5p Aut",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Space Wagon GLS 2.0",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Space Wagon GLS 2.4",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Space Wagon GLXi 2.4 ( Nova Série )",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "Space Wagon/ Glxi 2.4",
+                "marca": "Mitsubishi"
+            }, {
+                "modelo": "350Z 3.5 V6 280cv/ 312cv 2p",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Altima GXE 2.4 16V",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Altima SE 2.4 16V",
+                "marca": "Nissan"
+            }, {
+                "modelo": "ALTIMA SL 2.5 16V 4p Aut.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "AX 6.5D Turbo Diesel",
+                "marca": "Nissan"
+            }, {
+                "modelo": "D-21 Pick-Up CD 4x2/4x4 2.7 Diesel",
+                "marca": "Nissan"
+            }, {
+                "modelo": "D-21 Pick-Up CS 4x2/4x4 2.7 Diesel",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Frontier AX 3.2 CD Diesel",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Infinit 3.0",
+                "marca": "Nissan"
+            }, {
+                "modelo": "KICKS Rio 2016 1.6 16V FlexStar 5p Aut.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "KICKS SL 1.6 16V FlexStar 5p Aut.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "King-Cab SE 4x4 3.0 V6",
+                "marca": "Nissan"
+            }, {
+                "modelo": "MARCH 1.0 12V Flex 5p",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Pathfinder LE 2.5 16V TDI Diesel Aut",
+                "marca": "Nissan"
+            }, {
+                "modelo": "Sentra 2.0/ 2.0 Flex Fuel 16V Aut.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "TIIDA S 1.8/1.8 Flex 16V  Mec.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "VERSA 1.0 12V FlexStart 4p Mec.",
+                "marca": "Nissan"
+            }, {
+                "modelo": "XTerra XE 4x4 2.8 132cv TB Int. Diesel",
+                "marca": "Nissan"
+            }, {
+                "modelo": "X-TRAIL GX 2.5 16V 180cv 5p",
+                "marca": "Nissan"
+            }, {
+                "modelo": "205 CJ Cabriolet",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "207 Active 1.4 Flex 8V 5p",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "208 Active 1.2 Flex 12V 5p mec.",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "306 Cabriolet 1.8/ Mi 16V",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "307 SW Feline 2.0 16V 5p Aut.",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "508 THP 1.6 Turbo 16V 4p Aut.",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "Boxer 2.3 Furg.TB Dies. Curto/Médio",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "HOGGAR Active 1.4 Flex 8V 2p",
+                "marca": "Peugeot"
+            }, {
+                "modelo": "Clio Auth. /AIR Hi-Flex 1.6 16V 5p",
+                "marca": "Renault"
+            }, {
+                "modelo": "DUSTER 1.6 Hi-Flex 16V Mec",
+                "marca": "Renault"
+            }, {
+                "modelo": "Express 1.6/ RL 1.6",
+                "marca": "Renault"
+            }, {
+                "modelo": "FLUENCE Sed. Dyn. Plus 2.0 16V FLEX Aut.",
+                "marca": "Renault"
+            }, {
+                "modelo": "Kangoo Authentique 1.6 16V 95cv",
+                "marca": "Renault"
+            }, {
+                "modelo": "Laguna Grand Tour Privilège 3.0 V6 210cv",
+                "marca": "Renault"
+            }, {
+                "modelo": "LOGAN Authentique Hi-Flex 1.0 16V 4p",
+                "marca": "Renault"
+            }, {
+                "modelo": "Master 2.3 dCi Chassi 16V Diesel",
+                "marca": "Renault"
+            }, {
+                "modelo": "Megane Grand Tour Dynam. Hi-Flex 1.6 16V",
+                "marca": "Renault"
+            }, {
+                "modelo": "Megane Sed. Expression 2.0 16V Aut.",
+                "marca": "Renault"
+            }, {
+                "modelo": "SANDERO Auth. Plus Hi-Power 1.0 16V 5p",
+                "marca": "Renault"
+            }, {
+                "modelo": "Scénic RXE 2.0 8V",
+                "marca": "Renault"
+            }, {
+                "modelo": "Twingo Easy 1.2",
+                "marca": "Renault"
+            }, {
+                "modelo": "Grand Vitara 1.6 16V Aut.",
+                "marca": "Suzuki"
+            }, {
+                "modelo": "Swift GL",
+                "marca": "Suzuki"
+            }, {
+                "modelo": "SX4 2.0 16V 145cv 4WD 5p Aut.",
+                "marca": "Suzuki"
+            }, {
+                "modelo": "Vitara JLX Metal 1.6 8V 2p",
+                "marca": "Suzuki"
+            }, {
+                "modelo": "Corolla ALTIS 2.0 Flex 16V Aut.",
+                "marca": "Toyota"
+            }, {
+                "modelo": "Corolla DX/ SW DX 1.6 16V",
+                "marca": "Toyota"
+            }, {
+                "modelo": "ETIOS 1.3 Flex 16V 5p Mec.",
+                "marca": "Toyota"
+            }, {
+                "modelo": "Hilux 4x2 2.4 Diesel",
+                "marca": "Toyota"
+            }, {
+                "modelo": "Land Cruiser 4WD 4.5 24V",
+                "marca": "Toyota"
+            }, {
+                "modelo": "PRIUS HYBRID 1.8 16V 5p Aut.",
+                "marca": "Toyota"
+            }, {
+                "modelo": "RAV4 2.0 4x2 16V Aut.",
+                "marca": "Toyota"
+            }, {
+                "modelo": "Supra",
+                "marca": "Toyota"
+            }, {
+                "modelo": "T-100 3.4 V6",
+                "marca": "Toyota"
+            }, {
+                "modelo": "440 Turbo 1.8",
+                "marca": "Volvo"
+            }, {
+                "modelo": "S80 3.2 238cv Aut.",
+                "marca": "Volvo"
+            }, {
+                "modelo": "V60 T-5 MOMENTUM 2.0 245cv 5p",
+                "marca": "Volvo"
+            }, {
+                "modelo": "AMAROK CD2.0 16V/S CD2.0 16V TDI 4x2 Die",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Bora 2.0 8v Comfortline Aut.",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "CROSSFOX  1.6 T. Flex 16V 5p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "EOS Cab. 2.0 Turbo FSI Tiptronic",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Eurovan 2.4 Diesel",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Fox 1.0 Mi Total Flex 8V 3p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Fusca",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Fusca 2.0 TSI 16V Mec.",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Gol (novo) 1.0 Mi Total Flex 8V 2p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Gol TSi 2000 2p e 4p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Golf  BLACK EDITON 2.0 Mi T. Flex 8V Tip",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Grand Saveiro Xtreme/Street  1.6/1.8/2.0",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "JETTA  GLX III 2.8 VR6",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Kombi Carat",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Logus 1.6 / CLi / CL/ GL",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "New Beetle 2.0 Mi Mec./Aut.",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Parati 1.0 Mi FUN/ SunSet 16V 4p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Passat  L/LS/LSe/GL/GLS/TS/Fla/Vill/Plus",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Passat VR6 2.8",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Pointer 1.8 / CLi",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Polo 1.0 Mi 79cv 16V 5p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Quantum 1.8 Mi/ 1.8i",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Santana 1.8 Mi",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "Saveiro  Trendline 1.6 T.Flex 8V",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "SpaceCross I MOTION 1.6 Mi Total Flex 8V",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "SPACEFOX  SPORTLINE/HIGHLINE 1.6 T.Flex",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "up! black/white/red 1.0 T. Flex 12V 5p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "VOYAGE Trendline 1.0 T.Flex 12V 4p",
+                "marca": "VW - VolksWagen"
+            }, {
+                "modelo": "145 Elegant 1.7/1.8 16V",
+                "marca": "Alfa Romeo"
+            }, {
+                "modelo": "145 Elegant 2.0 16V",
+                "marca": "Alfa Romeo"
+            }, {
+                "modelo": "156 SportWagon 2.5 V6 24V 190cv 4p Aut.",
+                "marca": "Alfa Romeo"
+            }, {
+                "modelo": "Celer Hatch 1.5 16V Flex 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "Celer Sedan ACT 1.5 16V Flex 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "CIELO 1.6 16V 119cv  5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "CIELO Sedan 1.6 16V 119cv  4p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "Face 1.3 16V/1.3 16v Flex.Mec",
+                "marca": "CHERY"
+            }, {
+                "modelo": "QQ 1.0 ACT 12V 69cv 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "QQ 1.0 ACT FL 12V 69cv 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "QQ 1.0 Look FL 12V 69cv 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "QQ 1.1/1.0 12V 69cv 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "S-18 1.3 16V Flex Mec. 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "Tiggo 2.0 16V Aut. 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "Tiggo 2.0 16V Mec. 5p",
+                "marca": "CHERY"
+            }, {
+                "modelo": "Caravan LE  3.3",
+                "marca": "Chrysler"
+            }, {
+                "modelo": "Grand Caravan LE 3.3 Aut",
+                "marca": "Chrysler"
+            }, {
+                "modelo": "PT Cruiser Cabrio 2.4 16V 143cv 2p",
+                "marca": "Chrysler"
+            }, {
+                "modelo": "Dakota 2.5",
+                "marca": "Dodge"
+            }, {
+                "modelo": "JOURNEY Crossroad 3.6 V6 Aut.",
+                "marca": "Dodge"
+            }, {
+                "modelo": "Ram 2500 TROPIVAN 5.9 SLT TDI 4x4 Dies.",
+                "marca": "Dodge"
+            }, {
+                "modelo": "456 GTA",
+                "marca": "Ferrari"
+            }, {
+                "modelo": "BR-800 (todos)/ Supermini",
+                "marca": "Gurgel"
+            }, {
+                "modelo": "J2 1.4 16V 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "J2 1.4 JET Flex 16V 5p Mec",
+                "marca": "JAC"
+            }, {
+                "modelo": "J3 1.4 16V 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "J5 Sedan 1.5 16V 4p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "J6 2.0 16V 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "T 140 2.8 2p (diesel)",
+                "marca": "JAC"
+            }, {
+                "modelo": "T5 1.5 JET Flex 16V 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "T6 2.0 JET Flex 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "T8 2.0 16V 5p Mec.",
+                "marca": "JAC"
+            }, {
+                "modelo": "XJ-8 Executive/ Centenary 4.0",
+                "marca": "Jaguar"
+            }, {
+                "modelo": "Cherokee Sport 2.5 4x4 Diesel",
+                "marca": "Jeep"
+            }, {
+                "modelo": "Grand Cherokee Laredo 2.7 I-5 TB Dies.",
+                "marca": "Jeep"
+            }, {
+                "modelo": "Grand Cherokee SRT8 6.1 V8 16V 432cv Aut",
+                "marca": "Jeep"
+            }, {
+                "modelo": "Renegade 75 Anos 1.8 4X2 Flex 16V Aut.",
+                "marca": "Jeep"
+            }, {
+                "modelo": "Renegade1.8 4x2 Flex 16V Mec.",
+                "marca": "Jeep"
+            }, {
+                "modelo": "Wrangler 4.0/Sport 4.0",
+                "marca": "Jeep"
+            }, {
+                "modelo": "HURACAN Coupe LP 610-4",
+                "marca": "LAMBORGHINI"
+            }, {
+                "modelo": "Defender 110 2.4 122cv T.Diesel",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Defender 90 TDI Hard Top Diesel",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Discovery3 HSE 4.4 V8 4x4 299cv Aut.",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Discovery4 HSE 2.7 4x4 TDV6 Diesel Aut.",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Range R. EVO DYNAMIQUE BLACK 2.0 Aut. 5p",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Range Rover EVOQUE Zanzibar 2.0 Aut. 5p",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Range Rover SUPERCHAGED 4.2 V8 396cv",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "Range Rover Vogue 3.0 TDV6 Diesel Aut.",
+                "marca": "Land Rover"
+            }, {
+                "modelo": "COOPER PACEMAN S John Works ALL4 1.6 Aut",
+                "marca": "MINI"
+            }, {
+                "modelo": "COOPER S BAYSWATER 1.6 Aut.",
+                "marca": "MINI"
+            }, {
+                "modelo": "COOPER S Clubman 1.6 Aut.",
+                "marca": "MINI"
+            }, {
+                "modelo": "ONE 1.6 Aut.",
+                "marca": "MINI"
+            }, {
+                "modelo": "Picape BG-Truck CD Turbo Diesel",
+                "marca": "Miura"
+            }, {
+                "modelo": "Boxster Spyder 3.4 320cv",
+                "marca": "Porsche"
+            }, {
+                "modelo": "Cayenne S 4.5/4.8",
+                "marca": "Porsche"
+            }, {
+                "modelo": "Cayman S 3.4",
+                "marca": "Porsche"
+            }, {
+                "modelo": "Mini Cooper 1.3",
+                "marca": "Rover"
+            }, {
+                "modelo": "ACTYON 2.3 16V 150cv Aut.",
+                "marca": "SSANGYONG"
+            }, {
+                "modelo": "Forester 2.0 16v 4x4 Turbo Aut.",
+                "marca": "Subaru"
+            }, {
+                "modelo": "XV 2.0 16V 4x4 150cv Aut.",
+                "marca": "Subaru"
+            }, {
+                "modelo": "PANTANAL 3.0 TDI Elet. 4x2 CS Diesel",
+                "marca": "Troller"
+            }, {
+                "modelo": "RF Esport 4x4 2.0",
+                "marca": "Troller"
+            }, {
+                "modelo": "T-4 DESERT STORM 4x4 3.0 TB Int Diesel",
+                "marca": "Troller"
+            }];
 
         }, {}],
         18: [function(require, module, exports) {
             'use strict';
             /* eslint indent: 4 */
-
 
             // Private helper class
             class SubRange {
@@ -4346,10 +6149,7 @@ var persons = require("./persons");
 
                 // Returns inclusive combination of SubRanges as a SubRange.
                 add(range) {
-                    return new SubRange(
-                        Math.min(this.low, range.low),
-                        Math.max(this.high, range.high)
-                    );
+                    return new SubRange(Math.min(this.low, range.low), Math.max(this.high, range.high));
                 }
 
                 // Returns subtraction of SubRanges as an array of SubRanges.
@@ -4358,10 +6158,7 @@ var persons = require("./persons");
                     if (range.low <= this.low && range.high >= this.high) {
                         return [];
                     } else if (range.low > this.low && range.high < this.high) {
-                        return [
-                            new SubRange(this.low, range.low - 1),
-                            new SubRange(range.high + 1, this.high)
-                        ];
+                        return [new SubRange(this.low, range.low - 1), new SubRange(range.high + 1, this.high)];
                     } else if (range.low <= this.low) {
                         return [new SubRange(range.high + 1, this.high)];
                     } else {
@@ -4370,17 +6167,16 @@ var persons = require("./persons");
                 }
 
                 toString() {
-                    return this.low == this.high ?
-                        this.low.toString() : this.low + '-' + this.high;
+                    return this.low == this.high ? this.low.toString() : this.low + '-' + this.high;
                 }
             }
-
 
             class DRange {
                 constructor(a, b) {
                     this.ranges = [];
                     this.length = 0;
-                    if (a != null) this.add(a, b);
+                    if (a != null)
+                        this.add(a, b);
                 }
 
                 _update_length() {
@@ -4408,7 +6204,8 @@ var persons = require("./persons");
                     if (a instanceof DRange) {
                         a.ranges.forEach(_add);
                     } else {
-                        if (b == null) b = a;
+                        if (b == null)
+                            b = a;
                         _add(new SubRange(a, b));
                     }
                     return this;
@@ -4432,7 +6229,8 @@ var persons = require("./persons");
                     if (a instanceof DRange) {
                         a.ranges.forEach(_subtract);
                     } else {
-                        if (b == null) b = a;
+                        if (b == null)
+                            b = a;
                         _subtract(new SubRange(a, b));
                     }
                     return this;
@@ -4456,7 +6254,8 @@ var persons = require("./persons");
                     if (a instanceof DRange) {
                         a.ranges.forEach(_intersect);
                     } else {
-                        if (b == null) b = a;
+                        if (b == null)
+                            b = a;
                         _intersect(new SubRange(a, b));
                     }
                     this.ranges = newRanges;
@@ -4509,7 +6308,6 @@ var persons = require("./persons");
             const DRange = require('drange');
             const types = ret.types;
 
-
             module.exports = class RandExp {
                 /**
                  * @constructor
@@ -4533,7 +6331,6 @@ var persons = require("./persons");
                     this.tokens = ret(regexp);
                 }
 
-
                 /**
                  * Checks if some custom properties have been set for this regexp.
                  *
@@ -4544,19 +6341,16 @@ var persons = require("./persons");
                     // When a repetitional token has its max set to Infinite,
                     // randexp won't actually generate a random amount between min and Infinite
                     // instead it will see Infinite as min + 100.
-                    this.max = regexp.max != null ? regexp.max :
-                        RandExp.prototype.max != null ? RandExp.prototype.max : 100;
+                    this.max = regexp.max != null ? regexp.max : RandExp.prototype.max != null ? RandExp.prototype.max : 100;
 
                     // This allows expanding to include additional characters
                     // for instance: RandExp.defaultRange.add(0, 65535);
-                    this.defaultRange = regexp.defaultRange ?
-                        regexp.defaultRange : this.defaultRange.clone();
+                    this.defaultRange = regexp.defaultRange ? regexp.defaultRange : this.defaultRange.clone();
 
                     if (regexp.randInt) {
                         this.randInt = regexp.randInt;
                     }
                 }
-
 
                 /**
                  * Generates the random string.
@@ -4566,7 +6360,6 @@ var persons = require("./persons");
                 gen() {
                     return this._gen(this.tokens, []);
                 }
-
 
                 /**
                  * Generate random string modeled after given tokens.
@@ -4582,18 +6375,20 @@ var persons = require("./persons");
                         case types.ROOT:
                         case types.GROUP:
                             // Ignore lookaheads for now.
-                            if (token.followedBy || token.notFollowedBy) { return ''; }
+                            if (token.followedBy || token.notFollowedBy) {
+                                return '';
+                            }
 
                             // Insert placeholder until group string is generated.
                             if (token.remember && token.groupNumber === undefined) {
                                 token.groupNumber = groups.push(null) - 1;
                             }
 
-                            stack = token.options ?
-                                this._randSelect(token.options) : token.stack;
+                            stack = token.options ? this._randSelect(token.options) : token.stack;
 
                             str = '';
-                            for (i = 0, l = stack.length; i < l; i++) {
+                            for (i = 0,
+                                l = stack.length; i < l; i++) {
                                 str += this._gen(stack[i], groups);
                             }
 
@@ -4608,13 +6403,14 @@ var persons = require("./persons");
 
                         case types.SET:
                             var expandedSet = this._expand(token);
-                            if (!expandedSet.length) { return ''; }
+                            if (!expandedSet.length) {
+                                return '';
+                            }
                             return String.fromCharCode(this._randSelect(expandedSet));
 
                         case types.REPETITION:
                             // Randomly generate number between min and max.
-                            n = this.randInt(token.min,
-                                token.max === Infinity ? token.min + this.max : token.max);
+                            n = this.randInt(token.min, token.max === Infinity ? token.min + this.max : token.max);
 
                             str = '';
                             for (i = 0; i < n; i++) {
@@ -4627,12 +6423,10 @@ var persons = require("./persons");
                             return groups[token.value - 1] || '';
 
                         case types.CHAR:
-                            var code = this.ignoreCase && this._randBool() ?
-                                this._toOtherCase(token.value) : token.value;
+                            var code = this.ignoreCase && this._randBool() ? this._toOtherCase(token.value) : token.value;
                             return String.fromCharCode(code);
                     }
                 }
-
 
                 /**
                  * If code is alphabetic, converts to other case.
@@ -4642,10 +6436,8 @@ var persons = require("./persons");
                  * @return {Number}
                  */
                 _toOtherCase(code) {
-                    return code + (97 <= code && code <= 122 ? -32 :
-                        65 <= code && code <= 90 ? 32 : 0);
+                    return code + (97 <= code && code <= 122 ? -32 : 65 <= code && code <= 90 ? 32 : 0);
                 }
-
 
                 /**
                  * Randomly returns a true or false value.
@@ -4655,7 +6447,6 @@ var persons = require("./persons");
                 _randBool() {
                     return !this.randInt(0, 1);
                 }
-
 
                 /**
                  * Randomly selects and returns a value from the array.
@@ -4669,7 +6460,6 @@ var persons = require("./persons");
                     }
                     return arr[this.randInt(0, arr.length - 1)];
                 }
-
 
                 /**
                  * expands a token to a DiscontinuousRange of characters which has a
@@ -4706,7 +6496,6 @@ var persons = require("./persons");
                     }
                 }
 
-
                 /**
                  * Randomly generates and returns a number between a and b (inclusive).
                  *
@@ -4718,7 +6507,6 @@ var persons = require("./persons");
                     return a + Math.floor(Math.random() * (1 + b - a));
                 }
 
-
                 /**
                  * Default range of characters to generate from.
                  */
@@ -4729,7 +6517,6 @@ var persons = require("./persons");
                 set defaultRange(range) {
                     this._range = range;
                 }
-
 
                 /**
                  *
@@ -4755,7 +6542,6 @@ var persons = require("./persons");
                     return randexp.gen();
                 }
 
-
                 /**
                  * Enables sugary /regexp/.gen syntax.
                  */
@@ -4767,24 +6553,26 @@ var persons = require("./persons");
                 }
             };
 
-        }, { "drange": 18, "ret": 20 }],
+        }, {
+            "drange": 18,
+            "ret": 20
+        }],
         20: [function(require, module, exports) {
             const util = require('./util');
             const types = require('./types');
             const sets = require('./sets');
             const positions = require('./positions');
 
-
             module.exports = (regexpStr) => {
                 var i = 0,
-                    l, c,
-                    start = { type: types.ROOT, stack: [] },
-
+                    l, c, start = {
+                        type: types.ROOT,
+                        stack: []
+                    },
                     // Keep track of last clause/group and stack.
                     lastGroup = start,
                     last = start.stack,
                     groupStack = [];
-
 
                 var repeatErr = (i) => {
                     util.error(regexpStr, `Nothing to repeat at column ${i - 1}`);
@@ -4840,16 +6628,21 @@ var persons = require("./persons");
                                     // Check if c is integer.
                                     // In which case it's a reference.
                                     if (/\d/.test(c)) {
-                                        last.push({ type: types.REFERENCE, value: parseInt(c, 10) });
+                                        last.push({
+                                            type: types.REFERENCE,
+                                            value: parseInt(c, 10)
+                                        });
 
                                         // Escaped character.
                                     } else {
-                                        last.push({ type: types.CHAR, value: c.charCodeAt(0) });
+                                        last.push({
+                                            type: types.CHAR,
+                                            value: c.charCodeAt(0)
+                                        });
                                     }
                             }
 
                             break;
-
 
                             // Positionals.
                         case '^':
@@ -4859,7 +6652,6 @@ var persons = require("./persons");
                         case '$':
                             last.push(positions.end());
                             break;
-
 
                             // Handle custom sets.
                         case '[':
@@ -4885,12 +6677,10 @@ var persons = require("./persons");
 
                             break;
 
-
                             // Class of any character except \n.
                         case '.':
                             last.push(sets.anyChar());
                             break;
-
 
                             // Push group onto stack.
                         case '(':
@@ -4917,9 +6707,7 @@ var persons = require("./persons");
                                     group.notFollowedBy = true;
 
                                 } else if (c !== ':') {
-                                    util.error(regexpStr,
-                                        `Invalid group, character '${c}'` +
-                                        ` after '?' at column ${i - 1}`);
+                                    util.error(regexpStr, `Invalid group, character '${c}'` + ` after '?' at column ${i - 1}`);
                                 }
 
                                 group.remember = false;
@@ -4936,7 +6724,6 @@ var persons = require("./persons");
                             last = group.stack;
                             break;
 
-
                             // Pop group out of stack.
                         case ')':
                             if (groupStack.length === 0) {
@@ -4946,10 +6733,8 @@ var persons = require("./persons");
 
                             // Check if this group has a PIPE.
                             // To get back the correct last stack.
-                            last = lastGroup.options ?
-                                lastGroup.options[lastGroup.options.length - 1] : lastGroup.stack;
+                            last = lastGroup.options ? lastGroup.options[lastGroup.options.length - 1] : lastGroup.stack;
                             break;
-
 
                             // Use pipe character to give more choices.
                         case '|':
@@ -4965,7 +6750,6 @@ var persons = require("./persons");
                             lastGroup.options.push(stack);
                             last = stack;
                             break;
-
 
                             // Repetition.
                             // For every repetition, remove last element from last stack
@@ -5033,7 +6817,6 @@ var persons = require("./persons");
                             });
                             break;
 
-
                             // Default is a character that is not `\[](){}?+*^$`.
                         default:
                             last.push({
@@ -5054,67 +6837,164 @@ var persons = require("./persons");
 
             module.exports.types = types;
 
-        }, { "./positions": 21, "./sets": 22, "./types": 23, "./util": 24 }],
+        }, {
+            "./positions": 21,
+            "./sets": 22,
+            "./types": 23,
+            "./util": 24
+        }],
         21: [function(require, module, exports) {
             const types = require('./types');
-            exports.wordBoundary = () => ({ type: types.POSITION, value: 'b' });
-            exports.nonWordBoundary = () => ({ type: types.POSITION, value: 'B' });
-            exports.begin = () => ({ type: types.POSITION, value: '^' });
-            exports.end = () => ({ type: types.POSITION, value: '$' });
+            exports.wordBoundary = () => ({
+                type: types.POSITION,
+                value: 'b'
+            });
+            exports.nonWordBoundary = () => ({
+                type: types.POSITION,
+                value: 'B'
+            });
+            exports.begin = () => ({
+                type: types.POSITION,
+                value: '^'
+            });
+            exports.end = () => ({
+                type: types.POSITION,
+                value: '$'
+            });
 
-        }, { "./types": 23 }],
+        }, {
+            "./types": 23
+        }],
         22: [function(require, module, exports) {
             const types = require('./types');
 
-            const INTS = () => [{ type: types.RANGE, from: 48, to: 57 }];
+            const INTS = () => [{
+                type: types.RANGE,
+                from: 48,
+                to: 57
+            }];
 
             const WORDS = () => {
-                return [
-                    { type: types.CHAR, value: 95 },
-                    { type: types.RANGE, from: 97, to: 122 },
-                    { type: types.RANGE, from: 65, to: 90 }
-                ].concat(INTS());
+                return [{
+                    type: types.CHAR,
+                    value: 95
+                }, {
+                    type: types.RANGE,
+                    from: 97,
+                    to: 122
+                }, {
+                    type: types.RANGE,
+                    from: 65,
+                    to: 90
+                }].concat(INTS());
             };
 
             const WHITESPACE = () => {
-                return [
-                    { type: types.CHAR, value: 9 },
-                    { type: types.CHAR, value: 10 },
-                    { type: types.CHAR, value: 11 },
-                    { type: types.CHAR, value: 12 },
-                    { type: types.CHAR, value: 13 },
-                    { type: types.CHAR, value: 32 },
-                    { type: types.CHAR, value: 160 },
-                    { type: types.CHAR, value: 5760 },
-                    { type: types.RANGE, from: 8192, to: 8202 },
-                    { type: types.CHAR, value: 8232 },
-                    { type: types.CHAR, value: 8233 },
-                    { type: types.CHAR, value: 8239 },
-                    { type: types.CHAR, value: 8287 },
-                    { type: types.CHAR, value: 12288 },
-                    { type: types.CHAR, value: 65279 }
-                ];
+                return [{
+                    type: types.CHAR,
+                    value: 9
+                }, {
+                    type: types.CHAR,
+                    value: 10
+                }, {
+                    type: types.CHAR,
+                    value: 11
+                }, {
+                    type: types.CHAR,
+                    value: 12
+                }, {
+                    type: types.CHAR,
+                    value: 13
+                }, {
+                    type: types.CHAR,
+                    value: 32
+                }, {
+                    type: types.CHAR,
+                    value: 160
+                }, {
+                    type: types.CHAR,
+                    value: 5760
+                }, {
+                    type: types.RANGE,
+                    from: 8192,
+                    to: 8202
+                }, {
+                    type: types.CHAR,
+                    value: 8232
+                }, {
+                    type: types.CHAR,
+                    value: 8233
+                }, {
+                    type: types.CHAR,
+                    value: 8239
+                }, {
+                    type: types.CHAR,
+                    value: 8287
+                }, {
+                    type: types.CHAR,
+                    value: 12288
+                }, {
+                    type: types.CHAR,
+                    value: 65279
+                }];
             };
 
             const NOTANYCHAR = () => {
-                return [
-                    { type: types.CHAR, value: 10 },
-                    { type: types.CHAR, value: 13 },
-                    { type: types.CHAR, value: 8232 },
-                    { type: types.CHAR, value: 8233 },
-                ];
+                return [{
+                    type: types.CHAR,
+                    value: 10
+                }, {
+                    type: types.CHAR,
+                    value: 13
+                }, {
+                    type: types.CHAR,
+                    value: 8232
+                }, {
+                    type: types.CHAR,
+                    value: 8233
+                }, ];
             };
 
             // Predefined class objects.
-            exports.words = () => ({ type: types.SET, set: WORDS(), not: false });
-            exports.notWords = () => ({ type: types.SET, set: WORDS(), not: true });
-            exports.ints = () => ({ type: types.SET, set: INTS(), not: false });
-            exports.notInts = () => ({ type: types.SET, set: INTS(), not: true });
-            exports.whitespace = () => ({ type: types.SET, set: WHITESPACE(), not: false });
-            exports.notWhitespace = () => ({ type: types.SET, set: WHITESPACE(), not: true });
-            exports.anyChar = () => ({ type: types.SET, set: NOTANYCHAR(), not: true });
+            exports.words = () => ({
+                type: types.SET,
+                set: WORDS(),
+                not: false
+            });
+            exports.notWords = () => ({
+                type: types.SET,
+                set: WORDS(),
+                not: true
+            });
+            exports.ints = () => ({
+                type: types.SET,
+                set: INTS(),
+                not: false
+            });
+            exports.notInts = () => ({
+                type: types.SET,
+                set: INTS(),
+                not: true
+            });
+            exports.whitespace = () => ({
+                type: types.SET,
+                set: WHITESPACE(),
+                not: false
+            });
+            exports.notWhitespace = () => ({
+                type: types.SET,
+                set: WHITESPACE(),
+                not: true
+            });
+            exports.anyChar = () => ({
+                type: types.SET,
+                set: NOTANYCHAR(),
+                not: true
+            });
 
-        }, { "./types": 23 }],
+        }, {
+            "./types": 23
+        }],
         23: [function(require, module, exports) {
             module.exports = {
                 ROOT: 0,
@@ -5132,9 +7012,15 @@ var persons = require("./persons");
             const types = require('./types');
             const sets = require('./sets');
 
-
             const CTRL = '@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^ ?';
-            const SLSH = { '0': 0, 't': 9, 'n': 10, 'v': 11, 'f': 12, 'r': 13 };
+            const SLSH = {
+                '0': 0,
+                't': 9,
+                'n': 10,
+                'v': 11,
+                'f': 12,
+                'r': 13
+            };
 
             /**
              * Finds character representations in str and convert all to
@@ -5151,12 +7037,7 @@ var persons = require("./persons");
                         return s;
                     }
 
-                    var code = b ? 8 :
-                        a16 ? parseInt(a16, 16) :
-                        b16 ? parseInt(b16, 16) :
-                        c8 ? parseInt(c8, 8) :
-                        dctrl ? CTRL.indexOf(dctrl) :
-                        SLSH[eslsh];
+                    var code = b ? 8 : a16 ? parseInt(a16, 16) : b16 ? parseInt(b16, 16) : c8 ? parseInt(c8, 8) : dctrl ? CTRL.indexOf(dctrl) : SLSH[eslsh];
 
                     var c = String.fromCharCode(code);
 
@@ -5171,7 +7052,6 @@ var persons = require("./persons");
                 return str;
             };
 
-
             /**
              * turns class into tokens
              * reads str until it encounters a ] not preceeded by a \
@@ -5185,7 +7065,6 @@ var persons = require("./persons");
                 var tokens = [];
                 var regexp = /\\(?:(w)|(d)|(s)|(W)|(D)|(S))|((?:(?:\\)(.)|([^\]\\]))-(?:\\)?([^\]]))|(\])|(?:\\)?([^])/g;
                 var rs, c;
-
 
                 while ((rs = regexp.exec(str)) != null) {
                     if (rs[1]) {
@@ -5227,7 +7106,6 @@ var persons = require("./persons");
                 exports.error(regexpStr, 'Unterminated character class');
             };
 
-
             /**
              * Shortcut to throw errors.
              *
@@ -5238,22 +7116,45 @@ var persons = require("./persons");
                 throw new SyntaxError('Invalid regular expression: /' + regexp + '/: ' + msg);
             };
 
-        }, { "./sets": 22, "./types": 23 }],
+        }, {
+            "./sets": 22,
+            "./types": 23
+        }],
         25: [function(require, module, exports) {
-            ! function(e, t) { "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.createNumberMask = t() : e.createNumberMask = t() }(this, function() {
+            ! function(e, t) {
+                "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.createNumberMask = t() : e.createNumberMask = t()
+            }(this, function() {
                 return function(e) {
-                    function t(n) { if (o[n]) return o[n].exports; var i = o[n] = { exports: {}, id: n, loaded: !1 }; return e[n].call(i.exports, i, i.exports, t), i.loaded = !0, i.exports }
+                    function t(n) {
+                        if (o[n])
+                            return o[n].exports;
+                        var i = o[n] = {
+                            exports: {},
+                            id: n,
+                            loaded: !1
+                        };
+                        return e[n].call(i.exports, i, i.exports, t),
+                            i.loaded = !0,
+                            i.exports
+                    }
                     var o = {};
-                    return t.m = e, t.c = o, t.p = "", t(0)
-                }([function(e, t, o) { e.exports = o(2) }, , function(e, t) {
+                    return t.m = e,
+                        t.c = o,
+                        t.p = "",
+                        t(0)
+                }([function(e, t, o) {
+                    e.exports = o(2)
+                }, , function(e, t) {
                     "use strict";
 
                     function o() {
                         function e() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : l,
                                 t = e.length;
-                            if (e === l || e[0] === y[0] && 1 === t) return y.split(l).concat([v]).concat(g.split(l));
-                            if (e === k && M) return y.split(l).concat(["0", k, v]).concat(g.split(l));
+                            if (e === l || e[0] === y[0] && 1 === t)
+                                return y.split(l).concat([v]).concat(g.split(l));
+                            if (e === k && M)
+                                return y.split(l).concat(["0", k, v]).concat(g.split(l));
                             var o = e[0] === s && q;
                             o && (e = e.toString().substr(1));
                             var c = e.lastIndexOf(k),
@@ -5261,12 +7162,29 @@ var persons = require("./persons");
                                 a = void 0,
                                 b = void 0,
                                 h = void 0;
-                            if (e.slice(T * -1) === g && (e = e.slice(0, T * -1)), u && (M || $) ? (a = e.slice(e.slice(0, R) === y ? R : 0, c), b = e.slice(c + 1, t), b = n(b.replace(f, l))) : a = e.slice(0, R) === y ? e.slice(R) : e, P && ("undefined" == typeof P ? "undefined" : r(P)) === p) {
+                            if (e.slice(T * -1) === g && (e = e.slice(0, T * -1)),
+                                u && (M || $) ? (a = e.slice(e.slice(0, R) === y ? R : 0, c),
+                                    b = e.slice(c + 1, t),
+                                    b = n(b.replace(f, l))) : a = e.slice(0, R) === y ? e.slice(R) : e,
+                                P && ("undefined" == typeof P ? "undefined" : r(P)) === p) {
                                 var S = "." === j ? "[.]" : "" + j,
                                     w = (a.match(new RegExp(S, "g")) || []).length;
                                 a = a.slice(0, P + w * Z)
                             }
-                            return a = a.replace(f, l), E || (a = a.replace(/^0+(0$|[^0])/, "$1")), a = x ? i(a, j) : a, h = n(a), (u && M || $ === !0) && (e[c - 1] !== k && h.push(m), h.push(k, m), b && (("undefined" == typeof L ? "undefined" : r(L)) === p && (b = b.slice(0, L)), h = h.concat(b)), $ === !0 && e[c - 1] === k && h.push(v)), R > 0 && (h = y.split(l).concat(h)), o && (h.length === R && h.push(v), h = [d].concat(h)), g.length > 0 && (h = h.concat(g.split(l))), h
+                            return a = a.replace(f, l),
+                                E || (a = a.replace(/^0+(0$|[^0])/, "$1")),
+                                a = x ? i(a, j) : a,
+                                h = n(a),
+                                (u && M || $ === !0) && (e[c - 1] !== k && h.push(m),
+                                    h.push(k, m),
+                                    b && (("undefined" == typeof L ? "undefined" : r(L)) === p && (b = b.slice(0, L)),
+                                        h = h.concat(b)),
+                                    $ === !0 && e[c - 1] === k && h.push(v)),
+                                R > 0 && (h = y.split(l).concat(h)),
+                                o && (h.length === R && h.push(v),
+                                    h = [d].concat(h)),
+                                g.length > 0 && (h = h.concat(g.split(l))),
+                                h
                         }
                         var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                             o = t.prefix,
@@ -5294,14 +7212,28 @@ var persons = require("./persons");
                             R = y && y.length || 0,
                             T = g && g.length || 0,
                             Z = j && j.length || 0;
-                        return e.instanceOf = "createNumberMask", e
+                        return e.instanceOf = "createNumberMask",
+                            e
                     }
 
-                    function n(e) { return e.split(l).map(function(e) { return v.test(e) ? v : e }) }
+                    function n(e) {
+                        return e.split(l).map(function(e) {
+                            return v.test(e) ? v : e
+                        })
+                    }
 
-                    function i(e, t) { return e.replace(/\B(?=(\d{3})+(?!\d))/g, t) }
-                    Object.defineProperty(t, "__esModule", { value: !0 });
-                    var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) { return typeof e } : function(e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e };
+                    function i(e, t) {
+                        return e.replace(/\B(?=(\d{3})+(?!\d))/g, t)
+                    }
+                    Object.defineProperty(t, "__esModule", {
+                        value: !0
+                    });
+                    var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+                            return typeof e
+                        } :
+                        function(e) {
+                            return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
+                        };
                     t.default = o;
                     var c = "$",
                         l = "",
