@@ -71,7 +71,7 @@ function makeHeader() {
     const header = `
     <nav>
       <div class="nav-wrapper container">
-        <a href="/index.html" class="brand-logo">
+        <a href="gerador-de-documentos/index.html" class="brand-logo">
           Gerador e Validador
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
