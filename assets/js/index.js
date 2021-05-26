@@ -56,12 +56,12 @@ function generalAction(dataId, type) {
                 document.querySelector('#valicon').classList.add('success');
                 document.querySelector('#valicon').classList.remove('danger');
 
-                document.querySelector('#valtext' + type).innerHTML = 'O CNS, ' + masked.bold() + ' é válido!';
+                document.querySelector('#valtext' + type).innerHTML = `${masked.bold()} válido!`;
             } else {
                 document.querySelector('#valicon' + type).innerHTML = 'thumb_down';
                 document.querySelector('#valicon').classList.remove('success');
                 document.querySelector('#valicon').classList.add('danger');
-                document.querySelector('#valtext' + type).innerHTML = `O CNS ${masked.bold()} é inválido!`;
+                document.querySelector('#valtext' + type).innerHTML = `${masked.bold()} inválido!`;
             }
         }
     }
