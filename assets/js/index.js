@@ -2,7 +2,6 @@ window.onload = () => {
     makeHeader();
     makeFooter();
     componentCustom();
-    makeSideNav();
 }
 
 function componentCustom() {
@@ -66,22 +65,6 @@ function generalAction(dataId, type) {
             }
         }
     }
-}
-
-function makeSideNav() {
-    const sidenav = `
-    <div class="collection">
-        <a href="cpf.html" class="collection-item">Gerador de CPF</a>
-        <a href="cnpj.html" class="collection-item">Gerador de CNPJ</a>
-        <a href="index.html" class="collection-item active">Gerador de CNS</a>
-        <a href="senha.html" class="collection-item">Gerador de senha</a>
-        <a href="telefone.html" class="collection-item">Gerador de telefone</a>
-        <a href="pessoa.html" class="collection-item">Gerador de pessoa</a>
-        <a href="empresa.html" class="collection-item">Gerador de empresa</a>
-        <a href="texto.html" class="collection-item">Conversor de texto</a>
-    </div>
-    `;
-    document.querySelector('.sidebar-collection').innerHTML = sidenav;
 }
 
 function makeHeader() {
