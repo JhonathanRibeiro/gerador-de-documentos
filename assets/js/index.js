@@ -71,7 +71,7 @@ function makeHeader() {
     const header = `
     <nav>
       <div class="nav-wrapper container">
-        <a href="gerador-de-documentos/index.html" class="brand-logo">
+        <a href="#" class="brand-logo">
           Gerador e Validador
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -89,7 +89,7 @@ function makeFooter() {
    
     <nav>
       <div class="nav-wrapper container">
-        <a href="gerador-de-documentos/index.html" class="brand-logo">
+        <a href="#" class="brand-logo">
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="https://jhonathanribeiro.netlify.app/"></a></li>
