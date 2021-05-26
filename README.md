@@ -1,24 +1,33 @@
 # Gerador de documentos
 Gerador de CPF CNPJ e outros documentos válidos
 CPF
-![image](https://user-images.githubusercontent.com/37172038/119424255-76af6d00-bcdb-11eb-8ddb-f402f2701c83.png)
+![image](https://user-images.githubusercontent.com/37172038/119657588-7cec3900-be02-11eb-9c78-edce3957c7b6.png)
 
 CNPJ
-![image](https://user-images.githubusercontent.com/37172038/119424383-bbd39f00-bcdb-11eb-8408-df293f2baa7a.png)
+![image](https://user-images.githubusercontent.com/37172038/119657631-883f6480-be02-11eb-8327-100711e2bb7b.png)
+
 
 CNS
-![image](https://user-images.githubusercontent.com/37172038/119424419-d0b03280-bcdb-11eb-9f8e-15e70fb28843.png)
+![image](https://user-images.githubusercontent.com/37172038/119657717-a4430600-be02-11eb-98e4-785706fc13f4.png)
+
 
 Senha
-![image](https://user-images.githubusercontent.com/37172038/119424445-ddcd2180-bcdb-11eb-8754-ee7de35d623d.png)
+![image](https://user-images.githubusercontent.com/37172038/119657750-adcc6e00-be02-11eb-9e95-82bfffb8b5d1.png)
+
 
 Telefone
-![image](https://user-images.githubusercontent.com/37172038/119424518-ff2e0d80-bcdb-11eb-83ec-86ba0509b22c.png)
+![image](https://user-images.githubusercontent.com/37172038/119657788-bae95d00-be02-11eb-8537-bbb4a539c5b5.png)
+
 
 Pessoa
-![image](https://user-images.githubusercontent.com/37172038/119424645-3dc3c800-bcdc-11eb-8100-ca74c3a5feb8.png)
+![image](https://user-images.githubusercontent.com/37172038/119657817-c3da2e80-be02-11eb-96d1-c6af62d8793a.png)
+
  
 Empresa
-![image](https://user-images.githubusercontent.com/37172038/119424703-5207c500-bcdc-11eb-8c13-da2619f484b2.png)
+![image](https://user-images.githubusercontent.com/37172038/119657848-cc326980-be02-11eb-84b1-55ce52d40ce9.png)
+
+Conversor de texto
+![image](https://user-images.githubusercontent.com/37172038/119657904-e3715700-be02-11eb-88f9-a00708349766.png)
+
 
 
