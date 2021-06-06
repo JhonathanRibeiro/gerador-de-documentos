@@ -9,8 +9,8 @@ module.exports = persons = () => {
             'MELO', 'MENDES', 'MIRANDA', 'MONTEIRO', 'MORAES', 'MOREIRA', 'MOURA', 'NASCIMENTO', 'NUNES', 'OLIVEIRA', 'PEREIRA', 'RAMOS', 'REIS', 'RIBEIRO', 'ROCHA',
             'SANTANA', 'SANTOS', 'SILVA', 'SOARES', 'SOUZA', 'TEIXEIRA', 'VIEIRA'
         ];
-        exports.EMPRESAS_TIPOS = ['Pizzaria', 'Mecânica', 'Laboratórios', 'Contabilidade', 'Padaria', 'Pastelaria'];
-        exports.EMPRESAS_NOMES = ['do Barão', 'União', 'Teixeira', 'Nova Era', 'Genuíno', 'Autêntica', 'Lux'];
+        exports.EMPRESAS_TIPOS = ['Hospital', 'Mecânica', 'Laboratórios', 'Contabilidade', 'Unidade de saúde', 'Farmácia'];
+        exports.EMPRESAS_NOMES = ['do Barão', 'União', 'Teixeira', 'Nova Era', 'Genuíno', 'Autêntica', 'Tereza Mussi', 'Pato Branco', 'União da vitória', 'São josé dos pinhais'];
         exports.TELEFONE_ESTADO = {
             'ac': 68,
             'al': 82,

@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gerador e Validador de CPF - Cadastro de Pessoas Físicas</title>
+    <title>Gerador e Validador de Dados De Pessoa Física</title>
+    <link rel="icon" href="https://user-images.githubusercontent.com/37172038/119654851-4234d180-bdff-11eb-9761-b41f34a42ec5.png">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/materialize.min.css">
@@ -13,22 +15,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body data-id="cpf">
+<body data-id="cns">
     <header></header>
-
     <main class="container">
-        <h1>Gerador e Validador de CPF - Cadastro de Pessoas Físicas</h1>
+        <h3>CNS</h3>
         <section>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col s4 sidebar-collection"></div>
-
+                        <div class="input-field col s4 sidebar-collection">
+                            <div class="collection">
+                                <a href="index.html" id="CPF" class="collection-item">Gerador de CPF</a>
+                                <a href="cnpj.html" id="CNPJ" class="collection-item">Gerador de CNPJ</a>
+                                <a href="cns.html" id="CNS" class="collection-item active">Gerador de CNS</a>
+                                <a href="senha.html" id="senha" class="collection-item">Gerador de senha</a>
+                                <a href="telefone.html" id="telefone" class="collection-item">Gerador de telefone</a>
+                                <a href="pessoa.html" id="pessoa" class="collection-item">Gerador de dados de pessoa física</a>
+                                <a href="empresa.html" id="empresa" class="collection-item">Gerador de dados de pessoa jurídica</a>
+                                <a href="texto.html" id="texto" class="collection-item">Conversor de texto</a>
+                            </div>
+                        </div>
                         <div class="input-field col s8">
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Gerar um número de CPF de exemplo no
-                    formato padrão</span>
+                                    <span class="card-title activator grey-text text-darken-4">Gerador de CNS</span>
                                     <input id="generated" type="text" class="validate">
                                     <label for="generated"></label>
                                 </div>
@@ -37,12 +47,11 @@
                     novo</a>
                                 </div>
                             </div>
-
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Validar se o CPF tem o formato padrão</span>
+                                    <span class="card-title activator grey-text text-darken-4">Validar CNS</span>
                                     <input id="validated" type="text" class="validate">
-                                    <label for="validated">Digite o CPF</label>
+                                    <label for="validated">Digite o CNS</label>
 
                                     <ul id="validatedResult" class=" hidden">
                                         <li>
@@ -70,17 +79,13 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">Como Funciona?</h5>
                     <p class="grey-text text-lighten-4">
-
-                        Os dígitos verificadores são calculados através de um algoritmo que soma o produto de cada dígito que compõe o CPF por um peso e calcula o resto da divisão dessa soma por 11. Pela característica, esse algoritmo é conhecido como "módulo 11". Porém, como
-                        resultado, o dígito verificador calculado pode eventualmente ser igual a 10 (dez), estabeleceu-se que o número 10 fosse substituído pelo dígito 0 (zero), No caso do CPF é feito o módulo 11 duas vezes, gerando dois digitos verificadores.
+                        O Cartão Nacional de Saúde é um instrumento que possibilita a vinculação dos procedimentos executados no âmbito do Sistema Único de Saúde (SUS) ao usuário, ao profissional que os realizou e também à unidade de saúde onde foram realizados.
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Referências</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas">Wikipedia</a></li>
-                        <li><a class="grey-text text-lighten-3" href="http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/CPF/">Receita
-                Federal</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cart%C3%A3o_SUS">Wikipedia</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,14 +93,15 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2021 Gerador
-                <a class="grey-text text-lighten-4 right" href="https://jhonathanribeiro.netlify.app/">Jhonathan Ribeiro</a>
+                <a class="grey-text text-lighten-4 right" href="#">Jhonathan Ribeiro</a>
             </div>
         </div>
     </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="assets/js/materialize.min.js"></script>
-    <script src="assets/js/cadastro.js"></script>
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/cadastro.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
 </body>
 
 </html>

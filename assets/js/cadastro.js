@@ -53,11 +53,15 @@
             Object.defineProperty(exports, "__esModule", {
                 value: true
             });
-            exports.NOMES_FEMININOS = ['MARIA', 'ANA', 'FRANCISCA', 'ANTONIA', 'ADRIANA', 'JULIANA', 'MARCIA', 'FERNANDA', 'PATRICIA', 'ALINE'];
-            exports.NOMES_MASCULINOS = ['JOSE', 'JOAO', 'ANTONIO', 'FRANCISCO', 'CARLOS', 'PAULO', 'PEDRO', 'LUCAS', 'LUIZ', 'MARCOS'];
-            exports.SOBRENOMES = ['ALMEIDA', 'ALVES', 'ANDRADE', 'BARBOSA', 'BARROS', 'BATISTA', 'BORGES', 'CAMPOS', 'CARDOSO', 'CARVALHO', 'CASTRO', 'COSTA', 'DIAS', 'DUARTE', 'FREITAS', 'FERNANDES', 'FERREIRA', 'GARCIA', 'GOMES', 'GONÇALVES', 'LIMA', 'LOPES', 'MACHADO', 'MARQUES', 'MARTINS', 'MEDEIROS', 'MELO', 'MENDES', 'MIRANDA', 'MONTEIRO', 'MORAES', 'MOREIRA', 'MOURA', 'NASCIMENTO', 'NUNES', 'OLIVEIRA', 'PEREIRA', 'RAMOS', 'REIS', 'RIBEIRO', 'ROCHA', 'SANTANA', 'SANTOS', 'SILVA', 'SOARES', 'SOUZA', 'TEIXEIRA', 'VIEIRA'];
-            exports.EMPRESAS_TIPOS = ['Pizzaria', 'Mecânica', 'Laboratórios', 'Contabilidade', 'Padaria', 'Pastelaria'];
-            exports.EMPRESAS_NOMES = ['do Barão', 'União', 'Teixeira', 'Nova Era', 'Genuíno', 'Autêntica', 'Lux'];
+            exports.NOMES_FEMININOS = ['MARIA', 'ANA', 'FRANCISCA', 'ANTONIA', 'ADRIANA', 'JULIANA', 'MARCIA', 'FERNANDA', 'PATRICIA', 'ALINE', 'ISABELLA', 'AMANDA', 'KARLA', 'FLAVIA'];
+            exports.NOMES_MASCULINOS = ['JOSE', 'JOAO', 'ANTONIO', 'FRANCISCO', 'CARLOS', 'PAULO', 'PEDRO', 'LUCAS', 'LUIZ', 'MARCOS', 'JHONATHAN', 'CHRYSTOPHER', 'ERICK', 'ROBERSON', 'DANIEL'];
+            exports.SOBRENOMES = ['ALMEIDA', 'ALVES', 'ANDRADE', 'BARBOSA', 'BARROS', 'BATISTA', 'BORGES', 'CAMPOS', 'CARDOSO', 'CARVALHO', 'CASTRO',
+                'COSTA', 'DIAS', 'DUARTE', 'FREITAS', 'FERNANDES', 'FERREIRA', 'GARCIA', 'GOMES', 'GONÇALVES', 'LIMA', 'LOPES', 'MACHADO', 'MARQUES', 'MARTINS', 'MEDEIROS',
+                'MELO', 'MENDES', 'MIRANDA', 'MONTEIRO', 'MORAES', 'MOREIRA', 'MOURA', 'NASCIMENTO', 'NUNES', 'OLIVEIRA', 'PEREIRA', 'RAMOS', 'REIS', 'RIBEIRO', 'ROCHA',
+                'SANTANA', 'SANTOS', 'SILVA', 'SOARES', 'SOUZA', 'TEIXEIRA', 'VIEIRA'
+            ];
+            exports.EMPRESAS_TIPOS = ['Hospital', 'Mecânica', 'Laboratórios', 'Contabilidade', 'Unidade de saúde', 'Farmácia'];
+            exports.EMPRESAS_NOMES = ['do Barão', 'União', 'Teixeira', 'Nova Era', 'Genuíno', 'Autêntica', 'Tereza Mussi', 'Pato Branco', 'União da vitória', 'São josé dos pinhais'];
             exports.TELEFONE_ESTADO = {
                 'ac': 68,
                 'al': 82,
@@ -175,7 +179,7 @@
             };
             exports.TIPOS_SANGUINEOS = ['O+', 'A+', 'B+', 'AB+', ' O−', ' A−', ' B−', 'AB−'];
 
-            function getAstro(data) {
+            function getOrinetacaoSexual(data) {
                 var month, day;
                 if (typeof data === 'string') {
                     day = parseInt(data.split('/')[0]);
@@ -191,33 +195,34 @@
                     throw new Error("Dia inválido : " + day);
                 }
                 if ((month == 1 && day < 20) || (month == 12 && day >= 22)) {
-                    return 'Capricórnio';
+                    return 'Heterossexual';
                 } else if ((month == 2 && day < 19) || (month == 1 && day >= 20)) {
-                    return 'Aquários';
+                    return 'Homossexual';
                 } else if ((month == 3 && day < 21) || (month == 2 && day >= 19)) {
-                    return 'Peixes';
+                    return 'Bissexual';
                 } else if ((month == 4 && day < 20) || (month == 3 && day >= 21)) {
-                    return 'Aries';
+                    return 'Outro';
                 } else if ((month == 5 && day < 21) || (month == 4 && day >= 20)) {
-                    return 'Touro';
+                    return 'Heterossexual';
                 } else if ((month == 6 && day < 22) || (month == 5 && day >= 21)) {
-                    return 'Gêmeos';
+                    return 'Homossexual';
                 } else if ((month == 7 && day < 23) || (month == 6 && day >= 22)) {
-                    return 'Cancer';
+                    return 'Bissexual';
                 } else if ((month == 8 && day < 23) || (month == 7 && day >= 23)) {
-                    return 'Leao';
+                    return 'Outro';
                 } else if ((month == 9 && day < 23) || (month == 8 && day >= 23)) {
-                    return 'Virgo';
+                    return 'Heterossexual';
                 } else if ((month == 10 && day < 24) || (month == 9 && day >= 22)) {
-                    return 'Libra';
+                    return 'Bissexual';
                 } else if ((month == 11 && day < 22) || (month == 10 && day >= 24)) {
-                    return 'Escorpião';
+                    return 'Homossexual';
                 } else if ((month == 12 && day < 22) || (month == 11 && day >= 22)) {
-                    return 'Sagitário';
+                    return 'Bissexual';
                 }
-                throw new Error("Signo não encontrado : " + day + '/' + month);
+                throw new Error("Orientação sexual não encontrada : " + day + '/' + month);
             }
-            exports.getAstro = getAstro;
+            exports.getOrinetacaoSexual = getOrinetacaoSexual;
+
             exports.NAMES = ['Aaron', 'Abel', 'Abelardo', 'Abelino', 'Abiel', 'Abiezer', 'Abílio', 'Abner', 'Abraão', 'Acácio', 'Adailton', 'Adair', 'Adalberto', 'Adalgiso', 'Adalício', 'Adalmir', 'Adalto', 'Adam', 'Adamastor', 'Adamor', 'Adão', 'Adeci', 'Adeildo', 'Adelair', 'Adélcio', 'Adelino', 'Adélio', 'Adelson', 'Ademar', 'Ademilson', 'Ademir', 'Aderbal', 'Adérito', 'Adilson', 'Admilson', 'Adolfo', 'Adonai', 'Adonis', 'Adónis', 'Adrian', 'Adriano', 'Adriel', 'Aécio', 'Afonso', 'Afrânio', 'Agenor', 'Ageo', 'Agipino', 'Agnaldo', 'Agnelo', 'Agostinho', 'Aguinaldo', 'Ailton', 'Aires', 'Airton', 'Aitor', 'Alair', 'Alaôr', 'Alarico', 'Albano', 'Albertino', 'Albino', 'Alcides', 'Alcindo', 'Aldair', 'Aldemir', 'Aldenor', 'Aldo', 'Alejandro', 'Alessandro', 'Alex', 'Alexandrino', 'Alexandro', 'Aléxio', 'Alfredo', 'Alípio', 'Alírio', 'Alison', 'Allan', 'Almerindo', 'Almir', 'Aloísio', 'Alonzo', 'Altino', 'Aluísio', 'Alvantino', 'Alvino', 'Amadeo', 'Amândio', 'Amarildo', 'Amauri', 'Amaury', 'Ambrósio', 'Américo', 'Amílcar', 'Amilton', 'Amir', 'Ananias', 'Andersen', 'Anderson', 'Ândreo', 'Andrés', 'Anésio', 'Angélico', 'Ângelo', 'Aníbal', 'Anísio', 'Anselmo', 'Antenor', 'Antero', 'Anthony', 'Apollo', 'Apolo', 'Aprígio', 'Aquiles', 'Arcanjo', 'Aristeu', 'Aristides', 'Armando', 'Armindo', 'Arnaldo', 'Arthur', 'Arturo', 'Ary', 'Asher', 'Assis', 'Ataíde', 'Athos', 'Átila', 'Atlas', 'Aureliano', 'Aurelino', 'Aurélio', 'Aurino', 'Ayrton', 'Balbino', 'Balduíno', 'Baltasar', 'Baltazar', 'Barnabé', 'Bartolomeu', 'Basileu', 'Basílio', 'Batista', 'Belarmino', 'Belchior', 'Belisário', 'Belmiro', 'Bendito', 'Benedito', 'Benito', 'Benjamin', 'Beto', 'Bill', 'Boanerges', 'Bob', 'Bonifácio', 'Bóris', 'Bosco', 'Brandon', 'Bruce', 'Bryan', 'Byron', 'Cacildo', 'Cadú', 'Cael', 'Caíco', 'Caíque', 'Calazan', 'Calisto', 'Calixto', 'Calvin', 'Camilo', 'Cândido', 'Canuto', 'Casimiro', 'Cassiano', 'Cássio', 'Castiel', 'Cauã', 'Cauê', 'Celestino', 'Celso', 'César', 'Charles', 'Christian', 'Christian', 'Christopher', 'Cirilo', 'Ciro', 'Cláudio', 'Claus', 'Clayton', 'Clementino', 'Clodomiro', 'Clovis', 'Clóvis', 'Conrad', 'Constantin', 'Constantino', 'Cosme', 'Cristiano', 'Cristóvão', 'Cursino', 'Custódio', 'Dácio', 'Dagoberto', 'Dalmo', 'Dalton', 'Danilo', 'Dante', 'Dárcio', 'Darius', 'Deivid', 'Delfino', 'Delmar', 'Demétrio', 'Denis', 'Denzel', 'Derik', 'Didier', 'Dimas', 'Dinis', 'Diniz', 'Dino', 'Diógenes', 'Dionísio', 'Djalma', 'Dom', 'Domênico', 'Dominic', 'Donatello', 'Donatílio', 'Donato', 'Donizete', 'Douglas', 'Douglas', 'Durval', 'Dylan', 'Ed', 'Éder', 'Ederson', 'Edivaldo', 'Edmilson', 'Edmir', 'Edson', 'Eliezer', 'Élio', 'Eliseo', 'Eliseu', 'Elísio', 'Élton', 'Emanuel', 'Emaús', 'Emerson', 'Emílio', 'Ênio', 'Enrico', 'Enrique', 'Erasmo', 'Erasmus', 'Eriberto', 'Erik', 'Ernesto', 'Esdras', 'Eugénio', 'Eurico', 'Evaldo', 'Evandro', 'Evelásio', 'Expedito', 'Ezekiel', 'Fabiano', 'Faustino', 'Fausto', 'Felipe', 'Felisberto', 'Felismino', 'Félix', 'Ferdinand', 'Ferdinando', 'Fernando', 'Fernão', 'Firmino', 'Flávio', 'Florêncio', 'Florentino', 'Floriano', 'Fortunato', 'Francesco', 'Francis', 'Franco', 'Frank', 'Franklin', 'Gael', 'Galdino', 'Galeno', 'Galileu', 'Gastão', 'Gaudêncio', 'Genaro', 'Genésio', 'Geovani', 'Geraldo', 'Germano', 'Gerson', 'Giancarlos', 'Giani', 'Gianluca', 'Gilberto', 'Gilmar', 'Gilmar', 'Gilson', 'Giuseppe', 'Glauco', 'Golias', 'Graciano', 'Gregório', 'Gualter', 'Guarani', 'Gumersindo', 'Guy', 'Haroldo', 'Hélder', 'Hélio', 'Henry', 'Herbert', 'Hermano', 'Hernâni', 'Horácio', 'Humberto', 'Ike', 'Irineu', 'Isaías', 'Isidoro', 'Israel', 'Ítalo', 'Itamar', 'Ivaldo', 'Ivandro', 'Ivanildo', 'Jacinto', 'Jack', 'Jackson', 'Jader', 'Jadiel', 'Jadir', 'Jair', 'Jairo', 'Jamal', 'Jamil', 'Jandir', 'Janilson', 'Januário', 'Jarbas', 'Jason', 'Jason', 'Javier', 'Jean', 'Jefferson', 'Jeremias', 'Jessé', 'Jessie', 'Jessiel', 'Jesualdo', 'Jesus', 'Joab', 'Joelson', 'Jofre', 'Johnny', 'Johnson', 'Jonas', 'Jonatã', 'Josélio', 'Joshua', 'Josias', 'Josué', 'Juan', 'Juliano', 'Julião', 'Júlio', 'Júnior', 'Jurandir', 'Juvenal', 'Kaique', 'Kauã', 'Kauan', 'Kawan', 'Kelvin', 'Kennedy', 'Klaus', 'Kleber', 'Lael', 'Laerte', 'Laertes', 'Lauro', 'Leon', 'Leôncio', 'Leonel', 'Leónidas', 'Leopoldo', 'Lineu', 'Lionel', 'Lisandro', 'Lívio', 'Logan', 'Luã', 'Luan', 'Luca', 'Luciano', 'Lúcio', 'Luigi', 'Luiz', 'Lukas', 'Luzio', 'Macário', 'Magnus', 'Malvino', 'Manassés', 'Manoel', 'Maomé', 'Márcio', 'Marcos', 'Marcus', 'Marley', 'Marlon', 'Martin', 'Martinho', 'Marvin', 'Matheo', 'Matheus', 'Mathias', 'Mathieu', 'Maurílio', 'Max', 'Maximiliano', 'Maxwell', 'Mélvin', 'Messias', 'Micael', 'Michael', 'Michel', 'Milo', 'Milton', 'Mizael', 'Moacir', 'Mohamed', 'Nataniel', 'Nazário', 'Neil', 'Nereu', 'Nestor', 'Newton', 'Ney', 'Nicola', 'Nicolas', 'Nildemar', 'Nilo', 'Nilson', 'Nilton', 'Nivaldo', 'Nonato', 'Norberto', 'Norildo', 'Norimar', 'Odemar', 'Odilson', 'Odin', 'Odorico', 'Olin', 'Omar', 'Omer', 'Onofre', 'Orestes', 'Orlandino', 'Orlando', 'Osias', 'Osman', 'Osmar', 'Osório', 'Osvaldo', 'Otacílio', 'Otávio', 'Otto', 'Ozael', 'Pablo', 'Paco', 'Paolo', 'Pascoal', 'Patrício', 'Patrick', 'Paulino', 'Pepe', 'Percival', 'Péricles', 'Pierre', 'Porfírio', 'Querubim', 'Quintino', 'Radamés', 'Rafaelo', 'Raí', 'Raimundo', 'Ralf', 'Ralph', 'Ramiro', 'Ramon', 'Ramón', 'Raoni', 'Raphael', 'Reginaldo', 'Régis', 'Reimão', 'Reinaldo', 'Renan', 'Renato', 'Renê', 'Rivaldo', 'Roberto', 'Robson', 'Rodney', 'Rodolfo', 'Roger', 'Rogério', 'Roland', 'Rolando', 'Romão', 'Romário', 'Romeo', 'Rômulo', 'Ronald', 'Ronaldo', 'Roni', 'Rosendo', 'Rúbens', 'Rudesindo', 'Rudolfo', 'Ruy', 'Ryan', 'Sansão', 'Saúl', 'Saulo', 'Sávio', 'Selton', 'Sertório', 'Severino', 'Sidney', 'Silas', 'Sílvio', 'Simplício', 'Sinésio', 'Stefan', 'Stefano', 'Stenio', 'Steve', 'Steven', 'Sydney', 'Taciano', 'Tadeu', 'Tales', 'Tamires', 'Tâmiris', 'Tarcísio', 'Tarik', 'Tarsício', 'Telmo', 'Tenório', 'Teo', 'Teobaldo', 'Teodemiro', 'Thales', 'Theo', 'Thiago', 'Thomas', 'Thomaz', 'Tibúrcio', 'Ticiano', 'Tierry', 'Timóteo', 'Tito', 'Tom', 'Tomaz', 'Tristão', 'Troy', 'Túlio', 'Ubirajara', 'Ubiratã', 'Urbano', 'Uriel', 'Valdemar', 'Valentino', 'Vanderlei', 'Vasco', 'Venâncio', 'Veríssimo', 'Vicenzo', 'Victor', 'Vílmar', 'Vilson', 'Vinícius', 'Virgílio', 'Vital', 'Vítor', 'Vladimir', 'Wagner', 'Waldir', 'Waldo', 'Wallace', 'Walter', 'Washington', 'Watson', 'Webster', 'Weller', 'Wellington', 'Wendel', 'Wesley', 'Will', 'William', 'Wilson', ];
 
         }, {}],
@@ -1188,7 +1193,7 @@
                 });
                 var altura = '1.' + utils_1.randomNumber(35, 90);
                 var peso = utils_1.randomNumber(50, 120);
-                var signo = pessoas_1.getAstro(dataNascimento);
+                var signo = pessoas_1.getOrinetacaoSexual(dataNascimento);
                 var tipoSanguineo = utils_1.randArray(pessoas_1.TIPOS_SANGUINEOS);
                 var sobrenomePai = utils_1.randArray(pessoas_1.SOBRENOMES);
                 var sobrenomeMae = utils_1.randArray(pessoas_1.SOBRENOMES);
@@ -1201,7 +1206,7 @@
                     pai: pai,
                     site: site(),
                     email: email(),
-                    senha: senha(),
+                    senha: senha(options),
                     rg: rg(options),
                     cpf: cpf(),
                     telefone: telefone(options),
@@ -1373,7 +1378,7 @@
                 cns: cns,
                 contabanco: contabanco,
                 cpf: cpf,
-                cpfcnpj: cpfcnpj,
+                // cpfcnpj: cpfcnpj,
                 currency: currency,
                 currencyNumber: currencyNumber,
                 data: data,
@@ -1421,7 +1426,7 @@
             });
             var utils_1 = require("./utils");
             /**
-             * BASED ON https://github.com/gammasoft/ie/
+             * baseado em https://github.com/gammasoft/ie/
              */
             exports.generateInscricaoEstadual = {
                 ac: function(valor) {
@@ -2582,7 +2587,7 @@
                 cns: makeGeneric('cns'),
                 contabanco: makeGeneric('contabanco'),
                 cpf: makeGeneric('cpf'),
-                cpfcnpj: makeGeneric('cpfcnpj'),
+                // cpfcnpj: makeGeneric('cpfcnpj'),
                 cartaocredito: makeGeneric('cartaocredito'),
                 currency: function(currencyValueInput, decimalsFormat) {
                     if (decimalsFormat === void 0) {
@@ -5117,7 +5122,7 @@
                 cns: validate_cns,
                 contabanco: validate_contabanco,
                 cpf: validate_cpf,
-                cpfcnpj: validate_cpfcnpj,
+                // cpfcnpj: validate_cpfcnpj,
                 currency: validate_currency,
                 data: validate_data,
                 ect: validate_ect,

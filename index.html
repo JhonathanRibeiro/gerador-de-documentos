@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gerador e Validador de Dados De Pessoa Física</title>
+    <title>Gerador e Validador de CPF - Cadastro de Pessoas Físicas</title>
     <link rel="icon" href="https://user-images.githubusercontent.com/37172038/119654851-4234d180-bdff-11eb-9761-b41f34a42ec5.png">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,43 +15,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body data-id="cns">
+<body data-id="cpf">
     <header></header>
+
     <main class="container">
-        <h3>CNS</h3>
+        <h3>CPF</h3>
         <section>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s4 sidebar-collection">
                             <div class="collection">
-                                <a href="cpf.html" id="CPF" class="collection-item">Gerador de CPF</a>
+                                <a href="index.html" id="CPF" class="collection-item active">Gerador de CPF</a>
                                 <a href="cnpj.html" id="CNPJ" class="collection-item">Gerador de CNPJ</a>
-                                <a href="index.html" id="CNS" class="collection-item active">Gerador de CNS</a>
+                                <a href="cns.html" id="CNS" class="collection-item">Gerador de CNS</a>
                                 <a href="senha.html" id="senha" class="collection-item">Gerador de senha</a>
                                 <a href="telefone.html" id="telefone" class="collection-item">Gerador de telefone</a>
-                                <a href="pessoa.html" id="pessoa" class="collection-item">Gerador de pessoa</a>
-                                <a href="empresa.html" id="empresa" class="collection-item">Gerador de empresa</a>
+                                <a href="pessoa.html" id="pessoa" class="collection-item">Gerador de dados de pessoa física</a>
+                                <a href="empresa.html" id="empresa" class="collection-item">Gerador de dados de pessoa jurídica</a>
                                 <a href="texto.html" id="texto" class="collection-item">Conversor de texto</a>
                             </div>
                         </div>
+
                         <div class="input-field col s8">
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Gerador de CNS</span>
+                                    <span class="card-title activator grey-text text-darken-4">Gerador de CPF</span>
+                                    <p> O terceiro dígito da direita para a esquerda identifica a unidade federativa na qual a pessoa foi registrada, observando o dígito final antes do traço pode-se descobrir a origem da pessoa. Verifique o exemplo logo abaixo</p>
                                     <input id="generated" type="text" class="validate">
                                     <label for="generated"></label>
                                 </div>
                                 <div class="card-action">
-                                    <a class="waves-effect waves-light btn" id="generatedAction"><i class="material-icons right">add</i>gerar
-                    novo</a>
+                                    <a class="waves-effect waves-light btn" id="generatedAction"><i class="material-icons right">add</i>gerar cpf</a>
                                 </div>
                             </div>
+
                             <div class="card">
                                 <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">Validar CNS</span>
+                                    <span class="card-title activator grey-text text-darken-4">Validar CPF</span>
                                     <input id="validated" type="text" class="validate">
-                                    <label for="validated">Digite o CNS</label>
+                                    <label for="validated">Digite o CPF</label>
 
                                     <ul id="validatedResult" class=" hidden">
                                         <li>
@@ -70,6 +73,41 @@
                         </div>
                 </form>
                 </div>
+                <div>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="card-title">Origem do CPF</span>
+                                    <p>Exemplo CPF nº 000.000.006-00</p>
+
+                                    <p>0 - Rio Grande do Sul</p>
+                                    <p>1 - Distrito Federal, Goiás, Mato Grosso do Sul e Tocantins</p>
+                                    <p>2 - Pará, Amazonas, Acre, Amapá, Rondônia e Roraima</p>
+                                    <p>3 - Ceará, Maranhão e Piauí</p>
+                                    <p>4 - Pernambuco, Rio Grande do Norte, Paraíba e Alagoas</p>
+                                    <p>5 - Bahia e Sergipe</p>
+                                    <p>6 - Minas Gerais</p>
+                                    <p>7 - Rio de Janeiro e Espírito Santo</p>
+                                    <p>8 - São Paulo</p>
+                                    <p>9 - Paraná e Santa Catarina</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div class="card blue-grey darken-1">
+                                <div class="card-content white-text">
+                                    <span class="card-title">O que é CPF? </span>
+                                    <p>CPF (Cadastro de Pessoa Física) é um número composto por 11 dígitos, o CPF é o cadastro da Receita Federal brasileira no qual devem estar todos os contribuintes (pessoas físicas brasileiras ou estrangeiras com negócios
+                                        no Brasil).</p>
+                                    <p>O CPF armazena informações fornecidas pelo próprio contribuinte e por outros sistemas da Receita Federal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
 
@@ -77,15 +115,12 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Como Funciona?</h5>
-                    <p class="grey-text text-lighten-4">
-                        O Cartão Nacional de Saúde é um instrumento que possibilita a vinculação dos procedimentos executados no âmbito do Sistema Único de Saúde (SUS) ao usuário, ao profissional que os realizou e também à unidade de saúde onde foram realizados.
-                    </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Referências</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cart%C3%A3o_SUS">Wikipedia</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas">Wikipedia</a></li>
+                        <li><a class="grey-text text-lighten-3" href="http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/CPF/">Receita Federal</a></li>
                     </ul>
                 </div>
             </div>
@@ -93,15 +128,14 @@
         <div class="footer-copyright">
             <div class="container">
                 © 2021 Gerador
-                <a class="grey-text text-lighten-4 right" href="#">Jhonathan Ribeiro</a>
+                <a class="grey-text text-lighten-4 right" href="https://jhonathanribeiro.netlify.app/">Jhonathan Ribeiro</a>
             </div>
         </div>
     </footer>
     <!-- Compiled and minified JavaScript -->
     <script src="assets/js/materialize.min.js"></script>
-    <script src="assets/js/index.js"></script>
     <script src="assets/js/cadastro.js"></script>
-    <script type="module" src="assets/js/app.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
