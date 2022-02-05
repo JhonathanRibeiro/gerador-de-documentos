@@ -2,14 +2,6 @@
     display: none;
 }
 
-nav {
-    background-color: #303F9F !important;
-}
-
-footer {
-    background-color: #3F51B5 !important;
-}
-
 .card .card-content {
     min-height: 100px;
 }
@@ -41,7 +33,34 @@ footer {
     margin-right: 10px;
 }
 
+.nav-container {
+    width: 100%;
+    background-color: #26a69a;
+}
+
+.nav-links{
+    background: #26a69a!important;
+    padding: 0;
+    height: 33px;
+    line-height: 33px;
+    -webkit-box-shadow: none!important;
+}
+
+.fake-title {
+    background-color: #26a69a;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 table {
     background-color: #fff;
     padding: 20px;
+}
+
+nav {
+    background-color: #303F9F !important;
+}
+
+footer {
+    background-color: #3F51B5 !important;
 }

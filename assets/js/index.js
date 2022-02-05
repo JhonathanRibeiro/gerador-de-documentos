@@ -1,7 +1,10 @@
+let pageTitle = 'FAKE GENERATOR';
+
 window.onload = () => {
     makeHeader();
     makeFooter();
     componentCustom();
+    document.title = pageTitle;
 }
 
 function componentCustom() {
@@ -70,14 +73,32 @@ function generalAction(dataId, type) {
 function makeHeader() {
     const header = `
     <nav>
-      <div class="nav-wrapper container">
+        <div class="nav-wrapper container">
         <a href="#" class="brand-logo">
-          Gerador e Validador
+            <span class="fake-title">FAKE</span> GENERATOR
         </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          
-        </ul>
-      </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
+        </div>
+    <div class="nav-container ">
+        <div class="nav-wrapper container">
+            <nav class="nav-links">
+            <ul>
+                <li class="active">
+                    <a href="/" title="Name Generator">Home</a>
+                </li>
+                <li>
+                    <a href="/" title="Free Tools">Ferramentas</a>
+                </li>
+                <li>
+                    <a href="/" title="Order in Bulk">FAQ</a>
+                </li>
+                <li>
+                    <a href="/" title="Order in Bulk">Contato</a>
+                </li>
+            </ul>
+            </nav>
+        </div>
+    </div>  
     </nav>
    `;
 
@@ -86,16 +107,6 @@ function makeHeader() {
 
 function makeFooter() {
     const footer = `
-   
-    <nav>
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo">
-        </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="https://jhonathanribeiro.netlify.app/"></a></li>
-        </ul>
-      </div>
-    </nav>
     <div style="text-align: center; background-color: white; color: black; font-size: 10px;">
       Todos os direitos reservados.
     </div>
