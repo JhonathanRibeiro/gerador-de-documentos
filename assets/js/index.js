@@ -84,16 +84,16 @@ function makeHeader() {
             <nav class="nav-links">
             <ul>
                 <li class="active">
-                    <a href="/" title="Name Generator">Home</a>
+                    <a href="#" title="Name Generator">Home</a>
                 </li>
                 <li>
-                    <a href="/" title="Free Tools">Ferramentas</a>
+                    <a href="#" title="Free Tools">Ferramentas</a>
                 </li>
                 <li>
-                    <a href="/" title="Order in Bulk">FAQ</a>
+                    <a href="#" title="Order in Bulk">FAQ</a>
                 </li>
                 <li>
-                    <a href="/" title="Order in Bulk">Contato</a>
+                    <a href="#" title="Order in Bulk">Contato</a>
                 </li>
             </ul>
             </nav>
